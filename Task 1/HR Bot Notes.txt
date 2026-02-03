@@ -1,0 +1,3 @@
+HR Bot	
+
+A discord bot that reviews discord messages and strikes and/or times out people based on their messages
