@@ -2,25 +2,46 @@
 
 ---
 
-## 1. Introduction (≈150 words) 104
+## 1. Introduction
 
 A tool that I felt was vital to the production of this game is a GitHub webhook for the Discord server. This tool allows the GitHub reviewers, Harry and myself, to be notified immediately when any push, pull request, branch creation, branch deletion or merge occurs in the repository. Without this tool, reviewers must constantly check for changes and then locate where each change happened. With the webhook, Discord messages show what has changed and include a link to the relevant GitHub page, allowing reviewers to see every update in detail. This improves efficiency and ensures no change is missed during the reviewing process.  
 
 ---
 
-## 2. Implementation (≈200 words) 224
+## 2. Implementation
 
 The implementation of this task used GitHub and Discord, focusing on GitHub webhooks as the main system. The setup process took place inside the GitHub repository settings and the Discord server settings. The first step involved creating a webhook inside a dedicated Discord channel, which generated a webhook URL linked to that specific channel.
+<br>
 
+![Discord Webhook](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Task%201/Images/Discord%20Webhook%20Setup.png)
+*Figure 1. The webhook that was setup on Discord that GitHub would use to send messages.*
+
+<br>
 The webhook URL was then added to the GitHub repository webhook settings. Event triggers were then selected to determine which types of events would be sent to the discord channel. The events I selected were branch creation and deletion, pull requests, and pushes. These were the only ones I chose as the others were either irrelevant to what the reviewer team needed to check or unlikely to be triggered. These events send data directly to Discord, in the form of a JSON payload, when triggered, which then displays the information as readable messages from GitHub inside the channel.
+<br>
 
+![GitHub Webhook](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Task%201/Images/GitHub%20Webhook%20setup.png)
+*Figure 2. The Webhook settings used to create this took on Github.*
+
+<br>
 Each message displays who triggered the event, what event occurred, and the given title of the change. Each message also includes a link that takes you directly to the change on the GitHub website, allowing easy access for review.
+<br>
 
+![GitHub Message Example](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Task%201/Images/Github%20Message%20Example%202.png)
+*Figure 3. An example of a message created by this tool.*
+
+<br>
+<br>
+
+![In Depth Push](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Task%201/Images/In%20Depth%20Push%20Example.png)
+*Figure 4. The in depth version of the change, found by clicking the link attached to each change.*
+
+<br>
 A challenge that occurred during the creation of this tool was an excessive number of notifications from unnecessary events. This issue was fixed by limiting triggers to repository actions relevant to the project. 
 
 ---
 
-## 3. Outcome (≈150 words) 206
+## 3. Outcome
 
 The final outcome provides automatic Discord messages and notifications for all selected GitHub repository actions, sent directly to the review channel. Each notification contains all relevant information that a reviewer needs to understand each action was for while also providing a link to allow further inspection of the action. This tool removes the need for manual repository checks and reduces the risk of missed changes.
 
@@ -44,22 +65,5 @@ The video below showcases this tool in use. In the video, I create a new branch 
 ## 5. AI Usage Declaration
 - Chatgpt was used for paragraph structure and spelling and grammar checking.
 - ChatGPT (s.d.) At: https://chatgpt.com/ (Accessed  09/02/2026).
-
----
-
-
-## Submission Notes & Checklist
-
-> Remove this section once complete — use this as a checklist before submitting
-
-- Total word count: **500 words (±10%)** across Sections 1–3  
-- **Figure captions and figure descriptions do NOT count towards the word count**  
-- Use **plenty of images, GIFs, videos, screenshots, and short code snippets** where appropriate to demonstrate understanding and functionality  
-- All required **source code is included in this repository**  
-- Any required **executables or builds are provided via GitHub Releases**, where appropriate  
-- Demonstration video link is accessible and clearly shows functionality  
-- Bibliography includes all referenced material  
-- AI usage is clearly declared (or explicitly stated as not used)  
-- Work reflects your own understanding and professional practice  
 
 ---
