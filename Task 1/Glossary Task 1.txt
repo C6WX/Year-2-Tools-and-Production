@@ -1,0 +1,25 @@
+Automation- Automation in game development is used to help move the development process of a game along more efficiently, as a member of a team isn't required to perform a task repetitively.
+
+With automation, developers can efficiently test various aspects of the game, including functionality, user interface, performance, and compatibility, ensuring a seamless gaming experience for players. Gone are the days when players would put a fault down to a ‘glitch’ or ‘lag’ and expectations on how games render have massively increased. (Mountford, 2024)
+
+
+
+Mountford, A. (2024) Level Up Your Game Development with Game Test Automation. At: https://www.t-plan.com/blog/level-up-your-game-automation/ (Accessed 04/02/2026).
+
+
+
+Platform selection - Platform selection covers many topics, including performance, audience and distribution. Different platforms could have the audience you want for your game; not all platforms can run certain games and if you decide to choose a console, you might want to think about making physical copies of the game.
+
+Choosing the right game development platform is crucial to success in the highly competitive mobile gaming market. It directly impacts your game’s performance, visuals, user experience, and success. With so many options available, making an informed decision is vital to ensure your game’s success. (LABS, 2023) 
+
+
+
+LABS, x]cube (2023) Choosing The Best Game Development Platform. At: https://www.xcubelabs.com/blog/the-best-game-development-platforms-a-comprehensive-guide-for-game-developers/ (Accessed 04/02/2026).
+
+
+
+Version Control - Version Control, also known as source code management, uses tools to track changes or edits made to source code over time. Version control enables fast and efficient collaboration between developers while maintaining code integrity, allowing software development teams to work without fear of code conflicts. (What is Version Control : Version Control Definition, s.d.)
+
+
+
+What is Version Control : Version Control Definition (s.d.) At: https://unity.com/glossary/version-control (Accessed 04/02/2026).

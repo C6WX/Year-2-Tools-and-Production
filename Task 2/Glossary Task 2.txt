@@ -1,0 +1,19 @@
+Batch Processing: Batch processing is the method used by computers to process high volumes of tasks and repetitive data jobs periodically instead of processing data individually.
+In computing, batch processing is the running of a software job in an automated and unattended way. A user schedules a job to run and then waits for a processing system to run it. Typically, a job is scheduled to run at a configured time of day or when an event occurs or when computer resources are available. (Batch processing, 2025)
+
+Batch processing (2025) In: Wikipedia. At: https://en.wikipedia.org/w/index.php?title=Batch_processing&oldid=1317315828 (Accessed  10/02/2026).
+
+
+Telemetry Data: Telemetry data refers to the automatic recording and transmission of data from a remote source to another system in a different location for monitoring and analysis. The transmission of data is triggered by a sensor, which then sends the data wirelessly to a central system that then analyses the received data.
+Software developers and IT administrators use telemetry to remotely monitor the health, security, and performance of applications and application components in real time. (What is telemetry and how does it work?, s.d.)
+
+
+Understanding ‘Telemetry Data’: A Simple Guide (2023) Directed by English Mastery with Language.Foundation. At: https://www.youtube.com/watch?v=Av9NGTj-Q1M (Accessed  10/02/2026).
+
+What is telemetry and how does it work? (s.d.) At: https://www.techtarget.com/whatis/definition/telemetry (Accessed  10/02/2026).
+
+
+Data Insight: Data insight refers to the analysis of data so that a software application or game can be improved. Data analysed for this within game development includes gameplay metrics, performance, and player engagement patterns. Learning how players interact with your game through data insights can also help improve and determine a game's success.
+
+
+Naphade, A. (2024) Data Analysis and Interpretation: Unlocking Insights for Game Developers. At: https://globalstep.com/blog/data-analysis-and-interpretation-unlocking-insights-for-game-developers/ (Accessed  10/02/2026).

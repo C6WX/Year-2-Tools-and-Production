@@ -3,3 +3,7 @@ https://www.youtube.com/playlist?list=PL_Tu5Dicv_WCyKwf9B4F4ljcpJMYhRJ36
 https://www.geeksforgeeks.org/devops/integrating-jenkins-with-popular-github/
 
 Glossary: research what the term is and then get a citation about it
+
+
+
+Split task 1 into a proposal for task one and a making it in task 2
