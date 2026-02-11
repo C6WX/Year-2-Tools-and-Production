@@ -16,21 +16,23 @@ As the repository grows, tracking changes will become more difficult and reviewe
 
 ---
 
-## 3. Solution
+## 3. Solution (117 words)
 
-The solution to this problem that I propose is bot in a Discord channel that uses webhooks to send repository event data directly to Discord. When a selected repository event occurs, GitHub will send data in the form of a JSON payload to a Discord webhook URL. Discord will then display the data as a readable message inside of a chosen, dedicated Discord channel. Each message will include the type of event that occured, the user who cause the event, and a short summary of the change. A direct link will also be attached to take you directly to the change on GitHub.
-
----
-
-
-## 4. Scope and technical context
-
+The solution to this problem that I propose is bot in a Discord channel that uses webhooks to send repository event data directly to Discord. When a selected repository event occurs, GitHub will send data in the form of a JSON payload to a Discord webhook URL. Discord will then display the data as a readable message inside of a chosen, dedicated Discord channel. Each message will include the type of event that occured, the user who cause the event, and a short summary of the change. A direct link will also be attached to take you directly to the change on GitHub. This tool will ensure that reviewers recieve instant updates without having to leave Discord.
 
 ---
 
 
-## 5. Justification
+## 4. Technical context (82 words)
 
+This tool will operate across GitHub and Discord and be supported by any platform that can run both applications, including desktop and mobile devices. It will focus on repository actions relevant to what reviewers need to know about during active development. These actions include pushed, pull requests, branch creation, branch deletion, and merges. Other repository actions are not being sent to the reviewers due to a lack of relevance to the reviewing role. Restricting events that trigger data being sent will remove any unnecessary notification and keep the review channel clear.  
+
+---
+
+
+## 5. Justification (40 words)
+
+The proposed tool will improve efficiency by removing the need for manual, periodic repository checks. Reviewers will receive immediate notifications of development activity within an already used communication platform. This tool supports consistent oversight and reduces likelihood of missed changes. 
 
 ---
 
