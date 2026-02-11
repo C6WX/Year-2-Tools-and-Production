@@ -17,7 +17,7 @@ The implementation of this task used GitHub and Discord, focusing on GitHub webh
 *Figure 1. The webhook that was setup on Discord that GitHub would use to send messages.*
 
 <br>
-The webhook URL was then added to the GitHub repository webhook settings. Event triggers were then selected to determine which types of events would be sent to the discord channel. The events I selected were branch creation and deletion, pull requests, and pushes. These were the only ones I chose as the others were either irrelevant to what the reviewer team needed to check or unlikely to be triggered. These events send data directly to Discord, in the form of a JSON payload, when triggered, which then displays the information as readable messages from GitHub inside the channel.
+The webhook URL was then added to the GitHub repository webhook settings. Event triggers were then selected to determine which types of events would be sent to the discord channel. The events I selected were branch creation and deletion, pull requests and pushes. These were the only ones I chose as the others were either irrelevant to what the reviewer team needed to check or unlikely to be triggered. These events send data directly to Discord, in the form of a JSON payload, when triggered, which then displays the information as readable messages from GitHub inside the channel.
 <br>
 
 ![GitHub Webhook](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Task%201/Images/GitHub%20Webhook%20setup.png)
