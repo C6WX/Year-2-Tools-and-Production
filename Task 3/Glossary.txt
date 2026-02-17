@@ -1,0 +1,20 @@
+Kernel-Level Anti-Cheat
+A kernel-level anti-cheat is a software that checks for any cheats of a player's computer. The difference between a kernel-level anti-cheat and a standard anti-cheat is the kernel-level part, which means that the software operates at the lowest level of the operating system, the kernel. 
+One of the biggest challenges with kernel-level anti-cheats is the risk to privacy. Because they interfere deeply with the system, there is a possibility that sensitive information could be unintentionally collected or disclosed. (Flo, 2025)
+
+Flo (2025) What are kernel-level anti-cheats and how do they work? All the info. At: https://www.practical-tips.com/games/what-are-kernel-level-anti-cheats-and-how-do-they-work-all-the-info/ (Accessed  17/02/2026).
+
+
+User Datagram Protocol (UDP)
+UDP is a form of communication protocol that sends data packets across a network. UDP sends packets directly to a computer without establishing a connection first, indicating the order of packets or checking if the packets arrived (What is the User Datagram Protocol (UDP)?, s.d.). UDP is faster than TCP but due to all the things UDP misses out on doing, TCP is the more secure option to use. TCP is best for sensitive or private data and UDP is best for time sensitive data.
+
+
+What is the User Datagram Protocol (UDP)? (s.d.) At: https://www.cloudflare.com/learning/ddos/glossary/user-datagram-protocol-udp/ (Accessed  17/02/2026).
+
+
+Kubernetes cluster
+
+A kubernetes cluster is a group of machines that run and manage containerised applications. A cluster is made up of a control plane and worker nodes, the control plane manages the cluster, schedules workloads and handles scaling decisions whereas the worker nodes run the applications.
+A container is a single application or microservice packaged with its dependencies, runnable as a self-contained environment and application in one. (What is a Kubernetes Cluster? - K8s Cluster Explained - AWS, s.d.)
+
+What is a Kubernetes Cluster? - K8s Cluster Explained - AWS (s.d.) At: https://aws.amazon.com/what-is/kubernetes-cluster/ (Accessed  17/02/2026).

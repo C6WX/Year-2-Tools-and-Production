@@ -1,0 +1,17 @@
+If you were building an online multiplayer game today, what architectural decisions would you prioritise to balance performance, cheat prevention, and GDPR compliance?
+
+To proiritse performance, I would use UDP for packet transfers as it is the faster method, however it can be less reliable due to there being a chance of packets not being delivered. This is still better then using TCP as TCP is much slower, which is too big of a downside when it comes to online multiplayer games.
+
+For cheat prevention, I would use server side anomoly detection to see if an player's have or are doing anything in the game that shouldn't be possible, which would then be logged and possibly result in players being banned or suspended from the game.
+
+For GDPR compliance, I would only request data needed for the player to play the game and any needed for the game's upkeep, while also being transparent about what data is being taken and stored. The data would also be encrypted and stored securely on a private server.  
+
+
+
+
+
+
+
+
+
+

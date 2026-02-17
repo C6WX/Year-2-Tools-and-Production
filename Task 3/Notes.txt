@@ -1,0 +1,1 @@
+Amend the script given in development to not send it to github releases and change the directorys to work on Staging.
