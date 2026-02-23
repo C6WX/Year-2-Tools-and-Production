@@ -50,10 +50,11 @@ This also allows errors to be found early, allowing them to be focused on and fi
 
 ---
 
-# Any security/data issues with the Jenkins
+# Are there any security/data issues with the Jenkins tool?
 
 <img class="top-right" src="https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Week%204/Images/Presentation/Jenkins%20Error.png">
 
+Unless there are any people who have for some reason added their personal details into the Unreal Engine project files, there is risk of Jenkins storing any data, let alone leaking it.
 
 ---
 
@@ -63,12 +64,18 @@ This also allows errors to be found early, allowing them to be focused on and fi
 
 This tool is really easy to replicate to work for another project. All that needs to be done to do this is to make sure that your Github key allows access to all repositories or at least the ones Jenkins needs to access. Then all that needs to be done is a new pipeline needs creating and the code will just need to be copied over from the previous pipeline and adjusted to work for the new repository.
 
-
-
 --- 
 # Bibliography
 
+<img class="top-right" src="https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Week%204/Images/Presentation/Jenkins%20Trophy.png">
+
 - Jenkins (s.d.) At: https://www.jenkins.io/https:/www.jenkins.io/ (Accessed  23/02/2026).
+
+- The most powerful real-time 3D creation tool (s.d.) At: https://www.unrealengine.com/en-US (Accessed  23/02/2026).
+
+- Build software better, together (s.d.) At: https://github.com (Accessed  23/02/2026).
+
+
 
 
 
