@@ -29,7 +29,7 @@ Presentation <br> by Callum Wade <br> 2404781
 
 Jenkins is an open source automation server that can be used to automate repetitive development tasks. 
 Jenkins creates pipelines that run a series of steps automatically when triggered by a set trigger (a specific time of day or when a script is run.)
-My PC hosts a Jenkins pipeline that I created that accesses the staging branch and builds the game in a separate workspace the check that the game works properly.  
+  
 
 ---
 
@@ -43,7 +43,10 @@ Jenkins is downloaded and run on my personal PC. To get Jenkins working, I creat
 
 # How this helps development
 
-<img class="top-right" src="https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Week%204/Images/Presentation/245-2457481_cute-jenkins-png.png">
+<img class="top-right" src="https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Week%204/Images/Presentation/jenkins-with-plate-basis-256px.png">
+
+Jenkins being integrated into the project means that no one is required to manually build the game periodically. Instead Jenkins does this at a specific time everyday without the need for human input, removing the chance of any human error. 
+This also allows errors to be found early, allowing them to be focused on and fixed before development continues, as at the end of the day, the game building is the most important thing.
 
 ---
 
@@ -54,10 +57,11 @@ Jenkins is downloaded and run on my personal PC. To get Jenkins working, I creat
 
 ---
 
-# How easily can it be made for another project?
+# How this can be replicated for another project?
 
-<img class="top-right" src="https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Week%204/Images/Presentation/Jenkins_logo.png">
+<img class="top-right" src="https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Week%204/Images/Presentation/Cute%20Jenkins.png">
 
+This tool is really easy to replicate to work for another project. All that needs to be done to do this is to make sure that your Github key allows access to all repositories or at least the ones Jenkins needs to access. Then all that needs to be done is a new pipeline needs creating and the code will just need to be copied over from the previous pipeline and adjusted to work for the new repository.
 
 
 
