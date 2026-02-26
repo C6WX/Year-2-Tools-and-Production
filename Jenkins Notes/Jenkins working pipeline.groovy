@@ -48,6 +48,30 @@ pipeline {
                 """
             }
         }
+            
+    }
+     post {
+        success {
+            withCredentials([string(credentialsId: 'discord-webhook-greedy-piggies', variable: 'WEBHOOK')]) {
+                    bat """
+                    curl -H "Content-Type: application/json" ^
+                    -X POST ^
+                    -d "{\\"content\\":\\"SUCCESS: ${env.JOB_NAME} #${env.BUILD_NUMBER}\\"}" ^
+                    %WEBHOOK%
+                    """
+                }
+            }
 
+        failure {
+            withCredentials([string(credentialsId: 'discord-webhook-greedy-piggies', variable: 'WEBHOOK')]) {
+                bat """
+                curl -H "Content-Type: application/json" ^
+                -X POST ^
+                -d "{\\"content\\":\\"FAILED: ${env.JOB_NAME} #${env.BUILD_NUMBER}\\"}" ^
+                %WEBHOOK%
+                """
+            }
+        }
     }
 }
+
