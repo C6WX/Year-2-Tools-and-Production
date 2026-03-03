@@ -1,0 +1,24 @@
+Web service
+A web service is a method for enabling communication between client and server applications over the world wide web. It is a software module designed to perform specific tasks and can be invoked over the network, providing functionallity to the client that calls it.
+Web services can be used by software programs written in a variety of programming languages and running on a variety of platforms to exchange data via computer networks such as the Internet in a similar way to inter-process communication on a single computer. (What are Web Services?, 22:05:48+00:00)
+
+What are Web Services? (22:05:48+00:00) At: https://www.geeksforgeeks.org/computer-science-fundamentals/what-are-web-services/ (Accessed  03/03/2026).
+
+
+API (Application Programming Interface)
+An API is a set of protocols that enable different software components to communicate and transfer data. APIs work by sharing data between applications, systems and devices.
+APIs operate through a request response cycle between a client and a server
+Request: The client sends a request to an API endpoint (URI).
+Processing: The API forwards the request to the server.
+Response: The server processes and sends back the requested data.
+Delivery: The API returns the server’s response to the client.
+(What is an API (Application Programming Interface), 17:00:05+00:00)
+
+What is an API (Application Programming Interface) (17:00:05+00:00) At: https://www.geeksforgeeks.org/software-testing/what-is-an-api/ (Accessed  03/03/2026).
+
+
+HTTPS request
+A HTTPS request is a secure version of the HTTP request. This type of request uses encryption protocols to encrypt communications so that it can be used to transfer important and sensitive information.
+Encryption ensures that the data you send and receive has not been tampered with or corrupted during transit. It prevents attackers from modifying the content of a website before it reaches you, in turn protecting you from malware injections or fraudulent information. (McAfee, 2025)
+
+McAfee (2025) What Is HTTPS and Why It Matters. At: https://www.mcafee.com/learn/what-is-https-and-why-it-matters/ (Accessed  03/03/2026).

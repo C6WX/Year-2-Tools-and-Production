@@ -1,0 +1,2 @@
+Why might a games team choose to build and host their own web service instead of relying on a third-party API, and what trade-offs does that decision introduce?
+An organisation may choose to host its own web service to maintain direct control over security configurations, data management and system administration, rather than relying entirely on a third party providers security measures.
