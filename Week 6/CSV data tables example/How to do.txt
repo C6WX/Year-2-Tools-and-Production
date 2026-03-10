@@ -1,0 +1,4 @@
+1. Find data you want to convert
+2. Input the prompt into an AI and edit it to fit the data
+3. Set the AI on antigravity to claude opus and input the provided prompt for the ai
+4. Run and wait
