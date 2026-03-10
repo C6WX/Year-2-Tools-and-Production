@@ -1,0 +1,36 @@
+Data Table-
+
+A data table is a structured format for organising and managing data within a game. It allows developers to store data for easy access and modification.
+
+Data Tables can be used to store any type of data that can be represented in a table format, including game settings, level layouts, character statistics, and more. (How to Use Data Tables in Unreal Engine 5: A Complete Guide | Quod Soler, s.d.)
+
+
+
+How to Use Data Tables in Unreal Engine 5: A Complete Guide | Quod Soler (s.d.) At: https://www.quodsoler.com/blog/using-datatables-to-store-game-data (Accessed 10/03/2026).
+
+
+
+
+
+
+
+JSON- 
+
+JSON stands for JavaScript Object Notation and is used to store and send structured data in a text format. JSON is used due to its readability for programs and developers. 
+
+JSON is often used when data is sent from a server to a web page. (What is JSON, s.d.)
+
+What is JSON (s.d.) At: https://www.w3schools.com/whatis/whatis_json.asp (Accessed 10/03/2026).
+
+
+
+
+
+CSV-
+
+CSV stands comma separated values and is used to store table data in a plain text file. The main difference between CSV and JSON is that CSV stores only table data whereas JSON stored nested structured data.
+
+These files are often used for exchanging data between different applications. For example, databases and contact managers often support CSV files. The idea is that you can export complex data from one application to a CSV file, and then import the data in that CSV file into another application. (Hoffman, 2018)
+
+Hoffman, C. (2018) What Is a CSV File, and How Do I Open It?. At: https://www.howtogeek.com/348960/what-is-a-csv-file-and-how-do-i-open-it/ (Accessed 10/03/2026).
+
