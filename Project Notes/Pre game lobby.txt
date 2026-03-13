@@ -2,3 +2,6 @@
 Player 1 picks a character and button deactivates
 Player 2 joins and player 1s character is already deactivated
 Player 2 picks character and the button is only disabled for them, not player 1
+
+14:55
+If player 1 picks after player 2, player 2's choice is overwritten
