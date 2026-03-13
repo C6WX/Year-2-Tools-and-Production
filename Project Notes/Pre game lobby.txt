@@ -1,0 +1,4 @@
+13/3/26	
+Player 1 picks a character and button deactivates
+Player 2 joins and player 1s character is already deactivated
+Player 2 picks character and the button is only disabled for them, not player 1
