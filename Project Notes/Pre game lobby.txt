@@ -1,8 +1,13 @@
 13/3/26	
-Player 1 picks a character and button deactivates
-Player 2 joins and player 1s character is already deactivated
-Player 2 picks character and the button is only disabled for them, not player 1
+-Player 1 picks a character and button deactivates
+-Player 2 joins and player 1s character is already deactivated
+-Player 2 picks character and the button is only disabled for them, not player 1
 
 14:55
-If player 1 picks after player 2, player 2's choice is overwritten
-Ready up button works when there is only 1 person, but with 2, it says not enough people have pressed it
+-If player 1 picks after player 2, player 2's choice is overwritten
+-Ready up button works when there is only 1 person, but with 2, it says not enough people have pressed it
+
+16/3/26
+-Tried making events in the player controller to set the selected character for each player but that still gave the save issues as before
+
+-AI just keeps on about making a refresh buttons event but iv tried that before and it didn't work
