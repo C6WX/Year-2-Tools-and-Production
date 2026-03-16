@@ -5,3 +5,4 @@ Player 2 picks character and the button is only disabled for them, not player 1
 
 14:55
 If player 1 picks after player 2, player 2's choice is overwritten
+Ready up button works when there is only 1 person, but with 2, it says not enough people have pressed it
