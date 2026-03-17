@@ -11,3 +11,6 @@
 -Tried making events in the player controller to set the selected character for each player but that still gave the save issues as before
 
 -AI just keeps on about making a refresh buttons event but iv tried that before and it didn't work
+
+27/3/26	
+Online test: Player 1 doesnt overwrite player 2s choice but even when player 2 picks first, player 1 doesnt see the change to the buttons. Also ready up still doesnt work.
