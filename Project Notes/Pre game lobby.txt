@@ -13,4 +13,14 @@
 -AI just keeps on about making a refresh buttons event but iv tried that before and it didn't work
 
 27/3/26	
-Online test: Player 1 doesnt overwrite player 2s choice but even when player 2 picks first, player 1 doesnt see the change to the buttons. Also ready up still doesnt work.
+Online test: Player 1 doesnt overwrite player 2s choice but even when player 2 picks first, player 1 doesnt see the change to the buttons. Also ready up still doesnt work.#
+
+Tested using replicated server events to start each button script but didnt work
+
+Now testing using the server event only to add the gameplay tag at the end of each script. 
+DIDNT WORK
+
+Tested setting all variables to replicated
+Didnt work
+
+Turns out printing the taken characters container shows that the server is only seeing player 1s character but client 1 is seeing all characters that are taken
