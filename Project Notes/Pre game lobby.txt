@@ -12,7 +12,7 @@
 
 -AI just keeps on about making a refresh buttons event but iv tried that before and it didn't work
 
-27/3/26	
+17/3/26	
 Online test: Player 1 doesnt overwrite player 2s choice but even when player 2 picks first, player 1 doesnt see the change to the buttons. Also ready up still doesnt work.#
 
 Tested using replicated server events to start each button script but didnt work
@@ -24,3 +24,13 @@ Tested setting all variables to replicated
 Didnt work
 
 Turns out printing the taken characters container shows that the server is only seeing player 1s character but client 1 is seeing all characters that are taken
+
+
+18/3/26	
+Tested having the taken characters array in the playerstate and it made it worse. With this, the server still didnt pick up on player 2+ character choice but also player 2 wouldnt pick up on player 1s character choice now. I tried get player state and get self, get owner, get player state and it didnt make a difference.
+
+Turns out server logic doesnt work on the widget, the server data was transfered onto the player controller and it works now!!!
+
+The player ready logic is only increasing for player 1, so when player 2 also readies up the value stays at 1
+
+When player 1 readies up, players ready = 1 but when player 2 readies up, players ready = -1
