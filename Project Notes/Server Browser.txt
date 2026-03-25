@@ -1,0 +1,2 @@
+25/3/26	
+Servers browser might be finding fake sessions or session from another game. Try session keys and have the game only find sessions with that key or try using steam friends apis so that players can join through their steam friends.
