@@ -1,0 +1,2 @@
+Platform and hardware choices create boundaries for a project. They dictate performance limits such as memory and power, while also forcing the development team to use specific programming languages and deployment tools to work with these performance constraints. 
+Platform and hardware choice also define the long-term strategy by setting the pace for maintenance and updates. These selections determine how often security vulnerabilities must be patched and whether you are tied to a specific software's ecosystem.
