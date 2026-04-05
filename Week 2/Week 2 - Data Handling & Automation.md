@@ -14,27 +14,28 @@ The tool uses built-in features from GitHub and Discord. It doesn't need any ext
 The implementation of this task used GitHub and Discord, focusing on GitHub webhooks as the main system. The setup process took place inside the GitHub repository settings and the Discord server settings. The first step involved creating a webhook inside a dedicated Discord channel, which generated a webhook URL linked to that specific channel.
 <br>
 
-![Discord Webhook](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Task%201/Images/Discord%20Webhook%20Setup.png)
+![Discord Webhook](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Week%202/Images/Github%20Discord%20Webhook.png)
+
 *Figure 1. The webhook that was setup on Discord that GitHub would use to send messages.*
 
 <br>
 The webhook URL was then added to the GitHub repository webhook settings. Event triggers were then selected to determine which types of events would be sent to the Discord channel. The events I selected were branch creation and deletion, pull requests and pushes. These were the only ones I chose as the others were either irrelevant to what the reviewer team needed to check or unlikely to be triggered. These events send data directly to Discord in the form of a JSON payload when triggered, which then displays the information as readable messages from GitHub inside the channel.
 <br>
 
-![GitHub Webhook](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Task%201/Images/GitHub%20Webhook%20setup.png)
-*Figure 2. The Webhook settings used to create this took on Github.*
+![GitHub Webhook](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Week%202/Images/Github%20Webhook%20Settings.png)
+*Figure 2. The Webhook settings used to create this tool on Github.*
 
 <br>
 Each message displays who triggered the event, what event occurred and the title of the change. Each message also includes a link that takes you directly to the change on the GitHub website, allowing easy access for review.
 <br>
 
-![GitHub Message Example](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Task%201/Images/Github%20Message%20Example%202.png)
+![GitHub Message Example](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Week%202/Images/Github%20Discord%20Message%20Example.png)
 *Figure 3. An example of a message created by this tool.*
 
 <br>
 <br>
 
-![In Depth Push](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Task%201/Images/In%20Depth%20Push%20Example.png)
+![In Depth Push](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Week%202/Images/Change%20Details.png)
 *Figure 4. The in depth version of the change, found by clicking the link attached to each change.*
 
 <br>
