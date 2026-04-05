@@ -6,11 +6,11 @@
 
 The tool that I developed for this project is a Jenkins (Jenkins, s.d.) pipeline that is used to automatically build the Unreal Engine (The most powerful real-time 3D creation tool, s.d.) project. The pipeline retrieves the latest version of the project from the staging repository, verifies the build environment, compiles the game and sends the build result to a Discord (Discord - Group Chat That’s All Fun & Games, s.d.) channel. This tool can be made more accessible to other developers working on the project by using a public facing API that can use a Discord bot to trigger builds and retrieve build information. This API will expose the Jenkins build system through a set of operations
 
-![Discord Build Notification Message]()
+![Discord Build Notification Message](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Week%205/Images/Jenkins%20Build%20Message.png)
 
 *Figure 1. This figure shows the message that is send by the Jenkins webhook that includes the build of the game and the result of the build to Discord.*
 
-![Jenkins GitHub Build]()
+![Jenkins GitHub Build](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Week%205/Images/Jenkins%20Build%20Artifacts.png)
 
 *Figure 2. This figure shows the build that is pushed to GitHub automatically after each successful build.*
 
@@ -72,7 +72,7 @@ The GetBuildLogs call is used to return the log output that is generated during 
 
 The final call is DownloadBuildArtifact which allows users to download the final package build produced by Jenkins. The only parameter used is the build identifier. The call outputs a compressed build file generated bt the Unreal packaging process. Errors can occur if the build failed or if the file has not yet been produced.
 
-![Artifact Storage]()
+![Artifact Storage](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Week%205/Images/GitHub%20Build%20Created%20By%20Jenkins.png)
 
 *Figure 3. This figure shows the artifacts being stored under the Jenkins directory for future use.*
 
