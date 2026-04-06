@@ -54,6 +54,7 @@ Callum Wade <br> 2404781
 - Jenkins Webhook
 - GitHub Webhook
 - ClickUp Webhook
+<img src="https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Presentation/Images/Tools/hammer-icon-6.png" class="bottom-right">
 
 ---
 # What is Jenkins
@@ -86,6 +87,8 @@ Callum Wade <br> 2404781
 # Jenkins Webhook
 - Allows Jenkins to send a message to the Discord server to notify channel members the status of the staging branch as well as providing access to the recent build
 - This allows the developers to keep track of staging and allows easy access to the most recent builds of the game.
+<img src="https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Week%204/Images/Presentation/jenkins-with-plate-basis-256px.png" class="bottom-right">
+
 ---
 # GitHub Webhook
 - Whenever a change is completed anywhere in the repository, GitHub sends a message to the Discord server
@@ -95,10 +98,14 @@ Callum Wade <br> 2404781
   - Who made the change
   - What was changed
   - A link to view the change on GitHub.com
+<img src="https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Presentation/Images/Tools/GitHub-logo-3679fed488b30b5824993f62bb9a7a9b.png" class="bottom-right">
+
 ---
 # How does this help the development
 - Allows everyone to easily get notified whenever anyone makes a change in the repository
 - Provides easier access to push reviewers as they can just click on a change on the server and will be sent straight to the change on GitHub's website with a more in-depth view of what has been changed
+<img src="https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Presentation/Images/Tools/23.png" class="bottom-right">
+
 ---
 # ClickUp Webhook
 - Whenever a task is created or the status of a task is changed on ClickUp, a message is sent on the set Discord channel.
@@ -111,11 +118,14 @@ Callum Wade <br> 2404781
   - A link to the workspace and to the task
 - This webhook was created for the developers and designers, each with their own separate Discord channel
 - The main purpose of this tool was to motivate people to use the ClickUp and to also keep people notified on what has been completed or what needs to be completed
+<img src="https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Presentation/Images/Tools/logo-color-medium-transparent.png" class="top-right">
 
 ---
 # How does this help the development
 - Keeps people notified of what tasks are still to be completed and of which tasks have been completed
 - Reminds people and motivates people to keep using the ClickUp and keeping it up to date
+<img src="https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Presentation/Images/Tools/programmerhumor-io-programming-memes-727c78fc25f79f0.png" class="bottom-right">
+
 ---
 # My roles within this project
 - GitHub Push Reviewer (Responsible)
@@ -124,6 +134,8 @@ Callum Wade <br> 2404781
 - Ticket Reviewing (Accountable)
 - Clickup (Accountable)
 - Multiplayer (Accountable) 
+<img src="https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Presentation/Images/Roles/Role.png" class="bottom-right">
+
 ---
 # GitHub Push Reviewer
 
@@ -131,6 +143,8 @@ Callum Wade <br> 2404781
 - Implemented a GitHub webhook to the Discord server to easy access and viewing of new changes and pushes to the repository
 - Kept track of changes
 - Used Jenkins to fix any pushes that caused errors to any of the primary branches
+<img src="https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Presentation/Images/Roles/Github.png" class="bottom-right">
+
 ---
 # Automated Builds
 
@@ -143,6 +157,7 @@ Callum Wade <br> 2404781
 ### What I could have done better:
 - Implementing Jenkins sooner into the project
 - Fixing the issue that cause it to not build automatically some days
+<img src="https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Week%204/Images/Presentation/Jenkins%20Trophy.png" class="bottom-right">
 
 ---
 # Design Liaison
@@ -156,21 +171,29 @@ Callum Wade <br> 2404781
 
 ### Why I felt this role didn't work:
 - Due to the high amount of departments and people working on the project, everyone would just speak to the specific designers themselves if they needed to clear something up as it is much easier then asking a liaison, which makes sense and is why I felt that this role didn't work for this project
+<img src="https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Presentation/Images/Roles/Talking-Ben-PNG-Free-Image.png" class="top-right">
+
 ---
 # Ticket Reviewing
 
 ### How I fulfilled this role:
 - Contacted and helped anyone who I could that uploaded a ticket that hadn't already been accepted
+<img src="https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Presentation/Images/Roles/IT%20meme.jpg" class="bottom-right">
+
 ---
 # Clickup
 
 ### How I fulfilled this role:
 - Created a ClickUp webhook that would notify the departments that used it when a change was made in their own ClickUp workspace
+<img src="https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Presentation/Images/Roles/Clickup.png" class="bottom-right">
+
 ---
 # Multiplayer
 
 ### How I fulfilled this role:
 - Worked on the original multiplayer and created the server browser to allow players to find and connect to other players through a server list or by joining through Steam friends
+<img src="https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Presentation/Images/Roles/multiplayer%20meme.jpg" class="bottom-right">
+
 ---
 # Contributions to the development of Greedy Piggies
 - The majority of my work was focussed on the UI menu screens and the multiplayer of Greedy Piggies as they were tied very closely together
