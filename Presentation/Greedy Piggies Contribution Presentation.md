@@ -5,33 +5,43 @@ theme: gaia
 author: Callum Wade 2404781
 transition: cover
 style: |
+  style: |
   section {
     font-size: 28px;
+    position: relative;
   }
 
-  h1 {
-    font-size: 48px;
+  h1 { font-size: 48px; }
+  h2 { font-size: 36px; }
+  h3 { font-size: 30px; }
+  p  { font-size: 28px; }
+  li { font-size: 25px; }
+
+  .bottom-right {
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    width: 150px;
   }
 
-  h2 {
-    font-size: 36px;
+  .bottom-left {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    width: 150px;
   }
 
-  h3 {
-    font-size: 30px;
+  .top-right {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    width: 150px;
   }
 
-  p {
-    font-size: 28px;
-  }
-
-  li {
-    font-size: 25px;
-  }
 
 ---
 
-<img width="800" src=""> 
+<img width="500" height="300" src="https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Presentation/Images/Greedy%20Piggies%20Title.png"> 
 
 # Greedy Piggies Contribution Presentation <br> 
 Created by 
@@ -54,6 +64,7 @@ Callum Wade <br> 2404781
   - Uploads the build to GitHub
   - Uses the Jenkins webhook to send a message to Discord that contains a link to the build, the status of the build and the build number
   - Updates the data tables that contain the build data
+<img src="https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Week%204/Images/Presentation/Jenkins_logo.png" class="bottom-right">
 
 ---
 # How it works
@@ -62,12 +73,15 @@ Callum Wade <br> 2404781
 - After the code is run, it will either say success or failed 
 - Success means it has done everything it is supposed to do, as stated in the previous slide
 - Failed means that there is either a problem with the pipeline or that something is wrong with the project, which by that point I would resolve the problem by looking through the Jenkins output log
+<img src="https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Week%204/Images/Presentation/Jenkins%20mechanic.png" class="bottom-right">
 
 ---
 # How does this help the development
 - Jenkins being integrated into the project means that no one is required to manually build the game periodically.
 - Instead Jenkins does this at a specific time every day without the need for human input, removing the chance of any human error. 
 - This also allows errors to be found early, allowing them to be focused on and fixed before development continues, as at the end of the day, the game building is the most important thing.
+<img src="https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Week%204/Images/Presentation/Cute%20Jenkins.png" class="bottom-right">
+
 ---
 # Jenkins Webhook
 - Allows Jenkins to send a message to the Discord server to notify channel members the status of the staging branch as well as providing access to the recent build
@@ -159,15 +173,42 @@ Callum Wade <br> 2404781
 - Worked on the original multiplayer and created the server browser to allow players to find and connect to other players through a server list or by joining through Steam friends
 ---
 # Contributions to the development of Greedy Piggies
+- The majority of my work was focussed on the UI menu screens and the multiplayer of Greedy Piggies as they were tied very closely together
+- I started by creating the first version of the multiplayer script that allowed players to connect by LAN in the server browser and create game screens and then I moved onto helping with getting online connections working whilst also creating more menus and working on the ones that I had already made so that they work together and with more game ready features.
 
 ---
-# Prototype Menus
+# Menu Screens
+- The menus were originally created to test the multiplayer but ended up being used as the bases that the menus in the game were designed using
+- These menus included:
+  - Main Menu Prototype
+  - Create Game
+  - Server Browser
+  - Server Browser Item
+  - Character Select Screen
+
+
+---
+# Main Menu Prototype
+- The main menu that I created allows the player to choose between creating a lobby or going to the server browser to search for one
+
+---
+# Create Game
+- The create game menu lets the player decide the maximum amount of player that can join their lobby as well as if the lobby is online or LAN.
 
 ---
 # Server Browser
+- The server browser searches for lobbies and displays each found lobby as a server browser item
+- Buttons at the top of the menu allow players to search for only LAN lobbies and also refresh the lobby list
+
+---
+# Server Browser Item
+- The server browser item appears in the server browser once for each lobby found and displays the lobby name, the amount of players in the lobby, the connection/ping and a check box to choose that lobby
 
 ---
 # Character Select Screen
+- The characters select screen is used as a pre game lobby to allow players to pick their characters
+- Once players have picked their character, they can ready up. Once all players are ready, they are sent into the main game
+- This menu was originally created as just a basic pre game lobby as a possible solution to fix a problem with players not seeing each other in the game but ended up turning into a working character select screen
 
 ---
 
