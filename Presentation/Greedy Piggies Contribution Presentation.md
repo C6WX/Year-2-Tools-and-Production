@@ -253,7 +253,7 @@ Callum Wade <br> 2404781
 - The characters select screen is used as a pre-game lobby to allow players to pick their characters
 - Once players have picked their character, they can ready up. Once all players are ready, they are sent into the main game
 - This menu was originally created as just a basic pre game lobby as a possible solution to fix a problem with players not seeing each other in the game but ended up turning into a working character select screen
-<img width="1000" height="600" src="https://github.com/C6WX/Year-2-Tools-and-Production/blob/main/Presentation/Images/Development/Character%20Select.png"> 
+<img width="1000" height="300" src="https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Presentation/Images/Development/Character%20Select.png"> 
 
----
+
 
