@@ -58,40 +58,40 @@ Callum Wade <br> 2404781
 
 ---
 # What is Jenkins
-- An open source automation tool that automates repetitive tasks such as building the project
+- An open-source automation tool that automates repetitive tasks such as building the project
 - It builds the game at 10pm every day
-- Whenever the pipeline is run it:
+- Whenever the pipeline is run, it:
   - Builds the game
   - Uploads the build to GitHub
-  - Uses the Jenkins webhook to send a message to Discord that contains a link to the build, the status of the build and the build number
+  - Uses the Jenkins webhook to send a message to Discord that contains a link to the build, the build status  and the build number
   - Updates the data tables that contain the build data
 <img src="https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Week%204/Images/Presentation/Jenkins_logo.png" class="bottom-right">
 
 ---
 # How it works
-- Jenkins runs on my home PC and runs a groovy script on the Greedy Piggies pipeline at 10pm everyday
+- Jenkins runs on my home PC and runs a Groovy script on the Greedy Piggies pipeline at 10 pm every day
 - This pipeline then accesses the staging branch from GitHub and builds the project through the Unreal Engine build tool.
-- After the code is run, it will either say success or failed 
-- Success means it has done everything it is supposed to do, as stated in the previous slide
-- Failed means that there is either a problem with the pipeline or that something is wrong with the project, which by that point I would resolve the problem by looking through the Jenkins output log
+- After the code is run, it will report either success or failure 
+- Success means it has done everything it is supposed to do, as stated previously 
+- Failed means that there is either a problem with the pipeline or that something is wrong with the project, which I would then resolve by checking the Jenkins output log
 <img src="https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Week%204/Images/Presentation/Jenkins%20mechanic.png" class="bottom-right">
 
 ---
 # How does this help the development
-- Jenkins being integrated into the project means that no one is required to manually build the game periodically.
-- Instead Jenkins does this at a specific time every day without the need for human input, removing the chance of any human error. 
-- This also allows errors to be found early, allowing them to be focused on and fixed before development continues, as at the end of the day, the game building is the most important thing.
+- Jenkins being integrated into the project means that no one needs to manually build the game
+- Instead Jenkins does this at a specific time every day without the need for human input, removing the chance of human error
+- This also allows errors to be found early, allowing them to be focused on and fixed before development continues, as at the end of the day, the game building is the most important thing
 <img src="https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Week%204/Images/Presentation/Cute%20Jenkins.png" class="bottom-right">
 
 ---
 # Jenkins Webhook
-- Allows Jenkins to send a message to the Discord server to notify channel members the status of the staging branch as well as providing access to the recent build
+- Allows Jenkins to send a message to the Discord server to notify channel members of the status of the staging branch as well as providing access to the recent build
 - This allows the developers to keep track of staging and allows easy access to the most recent builds of the game.
 <img src="https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Week%204/Images/Presentation/jenkins-with-plate-basis-256px.png" class="bottom-right">
 
 ---
 # GitHub Webhook
-- Whenever a change is completed anywhere in the repository, GitHub sends a message to the Discord server
+- Whenever a change is made in the repository, GitHub sends a message to the Discord server
 - This message includes:
   - The name of the change
   - Description of the change
@@ -108,7 +108,7 @@ Callum Wade <br> 2404781
 
 ---
 # ClickUp Webhook
-- Whenever a task is created or the status of a task is changed on ClickUp, a message is sent on the set Discord channel.
+- Whenever a task is created or the status of a task is changed on ClickUp, a message is sent to the set Discord channel.
 - These messages include:
   - Who created/changed the task
   - Who the task is assigned to
@@ -117,7 +117,7 @@ Callum Wade <br> 2404781
   - Which workspace and section within the workspace the task is in 
   - A link to the workspace and to the task
 - This webhook was created for the developers and designers, each with their own separate Discord channel
-- The main purpose of this tool was to motivate people to use the ClickUp and to also keep people notified on what has been completed or what needs to be completed
+- The main purpose of this tool was to motivate people to use ClickUp and to also keep people notified on what has been completed or what needs to be completed
 <img src="https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Presentation/Images/Tools/logo-color-medium-transparent.png" class="top-right">
 
 ---
@@ -137,7 +137,7 @@ Callum Wade <br> 2404781
 - Automated Builds (Responsible)
 - Design Liaison (Responsible)
 - Ticket Reviewing (Accountable)
-- Clickup (Accountable)
+- ClickUp (Accountable)
 - Multiplayer (Accountable) 
 <img src="https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Presentation/Images/Roles/Role.png" class="bottom-right">
 
@@ -145,9 +145,9 @@ Callum Wade <br> 2404781
 # GitHub Push Reviewer
 
 ### How I fulfilled this role:
-- Implemented a GitHub webhook to the Discord server to easy access and viewing of new changes and pushes to the repository
+- Implemented a GitHub webhook to the Discord server for easy access and viewing of new changes and pushes to the repository
 - Kept track of changes
-- Used Jenkins to fix any pushes that caused errors to any of the primary branches
+- Used Jenkins to fix any pushes that caused errors in any of the primary branches
 <img src="https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Presentation/Images/Roles/Github.png" class="bottom-right">
 
 ---
@@ -155,13 +155,13 @@ Callum Wade <br> 2404781
 
 ### How I fulfilled this role:
 - Implemented Jenkins into the project to automatically build the game every day
-- Added a webhook for Jenkins so that everyone would know when the game built and the status of the build
+- Added a webhook for Jenkins so everyone knows when the game built and the status of the build
 - Further worked on Jenkins to upload the build that is created to GitHub with a new tag so that new and old versions of the build are accessible online
-- Added to the pipelines code so that Jenkins uses Python to create and update data tables that display the time to build and status of each build 
+- Added to the pipeline's code so that Jenkins uses Python to create and update data tables that display the time to build and status of each build 
 
 ### What I could have done better:
 - Implementing Jenkins sooner into the project
-- Fixing the issue that cause it to not build automatically some days
+- Fixing the issue that caused it to not build automatically some days
 <img src="https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Week%204/Images/Presentation/Jenkins%20Trophy.png" class="bottom-right">
 
 ---
@@ -169,13 +169,13 @@ Callum Wade <br> 2404781
 
 ### How I fulfilled this role:
 - Provided all the designers with access to the repository and set their permission levels
-- Communicated with the designers whenever something needed clearing up
+- Communicated with the designers whenever something needed clarification
 
 ### What I could have done better:
 - Checking in on the designers more often
 
 ### Why I felt this role didn't work:
-- Due to the high amount of departments and people working on the project, everyone would just speak to the specific designers themselves if they needed to clear something up as it is much easier then asking a liaison, which makes sense and is why I felt that this role didn't work for this project
+- Due to the high amount of departments and people working on the project, everyone would just speak to the specific designers themselves if they needed to clear something up as it is much easier than asking a liaison, which makes sense and is why I felt that this role didn't work for this project
 <img src="https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Presentation/Images/Roles/Talking-Ben-PNG-Free-Image.png" class="top-right">
 
 ---
@@ -186,7 +186,7 @@ Callum Wade <br> 2404781
 <img src="https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Presentation/Images/Roles/IT%20meme.jpg" class="bottom-right">
 
 ---
-# Clickup
+# ClickUp
 
 ### How I fulfilled this role:
 - Created a ClickUp webhook that would notify the departments that used it when a change was made in their own ClickUp workspace
@@ -207,12 +207,12 @@ Callum Wade <br> 2404781
 ---
 # Contributions to the development of Greedy Piggies
 - The majority of my work was focussed on the UI menu screens and the multiplayer of Greedy Piggies as they were tied very closely together
-- I started by creating the first version of the multiplayer script that allowed players to connect by LAN in the server browser and create game screens and then I moved onto helping with getting online connections working whilst also creating more menus and improving the ones that I had already made with more game ready features.
+- I started by creating the first version of the multiplayer script that allowed players to connect by LAN in the server browser and create game screens and then I moved onto helping with getting online connections working while also creating more menus and improving existing ones with more game ready features.
 <img src="https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Presentation/Images/Development/Game%20dev%20meme.jpg" class="bottom-right">
 
 ---
 # Menu Screens
-- The menus were originally created to test the multiplayer but ended up being used as the bases that the menus in the game were designed using
+- The menus were originally created to test the multiplayer but ended up being used as the basis for the menus to be designed using
 - These menus included:
   - Main Menu Prototype
   - Create Game
@@ -220,7 +220,7 @@ Callum Wade <br> 2404781
   - Server Browser Item
   - Pause Menu Prototype
   - Character Select Screen
-
+<img src="https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Presentation/Images/Development/pngtree-game-over-text-effect-design-screen-ui-menu-png-image_6008809.png" class="bottom-right">
 
 ---
 # Main Menu Prototype
@@ -229,7 +229,7 @@ Callum Wade <br> 2404781
 
 ---
 # Create Game
-- The create game menu lets the player decide the maximum amount of player that can join their lobby as well as if the lobby is online or LAN.
+- The create game menu lets the player decide the maximum number of player that can join their lobby as well as if the lobby is online or LAN.
 <img width="1000" height="600" src="https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Presentation/Images/Development/Create%20Game.png"> 
 
 ---
@@ -250,7 +250,7 @@ Callum Wade <br> 2404781
 
 ---
 # Character Select Screen
-- The characters select screen is used as a pre game lobby to allow players to pick their characters
+- The characters select screen is used as a pre-game lobby to allow players to pick their characters
 - Once players have picked their character, they can ready up. Once all players are ready, they are sent into the main game
 - This menu was originally created as just a basic pre game lobby as a possible solution to fix a problem with players not seeing each other in the game but ended up turning into a working character select screen
 <img width="1000" height="600" src="https://github.com/C6WX/Year-2-Tools-and-Production/blob/main/Presentation/Images/Development/Character%20Select.png"> 
