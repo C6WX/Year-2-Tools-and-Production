@@ -6,39 +6,65 @@
 
 ---
 
-## Introduction (Goal = 175 words/10%) 150 WORDS
-My practical portfolio takes clear influence from recent games and media, shaping its mechanics, visual design and overall player experience. These influences go further than surface-level ideas and instead affect how the game communicates meaning through its systems. This essay argues that these influences are not only aesthetic but also ideological as game design choices reflect assumptions about player behavior, rewards systems and interaction. To explore this, this essay uses academic frameworks such as procedural rhetoric, alongside debates around nature in games and war games.
+## Introduction (Goal = 175 words/10%) 150 Words
+My practical portfolio takes clear influence from recent games and media, shaping its mechanics, visual design and overall player experience. These influences go further than surface-level ideas and instead affect how the game communicates meaning through its systems. This essay argues that these influences are not only aesthetic but also ideological as game design choices reflect assumptions about player behaviour, reward systems and interaction. To explore this, this essay uses academic frameworks such as procedural rhetoric, alongside debates around nature in games and war games.
 By analysing selected case studies, this essay examines how modern games structure player experience and how these ideas have informed my own design decisions. My portfolio is used as a case study to show how these theories apply in practice, not just in analysis. This approach links theory with development, showing how games act as both creative works and systems that communicate meaning through design.
 
 ---
 
 ## Literature Review (Goal = 350 words/20%)
+### Procedural Rhetoric (Goal = 116 words) 177
+Academic discussions around games often focus on how meaning is created through the design and mechanics of a game, rather than the narrative alone. One key concept is procedural rhetoric, introduced by Ian Bogost, which argues that games communicate through rules and systems. "Procedurality refers to a way of creating, explaining, or understanding processes. And processes define the way things work: the methods, techniques, and logics that drive the operation of systems, from mechanical systems like engines to organizational systems like high schools to conceptual systems like religious faith. Rhetoric refers to effective and persuasive expression. Procedural rhetoric, then, is a practice of using processes persuasively. More specifically, procedural rhetoric is the practice of persuading through processes in general and computational processes in particular." (Bogost, 2007)
+A primary debate is whether game mechanics themselves can carry ideological meaning. Personally, I strongly agree with the idea that game mechanics can carry ideological meaning. Barrett R. Anderson, Christopher R. Karzmark and Noah Wardrip-Fruin tested procedural rhetoric in video games by having people play games that focused primarily on game mechanics and with different levels of rhetorical design and had participants complete questionnaires about their experiences playing each game as well as their perception of each game's rhetorical content. This test resulted in them discovering that "Our initial results suggest that players are generally aware of a game’s rhetorical intent, and when combined with other kinds of rhetoric it has the potential to influence their beliefs and attitudes." (Anderson et al., 2019) These results don't only back up the idea that game mechanics can carry ideological meaning while also showing the true power that video games can have over their players, whether it is as simple as making them want to continue playing for long periods of time or changing their beliefs and attitudes.
+
+### Nature in games (Goal = 116 words) 250
+Another focus of academic discussions is nature within video games and how nature in games is never neutral but instead reflects ideology, history and how we understand the non-human world. It is often used to tell a story through environmental storytelling, treated as a resource or built into gameplay systems. Ecology in games refers to these systems and relationships, where environments are shaped by interaction, change and player impact rather than just visual detail. This means that nature is not only something players see, but something that functions, responds and carries meaning through how it is designed.
+“Environmental storytelling is the process of using a game’s spaces to communicate narrative without direct exposition.” (Chang, 2019) Game designers could simply just add a readable note into a game that tells the player exactly what has happened to the world, but that would not fully immerse the player in the story. Imagine how boring Fallout 4 (Bethesda Game Studios, 2015) would be if as soon as you leave the bunker, you read a note saying "A nuke exploded and destroyed the world, building turned to rubble and people turned to ash" and then you looked around and the world looks exactly the same as you went in. You would probably refund the game right then. But instead the world tells a story, a nuke went off, destroying the environment and a large number of the people who lived in it. Buildings look like they have been scavenged, because they have, people are fighting and looting to survive. Environments are not just there to look at, they tell a story at a level that nothing else can.
+
+### War in games (Goal = 116 words) 294
+A final focus of academic discussions is war in games. Video games originated in military research labs to train their soldiers but have now continued to evolve and become what they are today. However war and the military have continued to be involved and the focus of many games nowadays. These games don't always portray was as a you think they should be portrayed, but instead show them in a normalised way that desensitises players from the scary and dangerous side of war. But instead they make it fun and whether that is by giving the player points for each kill, something to work towards by killing other players or even by making them seem childish by using abstract art styles. War will always still be war, no matter how desensitised someone may be to it.
+"Although most of them understand the difference between virtual violence and a real conflict, some argue that continuous immersion in violent scenarios can reduce the emotional response to authentic suffering." (idcgames, 2025) When I first started playing war games as a child, something as little as blood appearing on my screen was enough to make me feel weird about playing this, as if I shouldn't be seeing this and it was horrific, but the more I saw the blood on my screen, the more I stopped caring. The blood on my screen became an annoyance as it distracted me from the people I was trying to kill. Although not completely a war game, when i recently played Resident Evil Village, (Capcom, 2021) when my character had his hand cut off, it shocked me, not because of the gore, but because it was unexpected and I was wondering how this would affect the future of the character. If I wasn't desensitised from my history of playing war games, that may have grossed me out or made me feel sick or wrong, but it didn't. War games stop violence seeming as bad or disturbing.
 
 
 ---
 
 ## Case Studies 
-### 1 (Goal = 275 words/~15%)
+### 1 (Goal = 200 words) 239
+Games using processes persuasively have been a thing since the very early days of gaming and is used even more nowadays. An early example of this is in Doom 1993 (id Software, 1993). In this game the player has no negative impact from killing anything, the only thing that occurs is the reward of score, health and ammo, persuading the player to have a killing mindset that keeps them playing and killing any enemy that they face. The reward of more health and ammo also keeps the player playing the game by persuading them that they are strong enough and well equipped for any enemy that is to come their way. A more recent example of using processes persuasively is Call Of Duty Black Ops 6 (Treyarch, 2024). In the recent Call Of Duty games, killing enemy players only has positive impacts, from gaining score to working on challenges and earning weapon skins, making sure the only thing on the player's mind is killing the enemies. This ideology has inspired me to implement a similar system to a game I am currently working on. The game is an endless round-based shooter which will have the player killing endless enemies which will reward them with score, drops and coins, keeping them wanting to kill more to upgrade their current character, buy new characters when they gain enough coins and to also compete against their friends with a score leaderboard.
+
+---
+### 2 (Goal = 200 words) 261
+One of my favourite game environments has to be from Horizon Zero Dawn (Sony Interactive Entertainment, 2017). The game centres on machines that were supposed to help humanity by keeping the world alive but instead turned on humanity and wiped the majority of them out. The robots are all broken up into different functions and protocols with the majority being made to take care of the environment, meaning the environment for this game needs to be important to properly match and tell this story. Personally I feel like the environmental designers for this game did a perfect job at this. From decaying buildings being overrun by plant life to tell the story of the humans who lived before to the machines looking after the plant life, the game really comes to life from its environment. I feel like this game was one of the first games to truly open my eyes to the power of environmental storytelling and has changed my own games for the better.
+Personally I don't often focus too much on a game's environment as I am a programmer and focus my efforts into mechanics but back when I used to 3D model, I always made sure that my environments told the story of the scene I was building and flow to lead the player around the scene if it was used in a game. From a simple forest I made that used shadows to direct the player to a bowling alley assignment, I always made sure to take into account the power of nature within my work.
+
+---
+### 3 (Goal = 200 words) 269 
+War in games doesn't really inspire me to change anything to do with any mechanics or gameplay within games I make but more on the story and graphical side of development. How war is portrayed is very important and it has affected and inspired a story idea for a game I want to work on. The game was at first just a standard shooter idea but after looking into this ideology, I want it to focus more on not normalising it and not desensitising players, but instead show the truth behind war. A game that I found that shows both a good and bad way to portray war is Call Of Duty WWII (Sledgehammer Games, 2017). This game is good at showing war whilst not normalising it in it's campaign mode. In the campaign, the game focuses heavily on the story and making the player feel connections and relationships with the soldiers they are fighting alongside, so that when a soldier dies, the player will feel sense of loss and the player could also understand how each enemy they kill may be feeling. Whereas in the multiplayer side of the game, it is all about getting as many kills as possible, you don't know anyone you're fighting alongside or against so killing someone or death becomes meaningless to the player. Using this knowledge of how games can desensitise players, I will adjust my game's story to focus more on relationships with characters you're fighting with and possibly against so that the player will care when a teammate is killed and may even feel bad for an enemy they killed.
+
+---
+## Research Process (200 words/~11%) 233
+For this essay, my main research method was using Google Scholar (Google Scholar, s.d.) to find essays to read and find quotations that I felt fit into my essay and the question I am answering. A large handful of websites provided by Google Scholar either aren't related to the topic I am researching or need a payment to access the essay so it took a while to find the perfect essay but I managed to find all the ones that I required. From there I would read through the parts of the essay that related to the current topic I was discussing till I quote that was particularly impactful and that I could work off of.
+For my research on Doom, I used a Youtube video (My 2023 Playthrough of DOOM (1993), 2023) to remind myself of the gameplay loop and how the player is rewarded for kills in the game so that I could go into more detail when connecting the game to the ideology of procedural rhetoric.
+The bulk of my research into different games that inspired my portfolio was done through recollection of playing them previously. The one game I did have to research to remind myself of was Horizon Zero Dawn and to do that I looked into different images of the game environment to make sure my points were accurate to the statements I was making.
 
 
 ---
-### 2 (Goal = 275 words/~15%)
-
-
----
-### 3 (Goal = 275 words/~15%)
-
-
----
-## Research Process (200 words/~11%)
-
-
----
-## Conclusion (Goal = 200 words/~12%)
-
+## Conclusion (Goal = 200 words/~12%) 74 
+To conclude this essay, I feel that my portfolio is evidently inspired by recent games, media and franchises, with different aspects being pulled from each one. Each game released has something that it at least does well and looking at these things from a creative practice and ideology standpoint allows me to dive deeper into why different aspects are done well and how I can implement and improve upon them for my own games.
 
 ---
 ## Bibliography
-
+- Bogost, I. (2007) Persuasive Games: The Expressive Power of Videogames. Cambridge, UNITED STATES: MIT Press. At: http://ebookcentral.proquest.com/lib/ucreative-ebooks/detail.action?docID=3338706 (Accessed  13/04/2026).
+- Anderson, B. R., Karzmark, C. R. and Wardrip-Fruin, N. (2019) 'The psychological reality of procedural rhetoric' In: Proceedings of the 14th International Conference on the Foundations of Digital Games. New York, NY, USA: Association for Computing Machinery. pp.1–9. At: https://dl.acm.org/doi/10.1145/3337722.3337751 (Accessed  13/04/2026).
+- Chang, A. Y. (2019) Playing Nature: Ecology in Video Games. (s.l.): U of Minnesota Press.
+- Bethesda Game Studios (2015) Fallout 4 [video game]. Rockville, MD: Bethesda Softworks.
+- idcgames (2025) The ethics of war games: Depictions of conflicts and their social impact. At: https://idcgames.com/en/blog/the-ethics-of-war-games-depictions-of-conflicts-and-their-social-impact/ (Accessed  13/04/2026).
+- Capcom (2021) Resident Evil Village [video game]. Osaka: Capcom.
+- id Software (1993) Doom [video game]. Mesquite, TX: id Software.
+- Treyarch (2024) Call of Duty: Black Ops 6 [video game]. Santa Monica, CA: Activision.
+- Sony Interactive Entertainment (2017) Horizon Zero Dawn [video game]. Amsterdam: Sony Interactive Entertainment.
+- Sledgehammer Games (2017) Call of Duty: WWII [video game]. Santa Monica, CA: Activision.
+- Google Scholar (s.d.) At: https://scholar.google.com/ (Accessed  13/04/2026).
+- My 2023 Playthrough of DOOM (1993) (2023) Directed by AI and Games Plus. At: https://www.youtube.com/watch?v=FZzLEmz6YWw (Accessed  13/04/2026).
 
 
