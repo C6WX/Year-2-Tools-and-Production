@@ -126,10 +126,13 @@ Callum Wade <br> 2404781
 - Reminds people and motivates people to keep using the ClickUp and keeping it up to date
 <img src="https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Presentation/Images/Tools/programmerhumor-io-programming-memes-727c78fc25f79f0.png" class="bottom-right">
 
+
+<!--
 ---
 # 1/3 DONE <br> MEME BREAK
 
 <img width="1150" height="500" src="https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Presentation/Images/Memes/97a80c00597889010cc31e796dc3e80be5a5da8a33a4df5901f9446ea620fd55.jpeg"> 
+
 
 ---
 # My roles within this project
@@ -203,7 +206,7 @@ Callum Wade <br> 2404781
 # 2/3 DONE <br> MEME BREAK
 
 <img width="1150" height="500" src="https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Presentation/Images/Memes/normal_252601-what-people-think-i-do-what-i-really-do.jpg"> 
-
+-->
 ---
 # Contributions to the development of Greedy Piggies
 - The majority of my work was focussed on the UI menu screens and the multiplayer of Greedy Piggies as they were tied very closely together
@@ -228,9 +231,16 @@ Callum Wade <br> 2404781
 <img width="1000" height="600" src="https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Presentation/Images/Development/Main%20Menu.png"> 
 
 ---
+# Difficulties & Research
+
+---
 # Create Game
 - The create game menu lets the player decide the maximum number of player that can join their lobby as well as if the lobby is online or LAN.
 <img width="1000" height="600" src="https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Presentation/Images/Development/Create%20Game.png"> 
+
+---
+# Difficulties & Research
+
 
 ---
 # Server Browser
@@ -239,21 +249,37 @@ Callum Wade <br> 2404781
 <img width="1000" height="600" src="https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Presentation/Images/Development/Server%20Browser.png"> 
 
 ---
+# Difficulties & Research
+
+---
+
 # Server Browser Item
 - The server browser item appears in the server browser once for each lobby found and displays the lobby name, the amount of players in the lobby, the connection/ping and a check box to choose that lobby
 <img width="1000" height="600" src="https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Presentation/Images/Development/Server%20Browser%20Item.png"> 
 
 ---
+# Difficulties & Research
+
+---
+
 # Pause Menu Prototype
 - The pause menu has buttons that resume the game, leave the current session and quit the whole game
 <img width="1000" height="600" src="https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Presentation/Images/Development/Pause%20Menu.png"> 
 
 ---
+# Difficulties & Research
+
+---
+
 # Character Select Screen
 - The characters select screen is used as a pre-game lobby to allow players to pick their characters
 - Once players have picked their character, they can ready up. Once all players are ready, they are sent into the main game
 - This menu was originally created as just a basic pre game lobby as a possible solution to fix a problem with players not seeing each other in the game but ended up turning into a working character select screen
 <img width="1000" height="300" src="https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Presentation/Images/Development/Character%20Select.png"> 
 
+---
+# Difficulties & Research
+
+---
 
 

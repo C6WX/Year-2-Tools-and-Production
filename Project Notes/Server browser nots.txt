@@ -1,0 +1,4 @@
+- session name not displaying the session name
+- After being kicked from a lobby for host leaving, the create lobby button doesn't work
+- Leave session button doesn't work on pause menu
+-The weird fake servers are back - Fixed by checking if the server has a valid host ID
