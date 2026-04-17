@@ -59,21 +59,21 @@ Callum Wade <br> 2404781
 ---
 # What is Jenkins
 - An open-source automation tool that automates repetitive tasks such as building the project
-- It builds the game at 10pm every day
-- Whenever the pipeline is run, it:
+- It builds the game at 10 pm every day
+- Whenever the pipeline runs, it:
   - Builds the game
   - Uploads the build to GitHub
-  - Uses the Jenkins webhook to send a message to Discord that contains a link to the build, the build status  and the build number
+  - Uses the Jenkins webhook to send a message to Discord containing a link to the build, the build status  and the build number
   - Updates the data tables that contain the build data
 <img src="https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Week%204/Images/Presentation/Jenkins_logo.png" class="bottom-right">
 
 ---
 # How it works
-- Jenkins runs on my home PC and runs a Groovy script on the Greedy Piggies pipeline at 10 pm every day
+- Jenkins runs on my home PC and executes a Groovy script on the Greedy Piggies pipeline at 10 pm every day
 - This pipeline then accesses the staging branch from GitHub and builds the project through the Unreal Engine build tool.
-- After the code is run, it will report either success or failure 
-- Success means it has done everything it is supposed to do, as stated previously 
-- Failed means that there is either a problem with the pipeline or that something is wrong with the project, which I would then resolve by checking the Jenkins output log
+- After the code runs, it will report either success or failure 
+- Success means everything has completed as expected 
+- Failure means either a problem with the pipeline or that an issue exists in the project, which I would then resolve by checking the Jenkins output log
 <img src="https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Week%204/Images/Presentation/Jenkins%20mechanic.png" class="bottom-right">
 
 ---
@@ -230,17 +230,28 @@ Callum Wade <br> 2404781
 - The main menu that I created allows the player to choose between creating a lobby or going to the server browser to search for one
 <img width="1000" height="600" src="https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Presentation/Images/Development/Main%20Menu.png"> 
 
+<!--
 ---
 # Difficulties & Research
-
+- There wasn't any coding issues when making the main menu due to it's simplicity, however I did use a Youtube tutorial for the base layout as it was 
+-->
 ---
 # Create Game
-- The create game menu lets the player decide the maximum number of player that can join their lobby as well as if the lobby is online or LAN.
+- The create game menu lets the player decide the maximum number of players that can join their lobby as well as if the lobby is online or LAN
 <img width="1000" height="600" src="https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Presentation/Images/Development/Create%20Game.png"> 
 
 ---
 # Difficulties & Research
+- At first the create game section used the build in Unreal Engine session nodes which I followed a YouTube tutorial* to understand how to create online sessions through Unreal Engine
+- This worked for creating LAN sessions but after testing found it didn't work with Steam sessions
+- Then I looked into advanced Steam session so that the game could run on Steam servers and could be tested online
+- To do this, I used the advanced Steam sessions plugin page** and a YouTube tutorial***
 
+
+
+*(Hosting, Finding and Joining Sessions | 04 | Multiplayer Battle Royale | Tutorial | Unreal Engine 5, 2023)
+**(ItsMeBroYT, 2026)
+***(UE5 Steam Multiplayer EP1 – Basic Connection Logic (No UI), 2026)
 
 ---
 # Server Browser
@@ -250,6 +261,12 @@ Callum Wade <br> 2404781
 
 ---
 # Difficulties & Research
+- When creating the server browser, I had the same problem as before where advanced sessions where required to use Steam sessions to play and test the game
+- A major problem that I was fixing for a while was fake sessions appearing in the server browser
+- I attempted to fix this by getting the session details and if there wasn't any actual players, a connection signal or a session name, however this didn't fix the problem as some sessions thought they had all those things
+- Once the game was working on Steam, I was able to fix this problem by using the Steam sessions plugin to get players' Steam names so that any sessions without a Steam ID wouldn't be able to show in the server browser.
+
+<img width="1000" height="600" src="https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Presentation/Images/Development/Fake%20Sessions.png"> 
 
 ---
 
@@ -258,7 +275,11 @@ Callum Wade <br> 2404781
 <img width="1000" height="600" src="https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Presentation/Images/Development/Server%20Browser%20Item.png"> 
 
 ---
+
 # Difficulties & Research
+- The same advanced sessions tutorial was used for the server browser item
+- However this tutorial didn't have everything that was needed for this server browser so after testing the use of tick boxes and session details, I was able to create a script that would allow the player to tick a session they want to join and then press join game, which would get the ticked session details, set it as the selected session variable and then send them into the selected session.
+- Another thing I added to the tutorial's server item was a player count that used shapes instead of text, to do this I used the set color and opacity node and then used the player count session detail to set the circles pink for each player in that session
 
 ---
 
@@ -268,18 +289,46 @@ Callum Wade <br> 2404781
 
 ---
 # Difficulties & Research
-
+- The leave session button wasn't easy to test until the game was put onto steam due to the code used but even on Steam it still doesn't work as intended
+- I have been researching how to leave a session but they all keep coming back with the exact same thing that I am currently doing
+- This button will continue to be worked on but may need to be removed from the menu for the release if a solution can't be found
 ---
 
 # Character Select Screen
-- The characters select screen is used as a pre-game lobby to allow players to pick their characters
+- The character select screen is used as a pre-game lobby to allow players to pick their characters
 - Once players have picked their character, they can ready up. Once all players are ready, they are sent into the main game
-- This menu was originally created as just a basic pre game lobby as a possible solution to fix a problem with players not seeing each other in the game but ended up turning into a working character select screen
+- This menu was originally created as just a basic pre-game lobby as a possible solution to fix a problem with players not seeing each other in the game but ended up turning into a working character select screen
 <img width="1000" height="300" src="https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Presentation/Images/Development/Character%20Select.png"> 
 
 ---
 # Difficulties & Research
+- The main difficulties with this UI came with the buttons and getting it working for online sessions
+- To make the base UI and code, I used a tutorial*. The reason I didn't stick with this code was due to it being basic and not fully covering everything that I need it to.
+- To develop the character select screen, I researched into tags** and used them to set a selected character variable and taken character variable to store the chosen characters
+- This worked for the most part until it was tested in online sessions, which I then found out that the events need to be called over the server to save the variables as the same tags for each player
+
+*(Make a Multiplayer Game in Unreal Engine 5 - Character Selection - Unreal Beginner Tutorial # 16, 2022)
+**(Using Gameplay Tags in Unreal Engine | Unreal Engine 5.7 Documentation | Epic Developer Community, s.d.)
 
 ---
+# Difficulties & Research
+- Once a player selects a character, the character's image would black out and no longer allow anyone to click it
+- A difficult problem occurred when getting this to work as the characters you couldn't select wasn't the same for each player
+- I managed to resolve this issue by changing the blueprint that handled the variable so that all players were using the same variable with the same value.
+<br>
+- This exact same problem occurred when making the ready up button as players all had variables that weren't being shared properly so no one could see if everyone was ready or not
+- This ended up having the same solution as the character buttons where it needed to be handled by a different blueprint
+
+---
+# Bibliography
+- Hosting, Finding and Joining Sessions | 04 | Multiplayer Battle Royale | Tutorial | Unreal Engine 5 (2023) Directed by Kekdot. At: https://www.youtube.com/watch?v=YUPZ1j_9Vzw (Accessed  18/02/2026).
+- ItsMeBroYT (2026) ItsMeBroYT/IMB_SteamSessionTutorial. At: https://github.com/ItsMeBroYT/IMB_SteamSessionTutorial (Accessed  25/03/2026).
+- UE5 Steam Multiplayer EP1 – Basic Connection Logic (No UI) (2026) Directed by It’s Me Bro. At: https://www.youtube.com/watch?v=KNeRVpPvl-w (Accessed  25/03/2026).
+- Make a Multiplayer Game in Unreal Engine 5 - Character Selection - Unreal Beginner Tutorial # 16 (2022) Directed by GameDevRaw. At: https://www.youtube.com/watch?v=9f-feH2gP-o (Accessed  13/03/2026).
+- Using Gameplay Tags in Unreal Engine | Unreal Engine 5.7 Documentation | Epic Developer Community (s.d.) At: https://dev.epicgames.com/documentation/unreal-engine/using-gameplay-tags-in-unreal-engine (Accessed  17/04/2026).
+
+
+
+
 
 
