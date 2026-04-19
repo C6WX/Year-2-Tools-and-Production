@@ -48,15 +48,35 @@ Once Jenkins was setup, I then went on to researching how I would go about creat
 I used webhooks three times during this project, one was programmed into the groovy script to link Jenkins to Discord, the second was to link GitHub to Discord and the third was to link ClickUp to Discord.
 When linking Jenkins and Discord, I didn't use any sources due to using AI improve my code, however I did research into linking GitHub to Discord. I wanted to create a webhook between the two apps so that ticket reviewers would get updates as soon as anything is changed on GitHub in an easy to read message format. To do this I found the official GitHub documentation (Creating webhooks, s.d.) that covers creating and using webhooks on GitHub. Looking through this documentation and using AI to help with the Discord side of the webhook allowed me to setup a link between the two websites so that whenever a change occurred on GitHub, a message would be sent to a Discord channel with all relevant information.
 ![GitHub Message](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Week%202/Images/Github%20Discord%20Message%20Example.png)
+<br>
+
 *Figure 1. An example of a message that is sent whenever a change occurs in any GitHub branch.*
 <br>
+
 Creating this webhook between these two apps allowed me to easily setup the webhook between ClickUp and Discord without the need of any form of research to help.
 
 #### Gameplay Tags
 For the character select screen to work as intended, I had to research into gameplay tags, as I knew that is what I would need to have a working character select, but I did not know anything about how they were used or any of the nodes that are linked to gameplay tags. To find out this information, I turned to the Unreal Engine gameplay tags documentation (Using Gameplay Tags in Unreal Engine | Unreal Engine 5.7 Documentation | Epic Developer Community, s.d.). Using the information gathered from this website, I was able to implement the character select screen using tags so that once a player selects a character, a tag for said character would be added to two different tag containers: one with the player's chosen character and one with all chosen characters. This allowed me to make it so that only one person can choose a character by accessing the chosen characters container and checking if each character has been chosen, and also allowed the archetypes team to access each players character individually to apply character models and voice lines to each player.
 
 #### Character Select Screen Inspiration
-When creating the base design for the character select screen, I took inspiration for the Move or Die (Move or Die on Steam, s.d.) character select/pre-game lobby screen. 
+When creating the base design for the character select screen, I took inspiration for the Move or Die (Move or Die on Steam, s.d.) character select/pre-game lobby screen. I found this game to have such a simple but effective UI layout that I had to take inspiration from it. What I found that made it work especially well is that the game's UI was made for four characters, which fits perfectly with the amount of characters in Greedy Piggies. Even though most of my time was spent on programming the menu, my base UI got redesigned but still kept the same layout that I originally made.
+![Move or Die Screen](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Research/Move%20or%20die%20character%20select.jpg)
+<br>
+
+*Figure 2. The character select screen used in Move or Die.*
+<br>
+
+![Base Character Select](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Presentation/Images/Development/Character%20Select.png)
+<br>
+
+*Figure 3. The base character select screen I created.*
+<br>
+
+![Redesigned Character Select](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Research/Redesigned%20Character%20Select.png)
+<br>
+
+*Figure 4. The redesigned character select screen after it was worked on by designers.*
+<br>
 
 #### Multiplayer
 
@@ -73,6 +93,7 @@ From this video I learned how to:
 - How to setup Jenkins
 - How to create a Jenkins account
 - How to access Jenkins through a web browser
+
 This tutorial was pretty useful for the most part however I ended up having to install Jenkins from a different file type on the website since the file type shown in the video would not work on my computer. This problem then lead me to looking at the Jenkins install documentation. 
 
 ##### Jenkins Documentation
@@ -80,6 +101,7 @@ The official Jenkins documentation (Windows, s.d.) was created by the official c
 Reading through the documentation taught me:
 - How to setup Jenkins in a more in depth guide
 - Using the windows file instead of the war file
+
 Without using this website, I would not have been able to setup Jenkins due to the problem I was having with the war file shown on the YouTube tutorial, making this source very helpful. However I did find that the documentation website was, although laid out neatly, very cluttered with information that could be elsewhere.
 
 #### App to Discord Webhooks
@@ -89,6 +111,7 @@ From reading through the documentation, I learnt how to:
 - How to add webhooks on GitHub
 - How to create and add secret keys
 - How to choose what triggers the webhook and what it has access to
+
 Finding this website was crucial to me being able to make the GitHub webhook work with Discord as I did not know the first thing about webhooks before researching this. I found the website to be very well laid out and easy to find what you need. On the other hand, although the website goes into a lot of detail about different types of webhooks, it did not cover much outside of creating a basic webhook.
 
 #### Gameplay Tags
@@ -98,9 +121,12 @@ From researching gameplay tags through this page, I discovered how to:
 - Create a tag container
 - Add tags to a container
 - Find if a container contains a specific tag
+
 In my opinion, the information provided was very bulky, making it difficult to find what I needed, but when I did find it, I was able to learn gameplay tags with ease.
 
 #### Character Select Screen Inspiration
+Move or Die was created by Those Awesome Guys, a small indie studio based in Romania. They are known for creating fast and simple party multiplayer games.
+From looking into this game, I took inspiration from their character select screen as it's layout fit perfectly with what I needed the Greedy Piggies screen to look like. The only thing it was missing that I added to the Greedy Piggies UI was a ready up button that would start the game once every player was ready.
 
 #### Multiplayer
 
