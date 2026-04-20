@@ -36,15 +36,15 @@ Something else that threw off my original approach was creating all the original
 
 ---
 
-## Research *(Approx. 20-30% of word count)*
+## Research *(Approx. 20-30% of word count)* 1564 words
 
-### What sources or references have you identified as relevant to this task?
+### What sources or references have you identified as relevant to this task? 966
 
-#### Jenkins
+#### Jenkins 203
 To be able to implement Jenkins into the project so that it could automatically build the staging branch, I first had to research how to setup Jenkins and how to use it. At first I started off by following a tutorial that covered downloading and installing Jenkins (How To Install Jenkins on Windows 11, 2023). At first I struggled to find the right tutorial for setting this up but this video was able to help me get Jenkins installed and working. During the install process, I did have trouble with finding which version to use and using the setup wizard but after looking into the official documentation, I was able to install the right version and continue following along with the video (Windows, s.d.). 
 Once Jenkins was setup, I then went on to researching how I would go about creating a pipeline. I started by watching videos and looking at documentation but they ended up not covering what I was trying to use Jenkins to do. So after that I then went onto asking for help from my lecturer who had used Jenkins before, who then provided me with a base code to use with Jenkins. After tweaking the code a bit, I was able to get Jenkins working on the staging branch.
 
-#### App to Discord Webhooks
+#### App to Discord Webhooks 187
 I used webhooks three times during this project, one was programmed into the groovy script to link Jenkins to Discord, the second was to link GitHub to Discord and the third was to link ClickUp to Discord.
 When linking Jenkins and Discord, I didn't use any sources due to using AI improve my code, however I did research into linking GitHub to Discord. I wanted to create a webhook between the two apps so that ticket reviewers would get updates as soon as anything is changed on GitHub in an easy to read message format. To do this I found the official GitHub documentation (Creating webhooks, s.d.) that covers creating and using webhooks on GitHub. Looking through this documentation and using AI to help with the Discord side of the webhook allowed me to setup a link between the two websites so that whenever a change occurred on GitHub, a message would be sent to a Discord channel with all relevant information.
 ![GitHub Message](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Week%202/Images/Github%20Discord%20Message%20Example.png)
@@ -55,10 +55,10 @@ When linking Jenkins and Discord, I didn't use any sources due to using AI impro
 
 Creating this webhook between these two apps allowed me to easily setup the webhook between ClickUp and Discord without the need of any form of research to help.
 
-#### Gameplay Tags
+#### Gameplay Tags 169
 For the character select screen to work as intended, I had to research into gameplay tags, as I knew that is what I would need to have a working character select, but I did not know anything about how they were used or any of the nodes that are linked to gameplay tags. To find out this information, I turned to the Unreal Engine gameplay tags documentation (Using Gameplay Tags in Unreal Engine | Unreal Engine 5.7 Documentation | Epic Developer Community, s.d.). Using the information gathered from this website, I was able to implement the character select screen using tags so that once a player selects a character, a tag for said character would be added to two different tag containers: one with the player's chosen character and one with all chosen characters. This allowed me to make it so that only one person can choose a character by accessing the chosen characters container and checking if each character has been chosen, and also allowed the archetypes team to access each players character individually to apply character models and voice lines to each player.
 
-#### Character Select Screen Inspiration
+#### Character Select Screen Inspiration 101
 When creating the base design for the character select screen, I took inspiration for the Move or Die (Move or Die on Steam, s.d.) character select/pre-game lobby screen. I found this game to have such a simple but effective UI layout that I had to take inspiration from it. What I found that made it work especially well is that the game's UI was made for four characters, which fits perfectly with the amount of characters in Greedy Piggies. Even though most of my time was spent on programming the menu, my base UI got redesigned but still kept the same layout that I originally made.
 ![Move or Die Screen](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Research/Move%20or%20die%20character%20select.jpg)
 <br>
@@ -78,15 +78,15 @@ When creating the base design for the character select screen, I took inspiratio
 *Figure 4. The redesigned character select screen after it was worked on by designers.*
 <br>
 
-#### Multiplayer
+#### Multiplayer and Audience 306
+When working on the multiplayer for Greedy Piggies, I decided to research into player types for the game's target audience. When looking through different peoples' work, I came across a book by Peter Vorderer, Jennings Bryant (Vorderer and Bryant, 2012) which discussed many different player archetypes that I had not previously heard of. Previously, I had research into Bartles Taxonomy (Kumar et al., 2026), which breaks down players into four categories: the achiever, the explorer, the socialiser and the killer. For Greedy Piggies, the player base is likely to be split between the socialiser, as it is a party game, and the killer, since the game is all about beating other players. However after reading Playing Video Games: Motives, Responses, and Consequences, I found myself thinking deeper into what fits the games player base as the book discusses more than four player types. "Some more prominent types are identified as: The Competitor, The Explorer, The Collector, The Achiever, The Joker, The Director, The Storyteller, The Performer, and The Craftsmen." After looking into what is said about each type of player, I feel like the audience of Greedy Piggies fits into four of these categories: the competitor, the achiever, the joker and the director. The reason I believe this is due to the competitor is always focussed on beating others and being the best, and Greedy Piggies is all about competition, the achiever who is want to be the best in rankings and have the most wins, in the game players can track their wins within a group of friends, the joker is all about playing for fun and enjoying the social aspects of the game, which Greedy Piggies is focused on being social and having fun, and the director who always wants to lead a group, which a leader of a friend group would be able to do to organise playing Greedy Piggies together.
 
-#### Steam Sessions 
 
 
-### Sources
+### Sources 598 words
 
 #### Jenkins
-##### Jenkins Setup Guide
+##### Jenkins Setup Guide 113
 The YouTube tutorial I used for setting up Jenkins (How To Install Jenkins on Windows 11, 2023) was published by ProgrammingKnowledge (• • 1 et al., s.d.), a YouTuber dedicated to creating tutorials and guides for many different tools and programming languages to help people get started. 
 From this video I learned how to:
 - How to install Jenkins
@@ -96,7 +96,7 @@ From this video I learned how to:
 
 This tutorial was pretty useful for the most part however I ended up having to install Jenkins from a different file type on the website since the file type shown in the video would not work on my computer. This problem then lead me to looking at the Jenkins install documentation. 
 
-##### Jenkins Documentation
+##### Jenkins Documentation 92
 The official Jenkins documentation (Windows, s.d.) was created by the official creators of Jenkins.
 Reading through the documentation taught me:
 - How to setup Jenkins in a more in depth guide
@@ -105,7 +105,7 @@ Reading through the documentation taught me:
 Without using this website, I would not have been able to setup Jenkins due to the problem I was having with the war file shown on the YouTube tutorial, making this source very helpful. However I did find that the documentation website was, although laid out neatly, very cluttered with information that could be elsewhere.
 
 #### App to Discord Webhooks
-##### GitHub Webhook Documentation
+##### GitHub Webhook Documentation 124
 The Github Webhook documentation was created by GitHub, Inc, the creators of Github.
 From reading through the documentation, I learnt how to:
 - How to add webhooks on GitHub
@@ -115,7 +115,7 @@ From reading through the documentation, I learnt how to:
 Finding this website was crucial to me being able to make the GitHub webhook work with Discord as I did not know the first thing about webhooks before researching this. I found the website to be very well laid out and easy to find what you need. On the other hand, although the website goes into a lot of detail about different types of webhooks, it did not cover much outside of creating a basic webhook.
 
 #### Gameplay Tags
-##### Gameplay Tags Documentation
+##### Gameplay Tags Documentation 74
 The gameplay tags documentation is created by Epic Games, the creators of Unreal Engine.
 From researching gameplay tags through this page, I discovered how to: 
 - Create a tag container
@@ -124,31 +124,32 @@ From researching gameplay tags through this page, I discovered how to:
 
 In my opinion, the information provided was very bulky, making it difficult to find what I needed, but when I did find it, I was able to learn gameplay tags with ease.
 
-#### Character Select Screen Inspiration
+#### Character Select Screen Inspiration 85
 Move or Die was created by Those Awesome Guys, a small indie studio based in Romania. They are known for creating fast and simple party multiplayer games.
 From looking into this game, I took inspiration from their character select screen as it's layout fit perfectly with what I needed the Greedy Piggies screen to look like. The only thing it was missing that I added to the Greedy Piggies UI was a ready up button that would start the game once every player was ready.
 
-#### Multiplayer
+#### Multiplayer and Audience 110
+Playing Video Games: Motives, Responses, and Consequences was wrote by Peter Vorderer and Jennings Bryant, two key figures in media psychology. They study how people interact with media, including games, TV and digital platforms.
+From reading their book, I learnt:
+- Another version of player taxonomy
+- How players interact with different types of games
 
-#### Steam Sessions 
-
-
-
-For each source, provide:
-
-1. An **opening paragraph** describing the source's creator/publisher, reputation, and relevance.
-2. A **bullet list** of what you analysed or learned from it.
-3. A **closing paragraph** evaluating its usefulness or limitations.
-
-You may include both **academic resources** and **industry examples** (e.g. documentation, games, developer talks). You are encouraged to include plenty of images, videos and diagrams.
-
-> You should have at least 1 game source as inspiration, 1 documentation/tutorial source and 1 academic source at a minimum.
+From what I was able to read of this book online, I felt like it was able to go really in depth about everything to do with player types in an easy to understand and read format. However, due to the high number of topics that the book covers, it is difficult to find what you need. 
 
 ---
 
 ## Implementation *(Approx. 30–40% of word count)*
 
 ### What was your development process and how did decisions evolve?
+
+#### Jenkins
+
+#### Webhooks
+
+#### Server Browser
+
+#### Character Select Screen
+
 
 Describe your technical and creative approach, including:
 
@@ -231,16 +232,24 @@ You may include screenshots, graphs, tables, or embedded videos to demonstrate t
 - Creating webhooks (s.d.) At: https://docs-internal.github.com/en/webhooks/using-webhooks/creating-webhooks (Accessed  19/03/2026).
 - Using Gameplay Tags in Unreal Engine | Unreal Engine 5.7 Documentation | Epic Developer Community (s.d.) At: https://dev.epicgames.com/documentation/unreal-engine/using-gameplay-tags-in-unreal-engine (Accessed  01/04/2026).
 - Move or Die on Steam (s.d.) At: https://store.steampowered.com/app/323850/Move_or_Die/ (Accessed  19/04/2026).
+- Vorderer, P. and Bryant, J. (2012) Playing Video Games: Motives, Responses, and Consequences. (s.l.): Routledge.
+- Kumar, J., Herger, M. and Dam, R. F. (2026) Bartle’s Player Types for Gamification. At: https://ixdf.org/literature/article/bartle-s-player-types-for-gamification (Accessed  20/04/2026).
+
+
 
 
 ### Sources
 - • • 1, 080 and Ago, 883 Views 6 Years (s.d.) YouTube. At: https://www.youtube.com/ (Accessed  19/04/2026).
 
-
+### Declared Assets
+- Statzer, J. (MordenTral) (2026) mordentral/AdvancedSessionsPlugin. At: https://github.com/mordentral/AdvancedSessionsPlugin (Accessed  20/04/2026).
 
 ---
 
 ## Declared Assets
+
+- * `AdvancedSessions.uplugin` - Third party plugin to connect the game to steam session - (Statzer, 2026)
+- * `AdvancedSteamSessions.uplugin` - Third party plugin to connect the game to steam session - (Statzer, 2026)
 
 You must declare any content that was **not entirely created by you**, or was **modified with the aid of AI tools**. This includes:
 
