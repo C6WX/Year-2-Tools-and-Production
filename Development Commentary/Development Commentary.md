@@ -675,8 +675,48 @@ pipeline {
 *Figure 16. The complete groovy script used by the Jenkins pipeline.*
 <br>
 
-#### Webhooks
+#### Webhooks 491
+##### GitHub
+Not including the Jenkins webhook, the first webhook I created and implemented was a GitHub webhook. The reason for adding this to the Discord webhook was, being a GitHub reviewer, I realised early on how inconvenient it was to keep checking to see if there has been any changes to the project and then trying to access all the change details. So I looked into having GitHub send the changes straight to a Discord channel for easy access. 
+Implementation started with me researching how to create a webhook between the two apps and then creating a Discord webhook, which is simple since it just requires one button press and then selecting the channel it can access.
 
+![Discord Bot Github](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Implementation/Webhooks/Discord%20bot%20github.png)
+<br>
+
+*Figure 17. The webhook created for GitHub to message on Discord.*
+<br>
+Once the bot was created, I had to finish the rest on GitHub. To start, a discord URL is needed for GitHub to access the server. Once that is added, all that was left to do was choose what events would trigger the bot to send a message and what sort of content was sent. The content I selected was an application/JSON and the triggers I chose were branch creations and deletions, pushes and pull requests.
+Now, whenever anyone makes a change on any branch in the Greedy Piggies repository, a message is sent to the GitHub push reviewers channel in the Discord. These messages contain the username of who made the change, the branch that the change was made on, the name given to the change and a link to in-depth version of the change.
+
+![GitHub Webhook Creation](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Implementation/Webhooks/GitHub%20Webhook%20setup.png)
+<br>
+
+*Figure 18. The setup page for the webhook on GitHub.*
+<br>
+
+![GitHub Change Message](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Implementation/Webhooks/Github%20Push.png)
+<br>
+
+*Figure 19. The message sent by GitHub whenever a change occurs in the repository.*
+<br>
+
+
+![GitHub Branch Creation Message](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Implementation/Webhooks/Github%20Branch%20Creation.png)
+<br>
+
+*Figure 20. The message sent by GitHub whenever a branch is created/deleted in the repository.*
+<br>
+
+##### ClickUp
+I was not originally planning on making a webhook bot for ClickUp as I my roles did not have anything to do with that department. However, I realised that the ClickUp department were not very happy with the fact that it was being completely ignored by the designers. So I thought that it would be a good idea to create a webhook that would send messages straight to a designer channel to incentivize the designers to use it more and remind them that it is still a thing that they should be using.
+Due to having previously made the GitHub webhook, I found this one much simpler to make, all I needed was to find the webhook section on the ClickUp workspace and get permissions to be able to manage the workspace. 
+As soon as I had the correct permissions, I created a ClickUp designer channel on Discord and then located the Discord section of the website and setup the Discord bot by adjusting what channels the bot can message in and what triggers each message. The messages that are sent contain the person who adjusted a task, the name of the task, the status of the task, who the task is assigned to, the location of the task and when the task was changed.
+Since creating this webhook was so simple, I also made one for the developers to help us stay on track with the project.
+
+![ClickUp Message](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Implementation/Webhooks/ClickUp%20message.png)
+<br>
+
+*Figure 21. A message that is sent to Discord by ClickUp.*
 
 #### Server Browser
 
