@@ -142,7 +142,7 @@ From what I was able to read of this book online, I felt like it was able to go 
 
 ### What was your development process and how did decisions evolve?
 
-#### Jenkins
+#### Jenkins 393 words
 After researching and setting up Jenkins, I was given a base code that I used to set up a test pipeline. This pipeline was used to build a random repository on my GitHub account at 10 pm everyday. The reason behind me testing on another repository first was because I did not want to risk making any mistakes on the staging branch of Greedy Piggies. After the pipeline was successful, I then went onto creating a pipeline for the staging branch of Greedy Piggies that once again built at 10 pm everyday.
 
 ``` Groovy
@@ -205,7 +205,7 @@ pipeline {
 *Figure 5. The base code that built staging and returned wether it was successful or not.*
 <br>
 
-After getting the basic pipeline working, I looked into having Jenkins send a message to Discord that contained the details on each Jenkins run. I was able to do this by creating a webhook that linked Jenkins and Discord and then adding to the groovy code within the pipeline so that whenever Jenkins was successful, the message would display: SUCCESS Greedy Piggies Staging (Build Number). Otherwise, if the build was to fail it would display: FAILED Greedy Piggies Staging (Build Number). 
+Once I had the basic pipeline working, I looked into having Jenkins send a message to Discord that contained the details on each Jenkins run. I was able to do this by creating a webhook that linked Jenkins and Discord and then adding to the groovy code within the pipeline so that whenever Jenkins was successful, the message would display: SUCCESS Greedy Piggies Staging (Build Number). Otherwise, if the build was to fail it would display: FAILED Greedy Piggies Staging (Build Number). 
 
 ```Groovy
         success {
@@ -332,7 +332,7 @@ success {
 ![New Jenkins Message Success](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Implementation/Jenkins/New%20Jenkins%20Success%20Message.png)
 <br> 
 
-Once I had learnt about CSV files and storing data, I moved onto implementing data tracking and storing into my Jenkins pipeline. I was able to do this with a mix of adding to the groovy script and using python. The two scripts communicate with each other to create and add to a CSV data table that stores each build's build number: date and time, branch, result and time to complete (in seconds). As well as the CSV data table, the pipeline now creates and adds to a graph png that tracks and compares each build's build time and a text document that tracks the number of total builds, successful builds, failed builds, average duration and success rate.
+Later into the project I learnt about CSV files and storing data, I moved onto implementing data tracking and storing into my Jenkins pipeline. I was able to do this with a mix of adding to the groovy script and using python. The two scripts communicate with each other to create and add to a CSV data table that stores each build's build number: date and time, branch, result and time to complete (in seconds). As well as the CSV data table, the pipeline now creates and adds to a graph png that tracks and compares each build's build time and a text document that tracks the number of total builds, successful builds, failed builds, average duration and success rate.
 
 ``` Groovy
 post {
@@ -484,13 +484,196 @@ Success rate: 86.21%
 ```
 <br>
 
-*Figure 14. The text file outputted by the python script.*
+*Figure 14. The text file outputted by the python script. The reason there is more total builds then successful and failed builds combined is due to it not separately tracking aborted builds.*
 <br>
 
-![Build Duration Table]()
+![Build Duration Table](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Implementation/Jenkins/build_duration.png)
 <br>
 
-*Figure 15. The data table outputted by the python script.*
+*Figure 15. The data table outputted by the python script. The spike in time for build 50 was due to internet connectivity issues.*
+
+```Groovy
+pipeline {
+    agent { label 'windows' }
+
+    options {
+        buildDiscarder(logRotator(numToKeepStr: '30'))
+        disableConcurrentBuilds()
+    }
+
+    environment {
+        UE_ROOT      = "C:\\Program Files\\Epic Games\\UE_5.6"
+        PROJECT_PATH = "${WORKSPACE}\\Greedy_Piggies.uproject"
+        UE_CONFIG    = "Development"
+        BUILD_DIR    = "BuildOutput"
+        ZIP_DIR      = "Builds"
+        ZIP_NAME     = "Greedy_Piggies_Win64_${BUILD_NUMBER}.zip"
+
+        GH_EXE       = "C:\\Program Files\\GitHub CLI\\gh.exe"
+        GH_REPO      = "University-for-the-Creative-Arts/Greedy_Piggies"
+        RELEASE_TAG  = "build-${BUILD_NUMBER}"
+        RELEASE_NAME = "Build ${BUILD_NUMBER}"
+
+        RESULTS_DIR  = "###"
+        CSV_FILE     = "####"
+        PYTHON_FILE  = "####"
+        PYTHON_EXE   = "####"
+        BRANCH_NAME  = "staging"
+    }
+
+    stages {
+
+        stage('Checkout') {
+            steps {
+                git branch: "${env.BRANCH_NAME}",
+                    url: 'https://github.com/University-for-the-Creative-Arts/Greedy_Piggies',
+                    credentialsId: 'Github'
+            }
+        }
+
+        stage('Sanity Check') {
+            steps {
+                bat """
+                if not exist "%UE_ROOT%\\Engine\\Build\\BatchFiles\\RunUAT.bat" exit /b 2
+                if not exist "%PROJECT_PATH%" exit /b 3
+                if not exist "%GH_EXE%" exit /b 4
+                if not exist "%PYTHON_EXE%" exit /b 5
+                if not exist "%RESULTS_DIR%" mkdir "%RESULTS_DIR%"
+                """
+            }
+        }
+
+        stage('Build Unreal Project') {
+            steps {
+                bat """
+                call "%UE_ROOT%\\Engine\\Build\\BatchFiles\\RunUAT.bat" ^
+                  BuildCookRun ^
+                  -project="%PROJECT_PATH%" ^
+                  -noP4 ^
+                  -platform=Win64 ^
+                  -clientconfig=%UE_CONFIG% ^
+                  -build -cook -stage -pak -archive ^
+                  -archivedirectory="%WORKSPACE%\\%BUILD_DIR%"
+                """
+            }
+        }
+
+        stage('Zip Build') {
+            steps {
+                powershell """
+                  \$zipDir  = Join-Path \$env:WORKSPACE \$env:ZIP_DIR
+                  \$zipPath = Join-Path \$zipDir \$env:ZIP_NAME
+                  \$srcPath = Join-Path \$env:WORKSPACE \$env:BUILD_DIR
+
+                  if (!(Test-Path \$zipDir)) { New-Item -ItemType Directory \$zipDir | Out-Null }
+                  if (Test-Path \$zipPath) { Remove-Item -Force \$zipPath }
+
+                  Compress-Archive -Path (Join-Path \$srcPath '*') -DestinationPath \$zipPath
+                """
+            }
+        }
+
+        stage('Archive Build') {
+            steps {
+                archiveArtifacts artifacts: 'Builds/*.zip', fingerprint: true
+            }
+        }
+
+        stage('Publish GitHub Release') {
+            steps {
+                withCredentials([string(credentialsId: 'github-token', variable: 'GITHUB_TOKEN')]) {
+                    bat """
+                    set GH_TOKEN=%GITHUB_TOKEN%
+
+                    "%GH_EXE%" release create %RELEASE_TAG% ^
+                      "%WORKSPACE%\\%ZIP_DIR%\\%ZIP_NAME%" ^
+                      --repo %GH_REPO% ^
+                      --title "%RELEASE_NAME%" ^
+                      --notes "Automated Jenkins build."
+
+                    "%GH_EXE%" release view %RELEASE_TAG% ^
+                      --repo %GH_REPO% ^
+                      --json url ^
+                      --jq ".url" > release_url.txt
+                    """
+                }
+
+                script {
+                    env.RELEASE_URL = readFile('release_url.txt').trim()
+                }
+            }
+        }
+    }
+
+    post {
+        always {
+            script {
+                def buildDate = new Date().format("yyyy-MM-dd HH:mm:ss")
+                def buildResult = currentBuild.currentResult ?: "SUCCESS"
+                def durationSeconds = (currentBuild.duration / 1000) as long
+
+                bat """
+                if not exist "%RESULTS_DIR%" mkdir "%RESULTS_DIR%"
+
+                if not exist "%CSV_FILE%" (
+                    echo BuildNumber,DateTime,Branch,Result,DurationSeconds> "%CSV_FILE%"
+                )
+
+                echo ${env.BUILD_NUMBER},${buildDate},${env.BRANCH_NAME},${buildResult},${durationSeconds}>> "%CSV_FILE%"
+                """
+
+                bat """
+                if exist "%PYTHON_FILE%" (
+                    "%PYTHON_EXE%" --version
+                    "%PYTHON_EXE%" "%PYTHON_FILE%"
+                ) else (
+                    echo Python analysis script not found
+                )
+                """
+
+                bat """
+                if exist "%RESULTS_DIR%\\build_duration.png" copy /Y "%RESULTS_DIR%\\build_duration.png" "%WORKSPACE%\\build_duration.png"
+                if exist "%RESULTS_DIR%\\build_summary.txt" copy /Y "%RESULTS_DIR%\\build_summary.txt" "%WORKSPACE%\\build_summary.txt"
+                """
+
+                if (fileExists('build_duration.png')) {
+                    archiveArtifacts artifacts: 'build_duration.png', fingerprint: true
+                }
+
+                if (fileExists('build_summary.txt')) {
+                    archiveArtifacts artifacts: 'build_summary.txt', fingerprint: true
+                }
+            }
+        }
+
+        success {
+            withCredentials([string(credentialsId: 'discord-webhook-greedy-piggies', variable: 'WEBHOOK')]) {
+                bat """
+                curl -H "Content-Type: application/json" ^
+                -X POST ^
+                -d "{\\"content\\":\\"SUCCESS: ${env.JOB_NAME} #${env.BUILD_NUMBER} ^| GitHub Release: ${env.RELEASE_URL}\\"}" ^
+                %WEBHOOK%
+                """
+            }
+        }
+
+        failure {
+            withCredentials([string(credentialsId: 'discord-webhook-greedy-piggies', variable: 'WEBHOOK')]) {
+                bat """
+                curl -H "Content-Type: application/json" ^
+                -X POST ^
+                -d "{\\"content\\":\\"FAILED: ${env.JOB_NAME} #${env.BUILD_NUMBER}\\"}" ^
+                %WEBHOOK%
+                """
+            }
+        }
+    }
+}
+```
+<br>
+
+*Figure 16. The complete groovy script used by the Jenkins pipeline.*
+<br>
 
 #### Webhooks
 
