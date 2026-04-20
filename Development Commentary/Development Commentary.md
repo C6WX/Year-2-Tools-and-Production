@@ -143,12 +143,363 @@ From what I was able to read of this book online, I felt like it was able to go 
 ### What was your development process and how did decisions evolve?
 
 #### Jenkins
+After researching and setting up Jenkins, I was given a base code that I used to set up a test pipeline. This pipeline was used to build a random repository on my GitHub account at 10 pm everyday. The reason behind me testing on another repository first was because I did not want to risk making any mistakes on the staging branch of Greedy Piggies. After the pipeline was successful, I then went onto creating a pipeline for the staging branch of Greedy Piggies that once again built at 10 pm everyday.
+
+``` Groovy
+pipeline {
+    agent { label 'windows' }
+
+    options {
+        buildDiscarder(logRotator(numToKeepStr: '30'))
+        disableConcurrentBuilds()
+    }
+
+    environment {
+        UE_ROOT      = "C:/Program Files/Epic Games/UE_5.6"
+        PROJECT_PATH = "${WORKSPACE}/Santa_Trackers/Santa_Trackers.uproject"
+        UE_CONFIG    = "Development"
+        BUILD_DIR    = "BuildOutput"
+        ZIP_DIR      = "Builds"
+        ZIP_NAME     = "Greedy_Piggies_Win64_${BUILD_NUMBER}.zip"
+    }
+
+    stages {
+
+        stage('Checkout') {
+            steps {
+                git branch: 'main',
+                    url: '##################',
+                    credentialsId: '##########'
+            }
+        }
+
+        stage('Sanity Check') {
+            steps {
+                bat """
+                if not exist "%UE_ROOT%/Engine/Build/BatchFiles/RunUAT.bat" exit /b 2
+                if not exist "%PROJECT_PATH%" exit /b 3
+                """
+            }
+        }
+
+        stage('Build Unreal Project') {
+            steps {
+                bat """
+                "%UE_ROOT%/Engine/Build/BatchFiles/RunUAT.bat" ^
+                  BuildCookRun ^
+                  -project="%PROJECT_PATH%" ^
+                  -noP4 ^
+                  -platform=Win64 ^
+                  -clientconfig=%UE_CONFIG% ^
+                  -build -cook -stage -pak -archive ^
+                  -archivedirectory="%WORKSPACE%/%BUILD_DIR%"
+                """
+            }
+        }
+
+    }
+}
+```
+<br>
+
+*Figure 5. The base code that built staging and returned wether it was successful or not.*
+<br>
+
+After getting the basic pipeline working, I looked into having Jenkins send a message to Discord that contained the details on each Jenkins run. I was able to do this by creating a webhook that linked Jenkins and Discord and then adding to the groovy code within the pipeline so that whenever Jenkins was successful, the message would display: SUCCESS Greedy Piggies Staging (Build Number). Otherwise, if the build was to fail it would display: FAILED Greedy Piggies Staging (Build Number). 
+
+```Groovy
+        success {
+            withCredentials([string(credentialsId: 'discord-webhook-greedy-piggies', variable: 'WEBHOOK')]) {
+                bat """
+                curl -H "Content-Type: application/json" ^
+                -X POST ^
+                -d "{\\"content\\":\\"SUCCESS: ${env.JOB_NAME} #${env.BUILD_NUMBER} 
+                %WEBHOOK%
+                """
+            }
+        }
+
+        failure {
+            withCredentials([string(credentialsId: 'discord-webhook-greedy-piggies', variable: 'WEBHOOK')]) {
+                bat """
+                curl -H "Content-Type: application/json" ^
+                -X POST ^
+                -d "{\\"content\\":\\"FAILED: ${env.JOB_NAME} #${env.BUILD_NUMBER}\\"}" ^
+                %WEBHOOK%
+                """
+            }
+        }
+```
+<br>
+
+*Figure 6. The code that was added to the pipeline to send Github Messages of each build status.*
+<br>
+
+![Original Jenkins Message](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Implementation/Jenkins/Orignial%20Jenkins%20Message.png)
+<br>
+
+*Figure 7. The message that was sent whenever Jenkins was successful with a build.*
+<br>
+
+![Original Jenkins Message](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Implementation/Jenkins/Original%20Jenkins%20Message%20Fail.png)
+<br>
+
+*Figure 8. The message that was sent whenever Jenkins was unsuccessful with a build.*
+<br>
+
+After getting feedback on how Jenkins was running, I realised that I needed to have Jenkins uploading each of these builds to GitHub so that they can be easily accessed and tested by anyone working on the game. I was able to implement this by updating the pipeline code with a new section that zips the build, archives it and then uploads it as a new GitHub release. Whilst working on this, I decided to add to the GitHub webhook code so that it would link the new release, making it even more accessible to anyone on the Discord.
+
+```Groovy
+stage('Zip Build') {
+            steps {
+                powershell """
+                  \$zipDir  = Join-Path \$env:WORKSPACE \$env:ZIP_DIR
+                  \$zipPath = Join-Path \$zipDir \$env:ZIP_NAME
+                  \$srcPath = Join-Path \$env:WORKSPACE \$env:BUILD_DIR
+
+                  if (!(Test-Path \$zipDir)) { New-Item -ItemType Directory \$zipDir | Out-Null }
+                  if (Test-Path \$zipPath) { Remove-Item -Force \$zipPath }
+
+                  Compress-Archive -Path (Join-Path \$srcPath '*') -DestinationPath \$zipPath
+                """
+            }
+        }
+
+        stage('Archive Build') {
+            steps {
+                archiveArtifacts artifacts: 'Builds/*.zip', fingerprint: true
+            }
+        }
+
+        stage('Publish GitHub Release') {
+            steps {
+                withCredentials([string(credentialsId: 'github-token', variable: 'GITHUB_TOKEN')]) {
+                    bat """
+                    set GH_TOKEN=%GITHUB_TOKEN%
+
+                    "%GH_EXE%" release create %RELEASE_TAG% ^
+                      "%WORKSPACE%\\%ZIP_DIR%\\%ZIP_NAME%" ^
+                      --repo %GH_REPO% ^
+                      --title "%RELEASE_NAME%" ^
+                      --notes "Automated Jenkins build."
+
+                    "%GH_EXE%" release view %RELEASE_TAG% ^
+                      --repo %GH_REPO% ^
+                      --json url ^
+                      --jq ".url" > release_url.txt
+                    """
+                }
+
+                script {
+                    env.RELEASE_URL = readFile('release_url.txt').trim()
+                }
+            }
+        }
+```
+<br>
+
+*Figure 9. Code that was added to the pipeline to zip the build, archive it locally and then upload it as a GitHub release.*
+<br>
+
+``` Groovy
+success {
+            withCredentials([string(credentialsId: 'discord-webhook-greedy-piggies', variable: 'WEBHOOK')]) {
+                bat """
+                curl -H "Content-Type: application/json" ^
+                -X POST ^
+                -d "{\\"content\\":\\"SUCCESS: ${env.JOB_NAME} #${env.BUILD_NUMBER} ^| GitHub Release: ${env.RELEASE_URL}\\"}" ^
+                %WEBHOOK%
+                """
+            }
+        }
+
+        failure {
+            withCredentials([string(credentialsId: 'discord-webhook-greedy-piggies', variable: 'WEBHOOK')]) {
+                bat """
+                curl -H "Content-Type: application/json" ^
+                -X POST ^
+                -d "{\\"content\\":\\"FAILED: ${env.JOB_NAME} #${env.BUILD_NUMBER}\\"}" ^
+                %WEBHOOK%
+                """
+            }
+        }
+```
+<br>
+
+*Figure 10. The updated version of the Discord webhook message code, so that it now links the GitHub release if the build succeeds.*
+<br>
+
+![New Jenkins Message Success](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Implementation/Jenkins/New%20Jenkins%20Success%20Message.png)
+<br> 
+
+Once I had learnt about CSV files and storing data, I moved onto implementing data tracking and storing into my Jenkins pipeline. I was able to do this with a mix of adding to the groovy script and using python. The two scripts communicate with each other to create and add to a CSV data table that stores each build's build number: date and time, branch, result and time to complete (in seconds). As well as the CSV data table, the pipeline now creates and adds to a graph png that tracks and compares each build's build time and a text document that tracks the number of total builds, successful builds, failed builds, average duration and success rate.
+
+``` Groovy
+post {
+        always {
+            script {
+                def buildDate = new Date().format("yyyy-MM-dd HH:mm:ss")
+                def buildResult = currentBuild.currentResult ?: "SUCCESS"
+                def durationSeconds = (currentBuild.duration / 1000) as long
+
+                bat """
+                if not exist "%RESULTS_DIR%" mkdir "%RESULTS_DIR%"
+
+                if not exist "%CSV_FILE%" (
+                    echo BuildNumber,DateTime,Branch,Result,DurationSeconds> "%CSV_FILE%"
+                )
+
+                echo ${env.BUILD_NUMBER},${buildDate},${env.BRANCH_NAME},${buildResult},${durationSeconds}>> "%CSV_FILE%"
+                """
+
+                bat """
+                if exist "%PYTHON_FILE%" (
+                    "%PYTHON_EXE%" --version
+                    "%PYTHON_EXE%" "%PYTHON_FILE%"
+                ) else (
+                    echo Python analysis script not found
+                )
+                """
+
+                bat """
+                if exist "%RESULTS_DIR%\\build_duration.png" copy /Y "%RESULTS_DIR%\\build_duration.png" "%WORKSPACE%\\build_duration.png"
+                if exist "%RESULTS_DIR%\\build_summary.txt" copy /Y "%RESULTS_DIR%\\build_summary.txt" "%WORKSPACE%\\build_summary.txt"
+                """
+
+                if (fileExists('build_duration.png')) {
+                    archiveArtifacts artifacts: 'build_duration.png', fingerprint: true
+                }
+
+                if (fileExists('build_summary.txt')) {
+                    archiveArtifacts artifacts: 'build_summary.txt', fingerprint: true
+                }
+            }
+        }
+```
+<br>
+
+*Figure 11. The new addition to the groovy script to communicate with the python script and create and update the new data files.*
+<br>
+
+```Python
+import os
+import pandas as pd
+import matplotlib.pyplot as plt
+
+results_dir = r"##########"
+
+csv_file = os.path.join(results_dir, "build_results.csv")
+duration_graph = os.path.join(results_dir, "build_duration.png")
+summary_file = os.path.join(results_dir, "build_summary.txt")
+
+if not os.path.exists(csv_file):
+    print("CSV file not found")
+    raise SystemExit(1)
+
+df = pd.read_csv(csv_file)
+
+df["BuildNumber"] = pd.to_numeric(df["BuildNumber"], errors="coerce")
+df["DurationSeconds"] = pd.to_numeric(df["DurationSeconds"], errors="coerce")
+df = df.dropna(subset=["BuildNumber", "DurationSeconds"])
+
+if df.empty:
+    print("CSV is empty after cleaning")
+    raise SystemExit(1)
+
+total_builds = len(df)
+success_count = (df["Result"] == "SUCCESS").sum()
+failure_count = (df["Result"] == "FAILURE").sum()
+avg_duration = df["DurationSeconds"].mean()
+success_rate = (success_count / total_builds) * 100 if total_builds > 0 else 0
+
+with open(summary_file, "w", encoding="utf-8") as f:
+    f.write(f"Total builds: {total_builds}\n")
+    f.write(f"Successful builds: {success_count}\n")
+    f.write(f"Failed builds: {failure_count}\n")
+    f.write(f"Average duration: {avg_duration:.2f} seconds\n")
+    f.write(f"Success rate: {success_rate:.2f}%\n")
+
+plt.figure(figsize=(8, 5))
+plt.plot(df["BuildNumber"], df["DurationSeconds"], marker="o")
+plt.xlabel("Build Number")
+plt.ylabel("Duration in Seconds")
+plt.title("Jenkins Build Duration Over Time")
+plt.grid(True)
+plt.tight_layout()
+plt.savefig(duration_graph)
+plt.close()
+
+print("Saved graph to:", duration_graph)
+print("Saved summary to:", summary_file)
+
+```
+<br>
+
+*Figure 12. The python script that gathers the data from each build and creates or updates the new data files.*
+<br>
+
+```CSV
+BuildNumber,DateTime,Branch,Result,DurationSeconds
+40,16/03/2026 12:58,staging,SUCCESS,50
+41,16/03/2026 13:01,staging,SUCCESS,23
+42,16/03/2026 13:03,staging,SUCCESS,23
+43,16/03/2026 13:09,staging,SUCCESS,163
+44,16/03/2026 13:18,staging,SUCCESS,151
+45,16/03/2026 13:30,staging,SUCCESS,152
+46,2026-03-16 14:17:10,staging,SUCCESS,184
+47,2026-03-16 14:24:31,staging,SUCCESS,236
+49,2026-03-16 14:30:45,staging,SUCCESS,160
+50,2026-03-17 22:17:12,staging,FAILURE,1024
+51,2026-03-17 22:19:46,staging,ABORTED,28
+52,2026-03-17 22:22:51,staging,SUCCESS,172
+53,2026-03-18 22:03:31,staging,SUCCESS,200
+54,2026-03-19 22:03:27,staging,SUCCESS,198
+55,2026-03-22 22:59:38,staging,SUCCESS,171
+56,2026-03-24 22:32:23,staging,SUCCESS,204
+57,2026-03-26 18:34:24,staging,FAILURE,90
+58,2026-03-26 18:50:41,staging,SUCCESS,292
+59,2026-03-28 23:42:51,staging,SUCCESS,206
+60,2026-03-31 22:18:31,staging,SUCCESS,214
+61,2026-04-06 14:16:07,staging,SUCCESS,227
+62,2026-04-11 23:54:15,staging,SUCCESS,244
+63,2026-04-13 13:41:47,staging,SUCCESS,237
+64,2026-04-13 14:01:30,staging,SUCCESS,225
+65,2026-04-13 22:04:46,staging,SUCCESS,275
+66,2026-04-14 22:08:28,staging,SUCCESS,501
+67,2026-04-15 22:04:56,staging,SUCCESS,286
+68,2026-04-17 14:28:17,staging,FAILURE,19
+69,2026-04-17 14:33:15,staging,SUCCESS,242
+```
+<br>
+
+*Figure 13. The CSV file outputted by the python script.*
+<br>
+
+```
+Total builds: 29
+Successful builds: 25
+Failed builds: 3
+Average duration: 213.69 seconds
+Success rate: 86.21%
+```
+<br>
+
+*Figure 14. The text file outputted by the python script.*
+<br>
+
+![Build Duration Table]()
+<br>
+
+*Figure 15. The data table outputted by the python script.*
 
 #### Webhooks
 
+
 #### Server Browser
 
+
 #### Character Select Screen
+
 
 
 Describe your technical and creative approach, including:
@@ -156,27 +507,6 @@ Describe your technical and creative approach, including:
 * Planning, ideation, and iteration
 * Feedback received and how it was integrated
 * New tools, workflows, or systems explored
-
-#### Example Code Snippet
-
-```csharp
-using UnityEngine;
-
-public class HelloWorld : MonoBehaviour 
-{
-    public void Start() 
-    {
-        Debug.Log("Hello World!");
-    }
-}
-```
-
-*Figure 2: Example code snippet using Unity's `Start()` method.*
-
-#### Example Image
-
-![Example](https://beforesandafters.com/wp-content/uploads/2021/05/Welcome-to-Unreal-Engine-5-Early-Access-11-16-screenshot.png)
-*Figure 3: Unreal packaging menu interface.*
 
 ### What creative or technical methods did you try?
 
