@@ -129,12 +129,6 @@ Callum Wade <br> 2404781
 
 <!--
 ---
-# 1/3 DONE <br> MEME BREAK
-
-<img width="1150" height="500" src="https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Presentation/Images/Memes/97a80c00597889010cc31e796dc3e80be5a5da8a33a4df5901f9446ea620fd55.jpeg"> 
-
-
----
 # My roles within this project
 - GitHub Push Reviewer (Responsible)
 - Automated Builds (Responsible)
@@ -202,10 +196,6 @@ Callum Wade <br> 2404781
 - Worked on the original multiplayer and created the server browser to allow players to find and connect to other players through a server list or by joining through Steam friends
 <img src="https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Presentation/Images/Roles/multiplayer%20meme.jpg" class="bottom-right">
 
----
-# 2/3 DONE <br> MEME BREAK
-
-<img width="1150" height="500" src="https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Presentation/Images/Memes/normal_252601-what-people-think-i-do-what-i-really-do.jpg"> 
 -->
 ---
 # Contributions to the development of Greedy Piggies
