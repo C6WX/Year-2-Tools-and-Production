@@ -12,7 +12,7 @@
 
 **User Guide Link:** \[URL]
 
-**Build Link:** \[URL or Embed]
+**Build Link:** https://store.steampowered.com/app/4463930/Greedy_Piggies/
 
 **Video Demonstration Link:** \[URL or Embed]
 
@@ -719,9 +719,96 @@ Since creating this webhook was so simple, I also made one for the developers to
 *Figure 21. A message that is sent to Discord by ClickUp.*
 
 #### Server Browser
+To start the server browser, I followed along with a tutorial (UE5 Steam Multiplayer EP1 – Basic Connection Logic (No UI), 2026) that had me create a create game menu, a join game menu, a server browser and server browser item.
 
+##### Create Game
+The first menu out of these that was created was the create game menu. This menu allows the player to choose the maximum amount of players in their game and if the session is LAN or not. 
+
+![LAN](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Implementation/Server%20Browser/Create%20Game/LAN.png)
+<br>
+
+*Figure 22. When the LAN check box is ticked, LAN becomes true which is then plugged into the create session setting to set the sessions as a LAN session.*
+<br>
+
+Originally, the max player amount from the tutorial was typed in by the player but i found this was giving the player too much power and allowed to lobbies to be made to have too many players. To avoid this, I implemented buttons that increased and decreased that value of the max player. Another problem was that the max players could be set to one or above four which was either too small or too large of a number then needed so I utilised the clamp node so that the value can be controlled by not being able to go below two or above four. When the player presses the create game button, a lobby is created with the details and settings that the player adjusted.
+
+![Max Players](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Implementation/Server%20Browser/Create%20Game/Max%20Players.png)
+<br>
+
+*Figure 23.The top section of this script sets the max player text to the original value of the max players. The lower half increases or decreases the value of max players depending on which arrow button is pressed, and then updates the test displayed on the menu.*
+<br>
+
+
+
+The original tutorial for this allowed the player to make a LAN session but did not work with online sessions. To get this working, I looked into advanced sessions and adjusted the script to use the plugin's nodes. After this plugin was implemented and the app ID was changed, the game worked with the steam sessions.
+
+![Create Game](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Implementation/Server%20Browser/Create%20Game/Create%20Session.png)
+<br>
+
+*Figure 24. When create game is clicked, a session is created using the settings that the player has set and then the main level is opened.*
+<br>
+
+The last feature I added to the create game menu was a back button that would return the player back to the main menu.
+
+![Back Button](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Implementation/Server%20Browser/Create%20Game/Back%20Button.png)
+<br>
+
+*Figure 25. The main menu opens back up and create game is removed from the players display once the back button is pressed.*
+<br>
+
+![Create Game Full Script](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Implementation/Server%20Browser/Create%20Game/Full%20Create%20Game%20Script.png)
+<br>
+
+*Figure 26. The complete script used to make the create game screen.*
+<br>
+
+![Original Create Game Menu Screen](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Implementation/Server%20Browser/Create%20Game/Create%20Game%20Original.png)
+<br>
+
+*Figure 27. The original create game screen designed and created by me.*
+<br>
+
+![Create Game Menu Screen](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Implementation/Server%20Browser/Create%20Game/Create%20Game%20menu.png)
+<br>
+
+*Figure 28. The create game screen after it was designed and updated by Lilly.*
+<br>
+
+##### Main Menu
+So that the create game menu and the join game menu would be accessible, I created a main menu to allow the two screens to be selectable. The original menu that I created only had the create game and join game buttons but once it had been worked on by designers, it also had a game manual button and a quit game button, as well as an updated and improved design.
+
+![Create Game Button](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Implementation/Server%20Browser/Main%20Menu/Create%20Game%20button.png)
+<br>
+
+*Figure 29. The button that removes that main menu and opens the create game menu.*
+<br>
+
+![Join Game Button](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Implementation/Server%20Browser/Main%20Menu/Join%20Game%20Button.png)
+<br>
+
+*Figure 30.The button that removes that main menu and opens the join game menu.*
+<br>
+
+![Original Menu Screen](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Implementation/Server%20Browser/Main%20Menu/Main%20Menu%20Original.png)
+<br>
+
+*Figure 31. A basic main menu that I created for testing purposes to easily access both menus.*
+<br>
+
+![Updated Menu Screen](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Implementation/Server%20Browser/Main%20Menu/Updated%20Main%20Menu.png)
+<br>
+
+*Figure 32. The redesigned main menu created by Lilly that now has a game manual button and a quit game button.*
+<br>
+
+##### Join Game Menu
+The original join game menu was also created using the same tutorial, but once again, didn't contain all the features needed for Greedy Piggies to work. It was missing online sessions, a back button and the ability to stop fake sessions from being created.
+Online sessions were implemented by simply replacing the find sessions node for the find advanced sessions node from the plugin that allowed the game to work with steam sessions. The menu uses this node to search for available sessions, and once it found them, would add a server browser item that displayed session details and allowed the player to tick the session they wanted to join.
 
 #### Character Select Screen
+
+
+#### Late Fixes
 
 
 
@@ -793,6 +880,10 @@ You may include screenshots, graphs, tables, or embedded videos to demonstrate t
 
 ### Sources
 - • • 1, 080 and Ago, 883 Views 6 Years (s.d.) YouTube. At: https://www.youtube.com/ (Accessed  19/04/2026).
+
+### Implementation
+- UE5 Steam Multiplayer EP1 – Basic Connection Logic (No UI) (2026) Directed by It’s Me Bro. At: https://www.youtube.com/watch?v=KNeRVpPvl-w (Accessed  17/04/2026).
+
 
 ### Declared Assets
 - Statzer, J. (MordenTral) (2026) mordentral/AdvancedSessionsPlugin. At: https://github.com/mordentral/AdvancedSessionsPlugin (Accessed  20/04/2026).
