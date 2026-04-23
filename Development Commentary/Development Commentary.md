@@ -14,7 +14,21 @@
 
 **Build Link:** https://store.steampowered.com/app/4463930/Greedy_Piggies/
 
-**Video Demonstration Link:** \[URL or Embed]
+**Task 1:** 
+
+**Task 2:** 
+
+**Task 3:** 
+
+**Task 4:** 
+
+**Task 5:** 
+
+**Task 6:** 
+
+**Presentation:** 
+
+**Personal Repository:** 
 
 ---
 
@@ -854,59 +868,172 @@ A refresh button and a search for LAN button is also working on the menu so that
 The server browser item is what is displayed for each session that the server browser is able to find. The original version of this UI was also created whilst following along with the same tutorial, however I adjusted a few things.
 The original menu from the video displayed the player count in numbers, the ping of the session and a button to select the session. I added to this some code that displayed the name of the session's host and four white circles that each turned pink based on the amount of players present in the session.
 
-![Construct]()
+![Construct](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Implementation/Server%20Browser/Server%20Browser%20Item/Construct.png)
 <br>
 
-*Figure 40.*
+*Figure 40. When the item is created on the server browser, all the details are gathered and set on what they need to to allow the item to display the session details.*
 <br>
 
-![Player Count]()
+![Player Count](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Implementation/Server%20Browser/Server%20Browser%20Item/Player%20Count.png)
 <br>
 
-*Figure 41.*
+*Figure 41. For each player that is in the session, one of the circles turns pink.*
 <br>
 
-![Check Box]()
+![Check Box](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Implementation/Server%20Browser/Server%20Browser%20Item/Check%20Box.png)
 <br>
 
-*Figure 42.*
+*Figure 42. The session details of the checked session is set to the current session variable for the server browser to load.*
 <br>
 
-![Full Script]()
+![Full Script](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Implementation/Server%20Browser/Server%20Browser%20Item/Full%20Script.png)
 <br>
 
-*Figure 43.*
+*Figure 43. The full script for the server browser item to work.*
 <br>
 
-![Original UI]()
+![Original UI](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Implementation/Server%20Browser/Server%20Browser%20Item/Original%20Server%20Browser%20Item.png)
 <br>
 
-*Figure 44.*
+*Figure 44. The original design I created for the server browser item.*
 <br>
 
-![Updated UI]()
+![Updated UI](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Implementation/Server%20Browser/Server%20Browser%20Item/Updated%20Server%20Browser%20Item.png)
 <br>
 
-*Figure 45.*
+*Figure 45. The redesigned and updated version of the server browser item done by Lilly*
 <br>
 
 
+#### Server Browser Videos
 
+**[Game Host Perspective](https://youtu.be/FDixecL6ufU)**
 
+**[Game Player Perspective](https://youtu.be/gAgglTWZ7JA)**
 
 
 #### Character Select Screen
+The character select screen was originally created as a way to fix a bug that would cause players to not see or interact with players that joined after them. We thought that if the players were to get together in a pre game lobby, that they would be sent to the main game together and this would fix the issue. However, whilst the character select screen was in development, this issue was fixed with another solution. But since a character select screen was still required for the archetypes system to function, it's development continued and it was implemented into the final game. 
+
+Before starting the development of this UI, I attempted to find tutorials that would help the creation of the menu. However I was unable to find one that had what Greedy Piggies required. The closest video I found (Make a Multiplayer Game in Unreal Engine 5 - Character Selection - Unreal Beginner Tutorial # 16, 2022) was able to teach me the basics of making a character select screen but none of the code ended up being used in the game. 
+The original version of the character select screen used tags to give the player the tag based on the button they selected, however this allowed multiple players to select the same characters. So another tag collection was created to store every character that is selected. This was used on each character button so that if the nepo piggy was selected, the nepo piggy button would check if that character tag is present in the collection. If it is, then the button would become deactivated for all players.
+
+![Character Button Pressed](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Implementation/Server%20Browser/Character%20Select/The%20Nobody%20Clicked.png)
+<br>
+
+*Figure 46. When the nobody button is clicked, the game checks that the player hasn't already picked a character, then the chosen character is added to the player's selected character tag container and the character clicked script runs based on the character clicked.*
+<br>
+
+![Character Button Deactivating](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Implementation/Server%20Browser/Character%20Select/The%20Nobody%20Button%20Deactivation.png)
+<br>
+
+*Figure 47. The taken characters container is checked for it the nobody character tag is in it. If it is then the button is deactivated so nobody else can pick that character. This function is copied and altered for each of the four character buttons.*
+<br>
+
+![Set Characters As Taken](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Implementation/Server%20Browser/Character%20Select/Set%20Character%20Taken.png)
+<br>
+
+*Figure 48. Based on the character selected, the server clicked function is ran within the player controller blueprint.*
+<br>
+
+![Character Clicked Function](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Implementation/Server%20Browser/Character%20Select/Character%20Clicked%20Function.png)
+<br>
+
+*Figure 49. The character that the player has chosen has it's tag added to the taken characters container.*
+<br>
+
+
+The majority of the time that was spent on this screen was used fixing a problem that stopped players from seeing each others selected characters. For example, player two can pick a character and then player one was able to overwrite their character selection and the only character that would become selected would be character ones choice. Also, the players that joined before another player was unable to see the choice of later joining players. This issue was fixed by using server events and having the script that sets the selected character tags for the collection moved into the player controller.
+
+Once this problem was fixed, the rest of the time spent on this UI was spent on the ready up button. The original script for this was simple, when the players who have pressed ready equals the amount of players within the session, the players would be sent into the main game. However this ended up being too simple and coming with issues. For example, players where unable to unready, a player could enter a game by themselves and players could join a game without selecting a character. To resolve these issues, code was added that allowed players to unready and changed the buttons text accordingly, as well as the number of ready players having to equal the number of current players, another and pin was added to make sure that the players ready is more than one and finally the player's selected character tag collection would be checked to make sure that they have a character tag before ready up can be pressed.
+
+![Ready Up](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Implementation/Server%20Browser/Character%20Select/Ready%20Up.png)
+<br>
+
+*Figure 50. When ready up is clicked, first it checks if the player has chosen a character, to avoid players entering the game without a character tag. Then a flip flop is used to change the player between being ready and unready whilst also matching the button's text.*
+<br>
+
+![Server Set Ready/Unready](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Implementation/Server%20Browser/Character%20Select/Set%20ReadyUnready.png)
+<br>
+
+*Figure 51. The functions that run after the ready up script either sets the player as ready or unready and then runs the check all players ready script.*
+<br>
+
+![Check All Players Ready](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Implementation/Server%20Browser/Character%20Select/Check%20All%20Players%20Are%20Ready.png)
+<br>
+
+*Figure 52. First off, the player count is obtained from the game states player array. Then for each player, their ready boolean is checked to see if it's true. If it is true, then variables are ran through an and node to check if there are enough players in the session, if the players ready is equal to the player count and if there is more than one player ready, to avoid players entering the game by themselves. If these all come back true, then the start game script is run and the UI is removed from the screen.*
+<br>
+
+Originally this menu was in it's own level within Unreal Engine, however, due to a problem with the archetype system and saving the tag collection data between levels, I changed some nodes so that the players were sent to the main game instead of the character select level and also the menu would disappear and the game would become playable once all players were ready.
+
+![Start Game](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Implementation/Server%20Browser/Character%20Select/Start%20Game.png)
+<br>
+
+*Figure 53. After the character select screen is removed from player screens, each player is checked for authority to see if they are the host and then the game is started.*
+<br>
+
+![Remove UI](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Implementation/Server%20Browser/Character%20Select/Remove%20UI.png)
+<br>
+
+*Figure 54. The UI is removed from each player's screens.*
+<br>
+
+![Full Character Select Script](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Implementation/Server%20Browser/Character%20Select/Full%20Character%20Select%20Script.png)
+<br>
+
+*Figure 55. The full script within the character select widget blueprint.*
+<br>
+
+
+![Original Character Select](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Implementation/Server%20Browser/Character%20Select/Original%20Character%20Select.png)
+<br>
+
+*Figure 56. The original character select screen I made.*
+<br>
+
+![Updated Character Select Screen](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Implementation/Server%20Browser/Character%20Select/Redesigned%20Character%20Select.png)
+<br>
+
+*Figure 57. The updated character select screen redesigned by Lilly.*
+<br>
 
 
 #### Late Fixes
+During the last few days of the game, I worked with Cameron, Lilly and Anna to try and get the game ready for release. Although by the end of our sessions together, the gameplay wasn't ready for release, I was able to get a handful of the features working and ready for release. 
+During this process, I was uploading the game to Steam so that test can be constantly ran to make sure fixes being made were working properly, leading to a lot of builds on Steamwork.
+
+![Steamwork Builds]()
+<br>
+
+*Figure 58. The list of game builds on Steamworks.*
+<br>
+
+Due to problems with the artists assets not getting into the final game, I prioritised locating and preparing a scene that contained a good handful or their assets. To do this I worked on locating and adding in the artist's textures that the designers struggled to locate and added them to the scene. Unfortunately it seemed that a mix between the asset bot and github resulted in assets and textures going missing, so some assets from the scene needed deleting or re-texturing. I was able to get the scene together and transferred game blueprints and spawns over to the new scene and replaced any references, meaning the scene with the artist's work is now the main scene in the game.
+
+![Original Final Scene]()
+<br>
+
+*Figure 59. The blockout scene that would've been the main game scene in the final release without this change.*
+<br>
+
+![Final Scene With Assets]()
+<br>
+
+*Figure 60. The new final scene that contains the work from the artists. This is the new main scene on the current game release.*
+<br>
+
+As well as this, I fixed input bugs caused by the gamepad. Whenever a button would be pressed to change the current card, around five cards would be skipped meaning it was accepting the button input too many times. To fix this issue, I adjust the node connection so that the input was accepted once the player let go of the arrow key.
+
+![Input Fix]()
+<br>
+
+*Figure 61. Previously the connection was coming out of triggered but to fix the issue, it is now connected to completed.*
+<br>
+
+I was also able to fix the game starting. Until I changed it, the game would only start once the player pressed G on the keyboard, which obviously couldn't make it to the final game. So I altered this so that the game would start just after the character select screen was removed from view. The adjusted script can be seen in figure 53.
 
 
-
-Describe your technical and creative approach, including:
-
-* Planning, ideation, and iteration
-* Feedback received and how it was integrated
-* New tools, workflows, or systems explored
 
 ### What creative or technical methods did you try?
 
@@ -973,6 +1100,7 @@ You may include screenshots, graphs, tables, or embedded videos to demonstrate t
 
 ### Implementation
 - UE5 Steam Multiplayer EP1 – Basic Connection Logic (No UI) (2026) Directed by It’s Me Bro. At: https://www.youtube.com/watch?v=KNeRVpPvl-w (Accessed  17/04/2026).
+- Make a Multiplayer Game in Unreal Engine 5 - Character Selection - Unreal Beginner Tutorial # 16 (2022) Directed by GameDevRaw. At: https://www.youtube.com/watch?v=9f-feH2gP-o (Accessed  17/04/2026).
 
 
 ### Declared Assets
@@ -1002,11 +1130,3 @@ Example:
 > * `DevelopmentJournal.html` – generated layout and headings
 
 ---
-
-## Tips for Success
-
-* Use plenty of **images, code snippets, drawn diagrams, tables and embedded media** to support your writing.
-* Use **inline citations** for everything that influenced your work, including software and games. Include as many **hyperlinks** as possible for easier navigation to external sources.
-* Reference **documentation, tutorials**, and **games** just like academic sources.
-* Word count is a guideline – ±10% is allowed.
-* You are allowed to use AI tools, but you **must declare** them under *Declared Assets*.
