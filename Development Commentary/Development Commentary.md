@@ -732,7 +732,7 @@ Since creating this webhook was so simple, I also made one for the developers to
 
 *Figure 21. A message that is sent to Discord by ClickUp.*
 
-#### Server Browser
+#### Server Browser 865 words
 To start the server browser, I followed along with a tutorial (UE5 Steam Multiplayer EP1 – Basic Connection Logic (No UI), 2026) that had me create a create game menu, a server browser and server browser item.
 
 ##### Create Game
@@ -912,7 +912,7 @@ The original menu from the video displayed the player count in numbers, the ping
 **[Game Player Perspective](https://youtu.be/gAgglTWZ7JA)**
 
 
-#### Character Select Screen
+#### Character Select Screen 597 words
 The character select screen was originally created as a way to fix a bug that would cause players to not see or interact with players that joined after them. We thought that if the players were to get together in a pre game lobby, that they would be sent to the main game together and this would fix the issue. However, whilst the character select screen was in development, this issue was fixed with another solution. But since a character select screen was still required for the archetypes system to function, it's development continued and it was implemented into the final game. 
 
 Before starting the development of this UI, I attempted to find tutorials that would help the creation of the menu. However I was unable to find one that had what Greedy Piggies required. The closest video I found (Make a Multiplayer Game in Unreal Engine 5 - Character Selection - Unreal Beginner Tutorial # 16, 2022) was able to teach me the basics of making a character select screen but none of the code ended up being used in the game. 
@@ -999,11 +999,11 @@ Originally this menu was in it's own level within Unreal Engine, however, due to
 <br>
 
 
-#### Late Fixes
+#### Late Fixes 522 words
 During the last few days of the game, I worked with Cameron, Lilly and Anna to try and get the game ready for release. Although by the end of our sessions together, the gameplay wasn't ready for release, I was able to get a handful of the features working and ready for release. 
-During this process, I was uploading the game to Steam so that test can be constantly ran to make sure fixes being made were working properly, leading to a lot of builds on Steamwork.
+During this process, I was uploading the game to Steam so that test can be constantly ran to make sure fixes being made were working properly, leading to a lot of builds on Steamworks.
 
-![Steamwork Builds]()
+![Steamwork Builds](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Implementation/Late%20Fixes/Steamworks.png)
 <br>
 
 *Figure 58. The list of game builds on Steamworks.*
@@ -1011,13 +1011,13 @@ During this process, I was uploading the game to Steam so that test can be const
 
 Due to problems with the artists assets not getting into the final game, I prioritised locating and preparing a scene that contained a good handful or their assets. To do this I worked on locating and adding in the artist's textures that the designers struggled to locate and added them to the scene. Unfortunately it seemed that a mix between the asset bot and github resulted in assets and textures going missing, so some assets from the scene needed deleting or re-texturing. I was able to get the scene together and transferred game blueprints and spawns over to the new scene and replaced any references, meaning the scene with the artist's work is now the main scene in the game.
 
-![Original Final Scene]()
+![Original Final Scene](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Implementation/Late%20Fixes/Original%20Final%20Scene.png)
 <br>
 
 *Figure 59. The blockout scene that would've been the main game scene in the final release without this change.*
 <br>
 
-![Final Scene With Assets]()
+![Final Scene With Assets](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Implementation/Late%20Fixes/Scene%20with%20assets.png)
 <br>
 
 *Figure 60. The new final scene that contains the work from the artists. This is the new main scene on the current game release.*
@@ -1025,7 +1025,7 @@ Due to problems with the artists assets not getting into the final game, I prior
 
 As well as this, I fixed input bugs caused by the gamepad. Whenever a button would be pressed to change the current card, around five cards would be skipped meaning it was accepting the button input too many times. To fix this issue, I adjust the node connection so that the input was accepted once the player let go of the arrow key.
 
-![Input Fix]()
+![Input Fix](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Implementation/Late%20Fixes/Gamepad%20Issue%20Fix.png)
 <br>
 
 *Figure 61. Previously the connection was coming out of triggered but to fix the issue, it is now connected to completed.*
@@ -1033,9 +1033,17 @@ As well as this, I fixed input bugs caused by the gamepad. Whenever a button wou
 
 I was also able to fix the game starting. Until I changed it, the game would only start once the player pressed G on the keyboard, which obviously couldn't make it to the final game. So I altered this so that the game would start just after the character select screen was removed from view. The adjusted script can be seen in figure 53.
 
+It took me a while to figure out what was wrong with it, but during this fixing stage, I was able to fix a problem with my own server browser where the session name wouldn't display the host's username. After some trial and error and testing I was able to fix this issue by using advanced session nodes to access the player's nickname and set it as the session name text. Unfortunately after further testing, we had a test where the session name was displayed as "unknown". This happened when someone tried to join my session who has never played with me before and didn't have me as a friend. I did not end up looking into this due to a lack of time but also because some players may prefer not having their username visible to random players.
 
+An error also occurred when merging the UI design branch into staging which did not successfully bring over an addition to my ready up script to change the text on the ready up. I quickly remade this script so that player's knew if they were readied up or not.
 
 ### What creative or technical methods did you try?
+
+#### Tools
+
+
+#### Development
+
 
 Were any methods unfamiliar or experimental? Did they succeed? Did they change your approach?
 
