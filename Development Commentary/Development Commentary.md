@@ -7,28 +7,28 @@
 **Student ID:** 2404781
 
 **Total Word Count:** \[XXXX]
-
+<!--
 **API Reference Link:** \[URL]
-
-**User Guide Link:** \[URL]
+--->
+**Tool Guide Link:** https://github.com/C6WX/Year-2-Tools-and-Production/blob/main/Shared%20Documentation/Github%20Tool%20Change%20Guide/GitHub%20Change%20Webhook%20Tool%20Guide.pdf
 
 **Build Link:** https://store.steampowered.com/app/4463930/Greedy_Piggies/
 
-**Task 1:** 
+**Task 1:** https://github.com/C6WX/Year-2-Tools-and-Production/blob/main/Week%201/Tool%20Ideation.pdf
 
-**Task 2:** 
+**Task 2:** https://github.com/C6WX/Year-2-Tools-and-Production/blob/main/Week%202/Data%20Handling%20%26%20Automation.pdf
 
-**Task 3:** 
+**Task 3:** https://github.com/C6WX/Year-2-Tools-and-Production/blob/main/Week%203/Networking%2C%20Multiplayer%20%26%20Compliance.pdf
 
-**Task 4:** 
+**Task 4:** https://github.com/C6WX/Year-2-Tools-and-Production/blob/main/Week%205/Web%20Services%20%26%20Online%20Integration.pdf
 
-**Task 5:** 
+**Task 5:** https://github.com/C6WX/Year-2-Tools-and-Production/blob/main/Week%206/Analytics%2C%20Databases%20%26%20Backends.pdf
 
-**Task 6:** 
+**Task 6:** https://github.com/C6WX/Year-2-Tools-and-Production/blob/main/Week%207/Platforms%2C%20Hardware%20%26%20System%20Administration.pdf
 
-**Presentation:** 
+**Presentation:** https://youtu.be/3yIZ7oq24LU | https://ucreative-my.sharepoint.com/personal/2404781_students_ucreative_ac_uk/_layouts/15/stream.aspx?id=%2Fpersonal%2F2404781_students_ucreative_ac_uk%2FDocuments%2FAttachments%2F2026-04-21%2011-26-47%2Emkv&ct=1776979260860&or=OWA-NT-Mail&cid=a9cd5614-f6de-bc19-fefd-cc1aab7af23a&ga=1&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2Ebc5decf4-d8c4-411f-b3e0-1f0dbf628ed8
 
-**Personal Repository:** 
+**Personal Repository:** https://github.com/C6WX/Year-2-Tools-and-Production
 
 ---
 
@@ -1037,19 +1037,23 @@ It took me a while to figure out what was wrong with it, but during this fixing 
 
 An error also occurred when merging the UI design branch into staging which did not successfully bring over an addition to my ready up script to change the text on the ready up. I quickly remade this script so that player's knew if they were readied up or not.
 
-### What creative or technical methods did you try?
+### What creative or technical methods did you try? 256 words
 
 #### Tools
-
+As I have never used Jenkins or groovy before, it was all new to me. After researching Jenkins and looking into its capabilities however. I found it simple to update the pipeline for whatever I needed. I went from having Jenkins check if staging works to having it message Discord with the job status, upload a build of the game to GitHub releases and link it in the message and use python to create and update a CSV file, a data graph and a build status text file.
 
 #### Development
+The whole of the multiplayer programming was completely unfamiliar to me seeing as I had never made an online game before Greedy Piggies. The whole time I was working on the multiplayer, I was researching or asking for peer feedback due to the difficulty of it. Many errors were occurring due to a lack of knowledge of how multiplayer is handled. I originally thought every player would see the same thing and some variables would be shared between players automatically since the session has one host hosting the game and the players are all playing the same game. However it turns out it doesn't work like that. I needed to ask for help and was taught by Bradley about server events existing. After experimenting with different server event settings and the blueprints that different codes were handled in, as some blueprints are shared between players and some aren't, I was able to solve these issues and get the server browser and the character select screen working as intended.  
 
-
+<!--
 Were any methods unfamiliar or experimental? Did they succeed? Did they change your approach?
+
 
 ### Did you experience any technical challenges?
 
 How did you address problems, bugs, or limitations?
+
+-->
 
 ---
 
@@ -1057,6 +1061,7 @@ How did you address problems, bugs, or limitations?
 
 ### What testing methods did you use?
 
+<!--
 * Did you conduct internal testing, peer testing, or user testing?
 * What were your key goals in testing?
 * What did you observe or learn from testing?
@@ -1073,11 +1078,14 @@ You may include screenshots, graphs, tables, or embedded videos to demonstrate t
 | User E | Safari   | iPhone 12 Safari       | Blind Test     | 4          | 50       | 2, 3, 3, 4     | Partial              | “Enjoyed art style. Unclear level goals; needed more on-screen hints.” |
 
 *Figure 4: User Testing Data.*
+-->
 
 ---
 
 ## Critical Reflection *(Approx. 10–15% of word count)*
 
+
+<!--
 ### What went well?
 
 * What strengths or successes stood out in the final piece?
@@ -1087,29 +1095,27 @@ You may include screenshots, graphs, tables, or embedded videos to demonstrate t
 
 * Were there things that didn’t work? Why?
 * What would you try differently with more time or resources?
+-->
 
 ---
 
 ## Bibliography
 ### Research
-- How To Install Jenkins on Windows 11 (2023) Directed by ProgrammingKnowledge. At: https://www.youtube.com/watch?v=Zdxko2bPAAw (Accessed  11/02/2026).
-- Windows (s.d.) At: https://www.jenkins.io/doc/book/installing/windows/ (Accessed  11/02/2026).
 - Creating webhooks (s.d.) At: https://docs-internal.github.com/en/webhooks/using-webhooks/creating-webhooks (Accessed  19/03/2026).
-- Using Gameplay Tags in Unreal Engine | Unreal Engine 5.7 Documentation | Epic Developer Community (s.d.) At: https://dev.epicgames.com/documentation/unreal-engine/using-gameplay-tags-in-unreal-engine (Accessed  01/04/2026).
+- How To Install Jenkins on Windows 11 (2023) Directed by ProgrammingKnowledge. At: https://www.youtube.com/watch?v=Zdxko2bPAAw (Accessed  11/02/2026).
 - Move or Die on Steam (s.d.) At: https://store.steampowered.com/app/323850/Move_or_Die/ (Accessed  19/04/2026).
-- Vorderer, P. and Bryant, J. (2012) Playing Video Games: Motives, Responses, and Consequences. (s.l.): Routledge.
 - Kumar, J., Herger, M. and Dam, R. F. (2026) Bartle’s Player Types for Gamification. At: https://ixdf.org/literature/article/bartle-s-player-types-for-gamification (Accessed  20/04/2026).
-
-
+- Using Gameplay Tags in Unreal Engine | Unreal Engine 5.7 Documentation | Epic Developer Community (s.d.) At: https://dev.epicgames.com/documentation/unreal-engine/using-gameplay-tags-in-unreal-engine (Accessed  01/04/2026).
+- Vorderer, P. and Bryant, J. (2012) Playing Video Games: Motives, Responses, and Consequences. (s.l.): Routledge.
+- Windows (s.d.) At: https://www.jenkins.io/doc/book/installing/windows/ (Accessed  11/02/2026).
 
 
 ### Sources
 - • • 1, 080 and Ago, 883 Views 6 Years (s.d.) YouTube. At: https://www.youtube.com/ (Accessed  19/04/2026).
 
 ### Implementation
-- UE5 Steam Multiplayer EP1 – Basic Connection Logic (No UI) (2026) Directed by It’s Me Bro. At: https://www.youtube.com/watch?v=KNeRVpPvl-w (Accessed  17/04/2026).
 - Make a Multiplayer Game in Unreal Engine 5 - Character Selection - Unreal Beginner Tutorial # 16 (2022) Directed by GameDevRaw. At: https://www.youtube.com/watch?v=9f-feH2gP-o (Accessed  17/04/2026).
-
+- UE5 Steam Multiplayer EP1 – Basic Connection Logic (No UI) (2026) Directed by It’s Me Bro. At: https://www.youtube.com/watch?v=KNeRVpPvl-w (Accessed  17/04/2026).
 
 ### Declared Assets
 - Statzer, J. (MordenTral) (2026) mordentral/AdvancedSessionsPlugin. At: https://github.com/mordentral/AdvancedSessionsPlugin (Accessed  20/04/2026).
@@ -1120,7 +1126,7 @@ You may include screenshots, graphs, tables, or embedded videos to demonstrate t
 
 - * `AdvancedSessions.uplugin` - Third party plugin to connect the game to steam session - (Statzer, 2026)
 - * `AdvancedSteamSessions.uplugin` - Third party plugin to connect the game to steam session - (Statzer, 2026)
-
+<!--
 You must declare any content that was **not entirely created by you**, or was **modified with the aid of AI tools**. This includes:
 
 * Third-party 3D models, audio, textures, or code
@@ -1128,7 +1134,7 @@ You must declare any content that was **not entirely created by you**, or was **
 * AI-generated or AI-assisted assets (e.g. ChatGPT, GitHub Copilot, DALL·E)
 
 List these clearly, with context where needed.
-
+-->
 Example:
 
 > The following assets were created or modified with the use of GPT-4o:
