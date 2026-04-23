@@ -719,7 +719,7 @@ Since creating this webhook was so simple, I also made one for the developers to
 *Figure 21. A message that is sent to Discord by ClickUp.*
 
 #### Server Browser
-To start the server browser, I followed along with a tutorial (UE5 Steam Multiplayer EP1 – Basic Connection Logic (No UI), 2026) that had me create a create game menu, a join game menu, a server browser and server browser item.
+To start the server browser, I followed along with a tutorial (UE5 Steam Multiplayer EP1 – Basic Connection Logic (No UI), 2026) that had me create a create game menu, a server browser and server browser item.
 
 ##### Create Game
 The first menu out of these that was created was the create game menu. This menu allows the player to choose the maximum amount of players in their game and if the session is LAN or not. 
@@ -801,9 +801,99 @@ So that the create game menu and the join game menu would be accessible, I creat
 *Figure 32. The redesigned main menu created by Lilly that now has a game manual button and a quit game button.*
 <br>
 
-##### Join Game Menu
-The original join game menu was also created using the same tutorial, but once again, didn't contain all the features needed for Greedy Piggies to work. It was missing online sessions, a back button and the ability to stop fake sessions from being created.
+##### Server Browser Menu
+The original server browser menu was also created using the same tutorial, but once again, didn't contain all the features needed for Greedy Piggies to work. It was missing online sessions, a back button and the ability to stop fake sessions from being created.
 Online sessions were implemented by simply replacing the find sessions node for the find advanced sessions node from the plugin that allowed the game to work with steam sessions. The menu uses this node to search for available sessions, and once it found them, would add a server browser item that displayed session details and allowed the player to tick the session they wanted to join.
+The script for this menu works by searching for sessions from the game, then for each session found, a server browser item is created and added to a list box. When a player has located the session they want to join, they press the check box next to it and then the join game button. From there, it takes the details of the checked session and sends the player into that session. Before this happens however, a check is ran to make sure that the session isn't full by comparing the current players to the max players settings on the session.
+
+![Refresh Button](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Implementation/Server%20Browser/Join%20Game/Refresh%20Button.png)
+<br>
+
+*Figure 33. When the UI is constructed or the refresh button is pressed, sessions are searched for and a server browser item is displayed for each one found.*
+<br>
+
+![Join Game](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Implementation/Server%20Browser/Join%20Game/Join%20Game.png)
+<br>
+
+*Figure 34. When the join game button is pressed, the selected server information is given to the join session node and the player is sent into the session.*
+<br>
+
+A refresh button and a search for LAN button is also working on the menu so that the player can run the session search again and so that the player only searches for LAN sessions. A back button is also on the menu to send the player back to the main menu.
+
+![LAN](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Implementation/Server%20Browser/Join%20Game/LAN.png)
+<br>
+
+*Figure 35. If the LAN button is pressed, LAN is changed to either true or false.*
+<br>
+
+![Back Button](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Implementation/Server%20Browser/Join%20Game/Back%20Button.png)
+<br>
+
+*Figure 36. This allows the button to take the player back to the main menu.*
+<br>
+
+![Full Script](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Implementation/Server%20Browser/Join%20Game/Full%20Script.png)
+<br>
+
+*Figure 37. The full script to allow the join game/server browser to work.*
+<br>
+
+![Original Server Browser](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Implementation/Server%20Browser/Join%20Game/Server%20Browser.png)
+<br>
+
+*Figure 38. A basic server browser that I created.*
+<br>
+
+![Updated Server Browser](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Implementation/Server%20Browser/Join%20Game/Updated%20Server%20Browser.png)
+<br>
+
+*Figure 39. The updated server browser, redesigned by Lilly.*
+<br>
+
+##### Server Browser Item
+The server browser item is what is displayed for each session that the server browser is able to find. The original version of this UI was also created whilst following along with the same tutorial, however I adjusted a few things.
+The original menu from the video displayed the player count in numbers, the ping of the session and a button to select the session. I added to this some code that displayed the name of the session's host and four white circles that each turned pink based on the amount of players present in the session.
+
+![Construct]()
+<br>
+
+*Figure 40.*
+<br>
+
+![Player Count]()
+<br>
+
+*Figure 41.*
+<br>
+
+![Check Box]()
+<br>
+
+*Figure 42.*
+<br>
+
+![Full Script]()
+<br>
+
+*Figure 43.*
+<br>
+
+![Original UI]()
+<br>
+
+*Figure 44.*
+<br>
+
+![Updated UI]()
+<br>
+
+*Figure 45.*
+<br>
+
+
+
+
+
 
 #### Character Select Screen
 
