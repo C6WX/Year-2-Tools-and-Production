@@ -26,7 +26,9 @@
 
 **Task 6:** https://github.com/C6WX/Year-2-Tools-and-Production/blob/main/Week%207/Platforms%2C%20Hardware%20%26%20System%20Administration.pdf
 
-**Presentation:** https://youtu.be/3yIZ7oq24LU | https://ucreative-my.sharepoint.com/personal/2404781_students_ucreative_ac_uk/_layouts/15/stream.aspx?id=%2Fpersonal%2F2404781_students_ucreative_ac_uk%2FDocuments%2FAttachments%2F2026-04-21%2011-26-47%2Emkv&ct=1776979260860&or=OWA-NT-Mail&cid=a9cd5614-f6de-bc19-fefd-cc1aab7af23a&ga=1&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2Ebc5decf4-d8c4-411f-b3e0-1f0dbf628ed8
+**Presentation File:** https://github.com/C6WX/Year-2-Tools-and-Production/blob/main/Presentation/Greedy%20Piggies%20Contribution%20Presentation.pdf
+
+**Presentation Video:** https://youtu.be/3yIZ7oq24LU | https://ucreative-my.sharepoint.com/personal/2404781_students_ucreative_ac_uk/_layouts/15/stream.aspx?id=%2Fpersonal%2F2404781_students_ucreative_ac_uk%2FDocuments%2FAttachments%2F2026-04-21%2011-26-47%2Emkv&ct=1776979260860&or=OWA-NT-Mail&cid=a9cd5614-f6de-bc19-fefd-cc1aab7af23a&ga=1&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2Ebc5decf4-d8c4-411f-b3e0-1f0dbf628ed8
 
 **Personal Repository:** https://github.com/C6WX/Year-2-Tools-and-Production
 
@@ -1126,12 +1128,31 @@ After running the pipeline to test the code, I had many failed builds, with each
 #### Character Select
 The majority of my testing occurred whilst working on the character select screen due to all the errors that I have previously discussed. After each test, I noted down my observations into a data table to keep track of my progress and each error that occurred during it's development. When I managed to fix the problems, it was not added to the table because I moved straight back to the server browser to fix an issue.
 
-![Character Select Test Table]()
+![Character Select Test Table](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Testing/Character%20Select%20Test%20Table.png)
 <br>
 
 *Figure 70. The table with the test that I ran whilst working on the character select screen.*
 <br>
 
+Whilst working on the character select screen, I took a few images from some of the tests I did.
+
+![Taken Character Tags Test]()
+<br>
+
+*Figure 71.*
+<br>
+
+![Taken Character Array In Player State P1]()
+<br>
+
+*Figure 71.*
+<br>
+
+![Taken Character Array In Player State P2]()
+<br>
+
+*Figure 71.*
+<br>
 
 
 <!--
@@ -1157,6 +1178,9 @@ You may include screenshots, graphs, tables, or embedded videos to demonstrate t
 
 ## Critical Reflection *(Approx. 10–15% of word count)*
 
+### What went well?
+
+### What could be improved or done differently next time?
 
 <!--
 ### What went well?
