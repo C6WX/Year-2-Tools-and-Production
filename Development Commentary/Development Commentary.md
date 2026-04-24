@@ -1061,10 +1061,7 @@ How did you address problems, bugs, or limitations?
 
 ## Testing *(Approx. 10–15% of word count)*
 
-### What testing methods did you use?
-
-
-#### Server Browser
+### Server Browser 377
 To check that the server browser worked, I had to upload the game build to Steam to run tests. From the first test, I discovered that fake sessions were being found and added to the server browser. When I attempted to join them, it said that there were either too many players in the sessions, while displaying that there is only one player in the session on the player count, or it would say the session didn't exist. Also this test allowed me to realise that the session names were not working either. Instead of having the host's username as the session name, it just said session name.
 
 ![Fake Sessions](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Testing/Fake%20Sessions.png)
@@ -1109,7 +1106,7 @@ Being able to solve this problem allowed me to fix the first issue that I left t
 *Figure 67. The Steam builds that were used to test the server browser issues.*
 <br>
 
-#### Jenkins
+### Jenkins 214
 Before running the staging pipeline, I tested the original code on a test pipeline. The test pipeline was setup to test a random repository that I hadn't used in a while. I did this instead of just working straight on the staging branch of the project because I had never used Jenkins before, so I did not want to risk any problems occurring in the project because of setting up Jenkins.
 After running the pipeline to test the code, I had many failed builds, with each one further expanding my knowledge of how Jenkins works and what is needed to automate the Unreal Engine build. My first few failed builds were occurring due to file paths being wrong and not existing, resulting in me fixing them checking through the code further for any other incorrect paths. After that failure, the next one failed due to a lack of access to the repository. To fix this problem, I had to look into access levels and keys, so that I could give Jenkins a GitHub access key with permissions to access and edit the repository. The final error ended up being due to a missing bracket in the code. After these tests, the original code worked and was ready for me to setup for Greedy Piggies.
 
@@ -1125,7 +1122,7 @@ After running the pipeline to test the code, I had many failed builds, with each
 *Figure 69. The results of each run of the test pipeline.*
 <br>
 
-#### Character Select
+### Character Select 95
 The majority of my testing occurred whilst working on the character select screen due to all the errors that I have previously discussed. After each test, I noted down my observations into a data table to keep track of my progress and each error that occurred during it's development. When I managed to fix the problems, it was not added to the table because I moved straight back to the server browser to fix an issue.
 
 ![Character Select Test Table](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Testing/Character%20Select%20Test%20Table.png)
@@ -1148,6 +1145,14 @@ Whilst working on the character select screen, I took a few images from some of 
 *Figure 72.The tag error from the perspective of player 2. The server would only see player one's choice whereas the client would see both choices.*
 <br>
 
+### Late Fixes 81
+Throughout the whole process of trying to get the game ready to be released, Lilly and I were running constant tests to make sure everything we were trying to fix worked. Due to the lack of time we had whilst working on the project at this stage and my need to still get this commentary done, I did not end up recording the results from each of these builds, just developing and attempting to fix the problem straight after the test.
+
+![All Steam Builds](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Testing/Steam%20Build%20List.png)
+<br>
+
+*Figure 73. All the Steam builds that were used to test the late fixes.*
+<br>
 
 <!--
 * Did you conduct internal testing, peer testing, or user testing?
@@ -1172,9 +1177,22 @@ You may include screenshots, graphs, tables, or embedded videos to demonstrate t
 
 ## Critical Reflection *(Approx. 10–15% of word count)*
 
-### What went well?
+### What went well? 171
+I was very proud of how well the sever browser and character select screen works, especially as it is my first time working with multiplayer on Unreal Engine. Even though both of them had countless errors and problems, I never gave up and kept testing, researching and altering their code until they both worked. 
 
-### What could be improved or done differently next time?
+When it comes to Jenkins, I was very proud of the end result and how far I have developed the code, from just checking if the game builds to uploading it to GitHub release, messaging the results to Discord and then using python to create and update data files on the results of each build.
+
+Although I wasn't the happiest in being left to fix the game basically by myself near the end, I was glad that I did it and happy of the progress I was able to make over those two days, especially with the fact that I was able to fix issues with scripts that I had never worked on or seen before then. 
+
+### What could be improved or done differently next time? 316
+I felt like a main problem throughout this project was a lack of communication. This affected the whole project throughout the whole ten weeks, from code needing to be cut or added but was not communicated properly, to me having to put assets in and change up the scene last minute as I heard that the assets weren't in the game or any scenes yet, even though it took me a minute to find all of them.
+
+Personally, I felt like I could have got Jenkins setup much sooner than I did. I did not set it up late into the project but I feel like if it was done a little bit sooner, I could have possibly helped with other bits that did not end up making it into the game like the shop cards instead of working on the server browser and character select screen till as late as I did.
+
+I also felt that some things were focussed on more than they should've been by other developers and designers, either by having a person focus on one small thing the whole of the ten weeks, or having a large group working on something that does not require that many people. If people were spread out between tasks in a more resourceful way, I feel like there would not have had to be as much cut from the final game as there was.
+
+If I was to do this again, I would get Jenkins setup within the first day of the project and then get straight onto working on the server browser as this ended up taking up most of my time as I did not realise how long of a task this was going to be to develop. I would have also setup the ClickUp webhook sooner than I did as that would have got people using it more as well as sooner.
+
 
 <!--
 ### What went well?
@@ -1225,7 +1243,7 @@ You must declare any content that was **not entirely created by you**, or was **
 * AI-generated or AI-assisted assets (e.g. ChatGPT, GitHub Copilot, DALL·E)
 
 List these clearly, with context where needed.
--->
+
 Example:
 
 > The following assets were created or modified with the use of GPT-4o:
@@ -1233,5 +1251,5 @@ Example:
 > * `Test.cs` – generated structure with manual revision
 > * `UIAudioManager.cs` – refactored with Copilot suggestions
 > * `DevelopmentJournal.html` – generated layout and headings
-
+-->
 ---
