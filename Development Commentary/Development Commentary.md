@@ -1061,6 +1061,79 @@ How did you address problems, bugs, or limitations?
 
 ### What testing methods did you use?
 
+
+#### Server Browser
+To check that the server browser worked, I had to upload the game build to Steam to run tests. From the first test, I discovered that fake sessions were being found and added to the server browser. When I attempted to join them, it said that there were either too many players in the sessions, while displaying that there is only one player in the session on the player count, or it would say the session didn't exist. Also this test allowed me to realise that the session names were not working either. Instead of having the host's username as the session name, it just said session name.
+
+![Fake Sessions](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Testing/Fake%20Sessions.png)
+<br>
+
+*Figure 62. An example of the fake sessions issue. This sessions said that I could not join because the session doesn't exist.*
+<br>
+
+I started with dealing with the fake session problem first. My thought process whilst working out how to solve this issue was that if these sessions don't exist, then they shouldn't have any players and shouldn't have a proper connection signal. So I added branches into the code so that the sessions would only appear if the session has at least one player and a valid signal.
+
+![Fake Sessions fix attempt](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Testing/Fake%20Sessions%20First%20Attempt%20Fix.png)
+<br>
+
+*Figure 63. The first fix I attempted for the fake sessions issue.*
+<br>
+
+However, after running another Steam test, it turned out that this solution did not fix the issue. I decided to put this problem on hold for now and attempt to fix the other issue with the session name. After looking further into the nodes that are included with the advanced sessions plugin, I found a unique net id to string node. After setting this as the session name string and testing, the same issue was still present, it still just said "session name". So I went back to looking into more nodes, leading me to find the get player nickname node. So I replaced the unique net id to string with it and tested the server browser again, resulting in the issue being fixed.
+
+![Session Name Fix](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Testing/Session%20Name%20Fix.png)
+<br>
+
+*Figure 64. The solution for the session name problem. The session name text is set as the host's nickname(username).*
+<br>
+
+![Session Name Working](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Testing/Sessions%20names%20working.png)
+<br>
+
+*Figure 65. The session name is now displaying the host's username instead of saying "session name".*
+<br>
+
+Being able to solve this problem allowed me to fix the first issue that I left to fix this one. If the sessions did not have a host player, then there is no valid net id within the session. This idea resulted in me deleting the branches from before and replacing it with a single branch that checked if there is a unique net id within the session. After one final Steam test, the fake sessions stopped appearing. 
+
+![Fake Sessions Fix](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Testing/Fake%20Sessions%20Final%20Fix.png)
+<br>
+
+*Figure 66. The fix for the fake sessions appearing. As the fake sessions should not have a host, a check is ran to make sure a host is present before a session is found and listed.*
+<br>
+
+![Steamworks Test Builds](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Testing/Server%20test%20builds.png)
+<br>
+
+*Figure 67. The Steam builds that were used to test the server browser issues.*
+<br>
+
+#### Jenkins
+Before running the staging pipeline, I tested the original code on a test pipeline. The test pipeline was setup to test a random repository that I hadn't used in a while. I did this instead of just working straight on the staging branch of the project because I had never used Jenkins before, so I did not want to risk any problems occurring in the project because of setting up Jenkins.
+After running the pipeline to test the code, I had many failed builds, with each one further expanding my knowledge of how Jenkins works and what is needed to automate the Unreal Engine build. My first few failed builds were occurring due to file paths being wrong and not existing, resulting in me fixing them checking through the code further for any other incorrect paths. After that failure, the next one failed due to a lack of access to the repository. To fix this problem, I had to look into access levels and keys, so that I could give Jenkins a GitHub access key with permissions to access and edit the repository. The final error ended up being due to a missing bracket in the code. After these tests, the original code worked and was ready for me to setup for Greedy Piggies.
+
+![Jenkins Pipelines](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Testing/Jenkins%20Pipelines.png)
+<br>
+
+*Figure 68. All three of the pipelines I have created, including the main pipeline, a test pipeline for getting an API for Jenkins working, and the original test branch for testing the original code.*
+<br>
+
+![Jenkins Test Results](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Testing/Jenkins%20Test%20Pipeline%20Results.png)
+<br>
+
+*Figure 69. The results of each run of the test pipeline.*
+<br>
+
+#### Character Select
+The majority of my testing occurred whilst working on the character select screen due to all the errors that I have previously discussed. After each test, I noted down my observations into a data table to keep track of my progress and each error that occurred during it's development. When I managed to fix the problems, it was not added to the table because I moved straight back to the server browser to fix an issue.
+
+![Character Select Test Table]()
+<br>
+
+*Figure 70. The table with the test that I ran whilst working on the character select screen.*
+<br>
+
+
+
 <!--
 * Did you conduct internal testing, peer testing, or user testing?
 * What were your key goals in testing?

@@ -1,0 +1,14 @@
+Date,Observation,Status/Result
+13/03/2026,"Player 1 picks a character and button deactivates. Player 2 joins and P1's character is already deactivated. Player 2 picks character and the button is only disabled for them, not P1.",Button deactivation out of sync
+13/03/2026,"If player 1 picks after player 2, player 2's choice is overwritten. Ready up button works with 1 person, but fails with 2.",Selection overwrite / Ready logic failure
+16/03/2026,Tried events in player controller to set selected character.,Save issues persist / Sync failed
+16/03/2026,AI suggested making a refresh button event.,Didn't work
+17/03/2026,"Online test: P1 doesn't overwrite P2, but P1 doesn't see P2's button changes. Ready up still fails.",Partial fix; UI sync missing
+17/03/2026,Tested replicated server events to start button scripts.,Didn't work
+17/03/2026,Tested server event to add gameplay tag at end of scripts.,Didn't work
+17/03/2026,Tested setting all variables to replicated.,Didn't work
+17/03/2026,Printing container shows Server only sees P1 character; Client 1 sees all.,Server visibility mismatch
+18/03/2026,Tested taken characters array in PlayerState.,Worse: P2 couldn't see P1's choice
+18/03/2026,Moved server data/logic from Widget to Player Controller.,SUCCESS: Logic works now
+18/03/2026,"Player ready logic only increases for P1. When P2 readies, value stays at 1.",Ready logic bug
+18/03/2026,"When P1 readies, count = 1. When P2 readies, count = -1.",Integer logic/sync error
