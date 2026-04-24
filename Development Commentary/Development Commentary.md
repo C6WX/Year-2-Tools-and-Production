@@ -1136,22 +1136,16 @@ The majority of my testing occurred whilst working on the character select scree
 
 Whilst working on the character select screen, I took a few images from some of the tests I did.
 
-![Taken Character Tags Test]()
+![Taken Character Array In Player State P1](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Testing/Taken%20character%20array%20in%20player%20state%20P1.png)
 <br>
 
-*Figure 71.*
+*Figure 71. The tag error from the perspective of player 1. The server would only see player one's choice whereas the client would see both choices.*
 <br>
 
-![Taken Character Array In Player State P1]()
+![Taken Character Array In Player State P2](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Testing/Taken%20character%20array%20in%20player%20state%20P2.png)
 <br>
 
-*Figure 71.*
-<br>
-
-![Taken Character Array In Player State P2]()
-<br>
-
-*Figure 71.*
+*Figure 72.The tag error from the perspective of player 2. The server would only see player one's choice whereas the client would see both choices.*
 <br>
 
 
