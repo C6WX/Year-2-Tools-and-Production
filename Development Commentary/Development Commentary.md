@@ -6,7 +6,7 @@
 
 **Student ID:** 2404781
 
-**Total Word Count:** \[XXXX]
+**Total Word Count:** 6,157
 <!--
 **API Reference Link:** \[URL]
 --->
@@ -34,7 +34,7 @@
 
 ---
 
-## Abstract *(Approx. 5–10% of word count)* 382 words
+## Abstract *(Approx. 5–10% of word count)* 379 words
 This development commentary covers all of my work whilst developing Greedy Piggies. The work covered consists of:
 - Jenkins
 - GitHub Webhook
@@ -43,12 +43,12 @@ This development commentary covers all of my work whilst developing Greedy Piggi
 - Creating the UI for the multiplayer
 - Creating the character select screen
 
-Within this project my tasks primarily consisted of creating automation tools to build the game, creating tools to improve workflow, reviewing GitHub pushes and programming the games multiplayer. These tasks weren't my original ones but were altered and adapted off of a RACI chart. My original roles also included design liaison and HR department, however I felt that these roles fell through as there was no need for the HR department within this project and in terms of conversing with the designers, everyone ended up talking to them themselves due to all the small departments that appeared and disappeared throughout the development of the game, meaning communication was easiest without a middle man in the way.
+Within this project, my tasks primarily consisted of creating automation tools to build the game, creating tools to improve workflow, reviewing GitHub pushes and programming the game's multiplayer. These tasks weren't my original ones but were altered and adapted from a RACI chart. My original roles also included design liaison and HR department, however I felt that these roles fell through as there was no need for the HR department within this project and in terms of conversing with the designers, everyone ended up talking to them themselves due to all the small departments that appeared and disappeared throughout the development of the game, meaning communication was easiest without a middle man in the way.
 
-My goals for this project was to release a game on steam that had a working multiplayer system that I helped develop and to improve the games development process with the tools I created and implemented into the development cycle.
+My goals for this project were to release a game on Steam that had a working multiplayer system that I helped develop, and to improve the game's development process with the tools I created and implemented into the development cycle.
 
-I approached this project by first ordering my tasks by level of importance, which lead me to start with the multiplayer menu, then move onto Jenkins to have that building the staging branch of the game. However it did not end up panning out this way as a lot of problems arose from the multiplayer at varied points of the game's development as well as new tool ideas to implement and more things for me to make or improve. For example, I realised that the ClickUp page that was created to keep the developers and designers on track and to allow everyone to see what still needs to be done and what has been done. But due to it's lack of use, I added a webhook to the Discord server to notify people on the progress updates from ClickUp so that people would feel more inclined to use it. 
-Something else that threw off my original approach was creating all the original UI and the character select screen, as it was not part of the original plan but was only thought of because of an error with the multiplayer. 
+I approached this project by first ordering my tasks by level of importance, which led me to start with the multiplayer menu, then move on to Jenkins to build the staging branch of the game. However, it did not end up panning out this way, as a lot of problems arose from the multiplayer at varied points of the game's development, as well as new tool ideas to implement and more things for me to make or improve. For example, I realised that the ClickUp page was created to keep the developers and designers on track and to allow everyone to see what still needs to be done and what has been done. But due to its lack of use, I added a webhook to the Discord server to notify people of the progress updates from ClickUp so that people would feel more inclined to use it. 
+Something else that threw off my original approach was creating all the original UI and the character select screen, as it was not part of the original plan, but was only thought of because of an error with the multiplayer. 
 
 ---
 
@@ -56,26 +56,26 @@ Something else that threw off my original approach was creating all the original
 
 ### What sources or references have you identified as relevant to this task? 966
 
-#### Jenkins 203
-To be able to implement Jenkins into the project so that it could automatically build the staging branch, I first had to research how to setup Jenkins and how to use it. At first I started off by following a tutorial that covered downloading and installing Jenkins (How To Install Jenkins on Windows 11, 2023). At first I struggled to find the right tutorial for setting this up but this video was able to help me get Jenkins installed and working. During the install process, I did have trouble with finding which version to use and using the setup wizard but after looking into the official documentation, I was able to install the right version and continue following along with the video (Windows, s.d.). 
-Once Jenkins was setup, I then went on to researching how I would go about creating a pipeline. I started by watching videos and looking at documentation but they ended up not covering what I was trying to use Jenkins to do. So after that I then went onto asking for help from my lecturer who had used Jenkins before, who then provided me with a base code to use with Jenkins. After tweaking the code a bit, I was able to get Jenkins working on the staging branch.
+#### Jenkins 206
+To be able to implement Jenkins into the project so that it could automatically build the staging branch, I first had to research how to set up Jenkins and how to use it. At first, I started off by following a tutorial that covered downloading and installing Jenkins (How To Install Jenkins on Windows 11, 2023). At first, I struggled to find the right tutorial for setting this up, but this video was able to help me get Jenkins installed and working. During the install process, I did have trouble with finding which version to use and using the setup wizard, but after looking into the official documentation, I was able to install the right version and continue following along with the video (Windows, s.d.). 
+Once Jenkins was set up, I then went on to researching how I would go about creating a pipeline. I started by watching videos and looking at documentation, but they ended up not covering what I was trying to use Jenkins to do. So after that, I then went on to ask for help from my lecturer, who had used Jenkins before, who then provided me with a base code to use with Jenkins. After tweaking the code a bit, I was able to get Jenkins working on the staging branch.
 
-#### App to Discord Webhooks 187
-I used webhooks three times during this project, one was programmed into the groovy script to link Jenkins to Discord, the second was to link GitHub to Discord and the third was to link ClickUp to Discord.
-When linking Jenkins and Discord, I didn't use any sources due to using AI improve my code, however I did research into linking GitHub to Discord. I wanted to create a webhook between the two apps so that ticket reviewers would get updates as soon as anything is changed on GitHub in an easy to read message format. To do this I found the official GitHub documentation (Creating webhooks, s.d.) that covers creating and using webhooks on GitHub. Looking through this documentation and using AI to help with the Discord side of the webhook allowed me to setup a link between the two websites so that whenever a change occurred on GitHub, a message would be sent to a Discord channel with all relevant information.
+#### App to Discord Webhooks 183
+I used webhooks three times during this project, one was programmed into the Groovy script to link Jenkins to Discord, the second was to link GitHub to Discord, and the third was to link ClickUp to Discord.
+When linking Jenkins and Discord, I didn't use any sources due to using AI to improve my code. I did research into linking GitHub to Discord. I wanted to create a webhook between the two apps so that ticket reviewers would get updates as soon as anything is changed on GitHub in an easy-to-read message format. To do this, I found the official GitHub documentation (Creating webhooks, s.d.) that covers creating and using webhooks on GitHub. Looking through this documentation and using AI to help with the Discord side of the webhook allowed me to set up a link between the two websites so that whenever a change occurred on GitHub, a message would be sent to a Discord channel with all relevant information.
 ![GitHub Message](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Week%202/Images/Github%20Discord%20Message%20Example.png)
 <br>
 
 *Figure 1. An example of a message that is sent whenever a change occurs in any GitHub branch.*
 <br>
 
-Creating this webhook between these two apps allowed me to easily setup the webhook between ClickUp and Discord without the need of any form of research to help.
+Creating this webhook between these two apps allowed me to easily set up the webhook between ClickUp and Discord without the need for any research.
 
-#### Gameplay Tags 169
-For the character select screen to work as intended, I had to research into gameplay tags, as I knew that is what I would need to have a working character select, but I did not know anything about how they were used or any of the nodes that are linked to gameplay tags. To find out this information, I turned to the Unreal Engine gameplay tags documentation (Using Gameplay Tags in Unreal Engine | Unreal Engine 5.7 Documentation | Epic Developer Community, s.d.). Using the information gathered from this website, I was able to implement the character select screen using tags so that once a player selects a character, a tag for said character would be added to two different tag containers: one with the player's chosen character and one with all chosen characters. This allowed me to make it so that only one person can choose a character by accessing the chosen characters container and checking if each character has been chosen, and also allowed the archetypes team to access each players character individually to apply character models and voice lines to each player.
+#### Gameplay Tags 168
+For the character select screen to work as intended, I had to research gameplay tags, as I knew that was what I would need to have a working character select, but I did not know anything about how they were used or any of the nodes that are linked to gameplay tags. To find out this information, I turned to the Unreal Engine gameplay tags documentation (Using Gameplay Tags in Unreal Engine | Unreal Engine 5.7 Documentation | Epic Developer Community, s.d.). Using the information gathered from this website, I was able to implement the character select screen using tags so that once a player selects a character, a tag for said character would be added to two different tag containers: one with the player's chosen character and one with all chosen characters. This allowed me to make it so that only one person can choose a character by accessing the chosen character's container and checking if each character has been chosen, and also allowed the archetypes team to access each player's character individually to apply character models and voice lines to each player.
 
 #### Character Select Screen Inspiration 101
-When creating the base design for the character select screen, I took inspiration for the Move or Die (Move or Die on Steam, s.d.) character select/pre-game lobby screen. I found this game to have such a simple but effective UI layout that I had to take inspiration from it. What I found that made it work especially well is that the game's UI was made for four characters, which fits perfectly with the amount of characters in Greedy Piggies. Even though most of my time was spent on programming the menu, my base UI got redesigned but still kept the same layout that I originally made.
+When creating the base design for the character select screen, I took inspiration from the Move or Die (Move or Die on Steam, s.d.) character select/pre-game lobby screen. I found this game to have such a simple but effective UI layout that I had to take inspiration from it. What I found that made it work especially well is that the game's UI was made for four characters, which fits perfectly with the number of characters in Greedy Piggies. Even though most of my time was spent on programming the menu, my base UI got redesigned, but still kept the same layout that I originally made.
 ![Move or Die Screen](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Research/Move%20or%20die%20character%20select.jpg)
 <br>
 
@@ -94,41 +94,41 @@ When creating the base design for the character select screen, I took inspiratio
 *Figure 4. The redesigned character select screen after it was worked on by designers.*
 <br>
 
-#### Multiplayer and Audience 306
-When working on the multiplayer for Greedy Piggies, I decided to research into player types for the game's target audience. When looking through different peoples' work, I came across a book by Peter Vorderer, Jennings Bryant (Vorderer and Bryant, 2012) which discussed many different player archetypes that I had not previously heard of. Previously, I had research into Bartles Taxonomy (Kumar et al., 2026), which breaks down players into four categories: the achiever, the explorer, the socialiser and the killer. For Greedy Piggies, the player base is likely to be split between the socialiser, as it is a party game, and the killer, since the game is all about beating other players. However after reading Playing Video Games: Motives, Responses, and Consequences, I found myself thinking deeper into what fits the games player base as the book discusses more than four player types. "Some more prominent types are identified as: The Competitor, The Explorer, The Collector, The Achiever, The Joker, The Director, The Storyteller, The Performer, and The Craftsmen." After looking into what is said about each type of player, I feel like the audience of Greedy Piggies fits into four of these categories: the competitor, the achiever, the joker and the director. The reason I believe this is due to the competitor is always focussed on beating others and being the best, and Greedy Piggies is all about competition, the achiever who is want to be the best in rankings and have the most wins, in the game players can track their wins within a group of friends, the joker is all about playing for fun and enjoying the social aspects of the game, which Greedy Piggies is focused on being social and having fun, and the director who always wants to lead a group, which a leader of a friend group would be able to do to organise playing Greedy Piggies together.
+#### Multiplayer and Audience 305
+When working on the multiplayer for Greedy Piggies, I decided to research player types for the game's target audience. When looking through different people's work, I came across a book by Peter Vorderer and Jennings Bryant (Vorderer and Bryant, 2012), which discussed many different player archetypes that I had not previously heard of. Previously, I had researched Bartle's Taxonomy (Kumar et al., 2026), which breaks down players into four categories: the achiever, the explorer, the socialiser and the killer. For Greedy Piggies, the player base is likely to be split between the socialiser, as it is a party game, and the killer, since the game is all about beating other players. However, after reading Playing Video Games: Motives, Responses, and Consequences, I found myself thinking deeper into what fits the game's player base, as the book discusses more than four player types. "Some more prominent types are identified as: The Competitor, The Explorer, The Collector, The Achiever, The Joker, The Director, The Storyteller, The Performer, and The Craftsmen." After looking into what is said about each type of player, I feel like the audience of Greedy Piggies fits into four of these categories: the competitor, the achiever, the joker and the director. The reason I believe this is due to the competitor is always focussed on beating others and being the best, and Greedy Piggies is all about competition, the achiever who is want to be the best in rankings and have the most wins, in the game players can track their wins within a group of friends, the joker is all about playing for fun and enjoying the social aspects of the game, which Greedy Piggies is focused on being social and having fun, and the director who always wants to lead a group, which a leader of a friend group would be able to do to organise playing Greedy Piggies together.
 
 
 
 ### Sources 598 words
 
 #### Jenkins
-##### Jenkins Setup Guide 113
+##### Jenkins Setup Guide 122
 The YouTube tutorial I used for setting up Jenkins (How To Install Jenkins on Windows 11, 2023) was published by ProgrammingKnowledge (• • 1 et al., s.d.), a YouTuber dedicated to creating tutorials and guides for many different tools and programming languages to help people get started. 
-From this video I learned how to:
+From this video, I learned how to:
 - How to install Jenkins
-- How to setup Jenkins
+- How to set up Jenkins
 - How to create a Jenkins account
 - How to access Jenkins through a web browser
 
-This tutorial was pretty useful for the most part however I ended up having to install Jenkins from a different file type on the website since the file type shown in the video would not work on my computer. This problem then lead me to looking at the Jenkins install documentation. 
+This tutorial was pretty useful for the most part; however, I ended up having to install Jenkins from a different file type on the website since the file type shown in the video would not work on my computer. This problem then led me to look at the Jenkins install documentation. 
 
-##### Jenkins Documentation 92
+##### Jenkins Documentation 93
 The official Jenkins documentation (Windows, s.d.) was created by the official creators of Jenkins.
 Reading through the documentation taught me:
-- How to setup Jenkins in a more in depth guide
-- Using the windows file instead of the war file
+- How to set up Jenkins in a more in-depth guide
+- Using the Windows file instead of the war file
 
-Without using this website, I would not have been able to setup Jenkins due to the problem I was having with the war file shown on the YouTube tutorial, making this source very helpful. However I did find that the documentation website was, although laid out neatly, very cluttered with information that could be elsewhere.
+Without using this website, I would not have been able to set up Jenkins due to the problem I was having with the war file shown on the YouTube tutorial, making this source very helpful. However, I did find that the documentation website was, although laid out neatly, very cluttered with information that could be elsewhere.
 
 #### App to Discord Webhooks
 ##### GitHub Webhook Documentation 124
-The Github Webhook documentation was created by GitHub, Inc, the creators of Github.
+The GitHub Webhook documentation was created by GitHub, Inc, the creators of GitHub.
 From reading through the documentation, I learnt how to:
 - How to add webhooks on GitHub
 - How to create and add secret keys
 - How to choose what triggers the webhook and what it has access to
 
-Finding this website was crucial to me being able to make the GitHub webhook work with Discord as I did not know the first thing about webhooks before researching this. I found the website to be very well laid out and easy to find what you need. On the other hand, although the website goes into a lot of detail about different types of webhooks, it did not cover much outside of creating a basic webhook.
+Finding this website was crucial to me being able to make the GitHub webhook work with Discord, as I did not know the first thing about webhooks before researching this. I found the website to be very well laid out and easy to find what you need. On the other hand, although the website goes into a lot of detail about different types of webhooks, it does not cover much outside of creating a basic webhook.
 
 #### Gameplay Tags
 ##### Gameplay Tags Documentation 74
@@ -140,17 +140,17 @@ From researching gameplay tags through this page, I discovered how to:
 
 In my opinion, the information provided was very bulky, making it difficult to find what I needed, but when I did find it, I was able to learn gameplay tags with ease.
 
-#### Character Select Screen Inspiration 85
+#### Character Select Screen Inspiration 84
 Move or Die was created by Those Awesome Guys, a small indie studio based in Romania. They are known for creating fast and simple party multiplayer games.
-From looking into this game, I took inspiration from their character select screen as it's layout fit perfectly with what I needed the Greedy Piggies screen to look like. The only thing it was missing that I added to the Greedy Piggies UI was a ready up button that would start the game once every player was ready.
+From looking into this game, I took inspiration from their character select screen, as its layout fit perfectly with what I needed the Greedy Piggies screen to look like. The only thing it was missing that I added to the Greedy Piggies UI was a ready-up button that would start the game once every player was ready.
 
-#### Multiplayer and Audience 110
-Playing Video Games: Motives, Responses, and Consequences was wrote by Peter Vorderer and Jennings Bryant, two key figures in media psychology. They study how people interact with media, including games, TV and digital platforms.
+#### Multiplayer and Audience 108
+Playing Video Games: Motives, Responses, and Consequences was written by Peter Vorderer and Jennings Bryant, two key figures in media psychology. They study how people interact with media, including games, TV and digital platforms.
 From reading their book, I learnt:
 - Another version of player taxonomy
 - How players interact with different types of games
 
-From what I was able to read of this book online, I felt like it was able to go really in depth about everything to do with player types in an easy to understand and read format. However, due to the high number of topics that the book covers, it is difficult to find what you need. 
+From what I was able to read of this book online, I felt like it was able to go really in depth about everything to do with player types in an easy-to-understand and read format. However, due to the high number of topics that the book covers, it is difficult to find what you need. 
 
 ---
 
@@ -158,8 +158,8 @@ From what I was able to read of this book online, I felt like it was able to go 
 
 ### What was your development process and how did decisions evolve?
 
-#### Jenkins 393 words
-After researching and setting up Jenkins, I was given a base code that I used to set up a test pipeline. This pipeline was used to build a random repository on my GitHub account at 10 pm everyday. The reason behind me testing on another repository first was because I did not want to risk making any mistakes on the staging branch of Greedy Piggies. After the pipeline was successful, I then went onto creating a pipeline for the staging branch of Greedy Piggies that once again built at 10 pm everyday.
+#### Jenkins 401 words
+After researching and setting up Jenkins, I was given a base code that I used to set up a test pipeline. This pipeline was used to build a random repository on my GitHub account at 10 pm every day. The reason behind my testing on another repository first was that I did not want to risk making any mistakes on the staging branch of Greedy Piggies. After the pipeline was successful, I then went on to create a pipeline for the staging branch of Greedy Piggies that was once again built at 10 pm every day.
 
 ``` Groovy
 pipeline {
@@ -221,7 +221,7 @@ pipeline {
 *Figure 5. The base code that built staging and returned wether it was successful or not.*
 <br>
 
-Once I had the basic pipeline working, I looked into having Jenkins send a message to Discord that contained the details on each Jenkins run. I was able to do this by creating a webhook that linked Jenkins and Discord and then adding to the groovy code within the pipeline so that whenever Jenkins was successful, the message would display: SUCCESS Greedy Piggies Staging (Build Number). Otherwise, if the build was to fail it would display: FAILED Greedy Piggies Staging (Build Number). 
+Once I had the basic pipeline working, I looked into having Jenkins send a message to Discord that contained the details on each Jenkins run. I was able to do this by creating a webhook that linked Jenkins and Discord and then adding to the Groovy code within the pipeline so that whenever Jenkins was successful, the message would display: SUCCESS Greedy Piggies Staging (Build Number). Otherwise, if the build were to fail, it would display: FAILED Greedy Piggies Staging (Build Number). 
 
 ```Groovy
         success {
@@ -263,7 +263,7 @@ Once I had the basic pipeline working, I looked into having Jenkins send a messa
 *Figure 8. The message that was sent whenever Jenkins was unsuccessful with a build.*
 <br>
 
-After getting feedback on how Jenkins was running, I realised that I needed to have Jenkins uploading each of these builds to GitHub so that they can be easily accessed and tested by anyone working on the game. I was able to implement this by updating the pipeline code with a new section that zips the build, archives it and then uploads it as a new GitHub release. Whilst working on this, I decided to add to the GitHub webhook code so that it would link the new release, making it even more accessible to anyone on the Discord.
+After getting feedback on how Jenkins was running, I realised that I needed to have Jenkins upload each of these builds to GitHub so that they can be easily accessed and tested by anyone working on the game. I was able to implement this by updating the pipeline code with a new section that zips the build, archives it and then uploads it as a new GitHub release. Whilst working on this, I decided to add to the GitHub webhook code so that it would link to the new release, making it even more accessible to anyone on the Discord.
 
 ```Groovy
 stage('Zip Build') {
@@ -348,7 +348,7 @@ success {
 ![New Jenkins Message Success](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Implementation/Jenkins/New%20Jenkins%20Success%20Message.png)
 <br> 
 
-Later into the project I learnt about CSV files and storing data, I moved onto implementing data tracking and storing into my Jenkins pipeline. I was able to do this with a mix of adding to the groovy script and using python. The two scripts communicate with each other to create and add to a CSV data table that stores each build's build number: date and time, branch, result and time to complete (in seconds). As well as the CSV data table, the pipeline now creates and adds to a graph png that tracks and compares each build's build time and a text document that tracks the number of total builds, successful builds, failed builds, average duration and success rate.
+Later in the project, I learned about CSV files and storing data, and I moved on to implementing data tracking and storing it in my Jenkins pipeline. I was able to do this with a mix of adding to the Groovy script and using Python. The two scripts communicate with each other to create and add to a CSV data table that stores each build's build number, date and time, branch, result and time to complete (in seconds). As well as the CSV data table, the pipeline now creates and adds to a graph PNG that tracks and compares each build's build time and a text document that tracks the number of total builds, successful builds, failed builds, average duration and success rate.
 
 ``` Groovy
 post {
@@ -691,9 +691,9 @@ pipeline {
 *Figure 16. The complete groovy script used by the Jenkins pipeline.*
 <br>
 
-#### Webhooks 491
+#### Webhooks 493
 ##### GitHub
-Not including the Jenkins webhook, the first webhook I created and implemented was a GitHub webhook. The reason for adding this to the Discord webhook was, being a GitHub reviewer, I realised early on how inconvenient it was to keep checking to see if there has been any changes to the project and then trying to access all the change details. So I looked into having GitHub send the changes straight to a Discord channel for easy access. 
+Not including the Jenkins webhook, the first webhook I created and implemented was a GitHub webhook. The reason for adding this to the Discord webhook was that, being a GitHub reviewer, I realised early on how inconvenient it was to keep checking to see if there had been any changes to the project and then trying to access all the change details. So I looked into having GitHub send the changes straight to a Discord channel for easy access. 
 Implementation started with me researching how to create a webhook between the two apps and then creating a Discord webhook, which is simple since it just requires one button press and then selecting the channel it can access.
 
 ![Discord Bot Github](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Implementation/Webhooks/Discord%20bot%20github.png)
@@ -701,8 +701,8 @@ Implementation started with me researching how to create a webhook between the t
 
 *Figure 17. The webhook created for GitHub to message on Discord.*
 <br>
-Once the bot was created, I had to finish the rest on GitHub. To start, a discord URL is needed for GitHub to access the server. Once that is added, all that was left to do was choose what events would trigger the bot to send a message and what sort of content was sent. The content I selected was an application/JSON and the triggers I chose were branch creations and deletions, pushes and pull requests.
-Now, whenever anyone makes a change on any branch in the Greedy Piggies repository, a message is sent to the GitHub push reviewers channel in the Discord. These messages contain the username of who made the change, the branch that the change was made on, the name given to the change and a link to in-depth version of the change.
+Once the bot was created, I had to finish the rest on GitHub. To start, a Discord URL is needed for GitHub to access the server. Once that is added, all that was left to do was choose what events would trigger the bot to send a message and what sort of content would be sent. The content I selected was an application/JSON, and the triggers I chose were branch creations and deletions, pushes and pull requests.
+Now, whenever anyone makes a change on any branch in the Greedy Piggies repository, a message is sent to the GitHub push reviewers channel in Discord. These messages contain the username of who made the change, the branch that the change was made on, the name given to the change and a link to an in-depth version of the change.
 
 ![GitHub Webhook Creation](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Implementation/Webhooks/GitHub%20Webhook%20setup.png)
 <br>
@@ -724,9 +724,9 @@ Now, whenever anyone makes a change on any branch in the Greedy Piggies reposito
 <br>
 
 ##### ClickUp
-I was not originally planning on making a webhook bot for ClickUp as I my roles did not have anything to do with that department. However, I realised that the ClickUp department were not very happy with the fact that it was being completely ignored by the designers. So I thought that it would be a good idea to create a webhook that would send messages straight to a designer channel to incentivize the designers to use it more and remind them that it is still a thing that they should be using.
-Due to having previously made the GitHub webhook, I found this one much simpler to make, all I needed was to find the webhook section on the ClickUp workspace and get permissions to be able to manage the workspace. 
-As soon as I had the correct permissions, I created a ClickUp designer channel on Discord and then located the Discord section of the website and setup the Discord bot by adjusting what channels the bot can message in and what triggers each message. The messages that are sent contain the person who adjusted a task, the name of the task, the status of the task, who the task is assigned to, the location of the task and when the task was changed.
+I was not originally planning on making a webhook bot for ClickUp, as my roles did not have anything to do with that department. However, I realised that the ClickUp department was not very happy with the fact that it was being completely ignored by the designers. So I thought that it would be a good idea to create a webhook that would send messages straight to a designer channel to incentivise the designers to use it more and remind them that it is still a thing that they should be using.
+Due to having previously made the GitHub webhook, I found this one much simpler to make; all I needed was to find the webhook section on the ClickUp workspace and get permissions to be able to manage the workspace. 
+As soon as I had the correct permissions, I created a ClickUp designer channel on Discord and then located the Discord section of the website and set up the Discord bot by adjusting what channels the bot can message in and what triggers each message. The messages that are sent contain the person who adjusted a task, the name of the task, the status of the task, who the task is assigned to, the location of the task and when the task was changed.
 Since creating this webhook was so simple, I also made one for the developers to help us stay on track with the project.
 
 ![ClickUp Message](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Implementation/Webhooks/ClickUp%20message.png)
@@ -734,11 +734,11 @@ Since creating this webhook was so simple, I also made one for the developers to
 
 *Figure 21. A message that is sent to Discord by ClickUp.*
 
-#### Server Browser 865 words
-To start the server browser, I followed along with a tutorial (UE5 Steam Multiplayer EP1 – Basic Connection Logic (No UI), 2026) that had me create a create game menu, a server browser and server browser item.
+#### Server Browser 700 words
+To start the server browser, I followed along with a tutorial (UE5 Steam Multiplayer EP1 – Basic Connection Logic (No UI), 2026) that had me create a create game menu, a server browser and a server browser item.
 
 ##### Create Game
-The first menu out of these that was created was the create game menu. This menu allows the player to choose the maximum amount of players in their game and if the session is LAN or not. 
+The first menu out of these that was created was the create game menu. This menu allows the player to choose the maximum number of players in their game and whether the session is LAN or not. 
 
 ![LAN](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Implementation/Server%20Browser/Create%20Game/LAN.png)
 <br>
@@ -746,7 +746,7 @@ The first menu out of these that was created was the create game menu. This menu
 *Figure 22. When the LAN check box is ticked, LAN becomes true which is then plugged into the create session setting to set the sessions as a LAN session.*
 <br>
 
-Originally, the max player amount from the tutorial was typed in by the player but i found this was giving the player too much power and allowed to lobbies to be made to have too many players. To avoid this, I implemented buttons that increased and decreased that value of the max player. Another problem was that the max players could be set to one or above four which was either too small or too large of a number then needed so I utilised the clamp node so that the value can be controlled by not being able to go below two or above four. When the player presses the create game button, a lobby is created with the details and settings that the player adjusted.
+Originally, the max player amount from the tutorial was typed in by the player, but I found this was giving the player too much power and allowed lobbies to be made to have too many players. To avoid this, I implemented buttons that increased and decreased the value of the max player. Another problem was that the maximum number of players could be set to one or above four, which was either too small or too large a number than needed, so I utilised the clamp node so that the value can be controlled by not being able to go below two or above four. When the player presses the create game button, a lobby is created with the details and settings that the player adjusted.
 
 ![Max Players](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Implementation/Server%20Browser/Create%20Game/Max%20Players.png)
 <br>
@@ -756,7 +756,7 @@ Originally, the max player amount from the tutorial was typed in by the player b
 
 
 
-The original tutorial for this allowed the player to make a LAN session but did not work with online sessions. To get this working, I looked into advanced sessions and adjusted the script to use the plugin's nodes. After this plugin was implemented and the app ID was changed, the game worked with the steam sessions.
+The original tutorial for this allowed the player to make a LAN session, but did not work with online sessions. To get this working, I looked into advanced sessions and adjusted the script to use the plugin's nodes. After this plugin was implemented and the app ID was changed, the game worked with the Steam sessions.
 
 ![Create Game](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Implementation/Server%20Browser/Create%20Game/Create%20Session.png)
 <br>
@@ -764,7 +764,7 @@ The original tutorial for this allowed the player to make a LAN session but did 
 *Figure 24. When create game is clicked, a session is created using the settings that the player has set and then the main level is opened.*
 <br>
 
-The last feature I added to the create game menu was a back button that would return the player back to the main menu.
+The last feature I added to the create game menu was a back button that would return the player to the main menu.
 
 ![Back Button](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Implementation/Server%20Browser/Create%20Game/Back%20Button.png)
 <br>
@@ -791,7 +791,7 @@ The last feature I added to the create game menu was a back button that would re
 <br>
 
 ##### Main Menu
-So that the create game menu and the join game menu would be accessible, I created a main menu to allow the two screens to be selectable. The original menu that I created only had the create game and join game buttons but once it had been worked on by designers, it also had a game manual button and a quit game button, as well as an updated and improved design.
+So that the create game menu and the join game menu would be accessible, I created a main menu to allow the two screens to be selectable. The original menu that I created only had the create game and join game buttons, but once it had been worked on by designers, it also had a game manual button and a quit game button, as well as an updated and improved design.
 
 ![Create Game Button](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Implementation/Server%20Browser/Main%20Menu/Create%20Game%20button.png)
 <br>
@@ -818,9 +818,9 @@ So that the create game menu and the join game menu would be accessible, I creat
 <br>
 
 ##### Server Browser Menu
-The original server browser menu was also created using the same tutorial, but once again, didn't contain all the features needed for Greedy Piggies to work. It was missing online sessions, a back button and the ability to stop fake sessions from being created.
-Online sessions were implemented by simply replacing the find sessions node for the find advanced sessions node from the plugin that allowed the game to work with steam sessions. The menu uses this node to search for available sessions, and once it found them, would add a server browser item that displayed session details and allowed the player to tick the session they wanted to join.
-The script for this menu works by searching for sessions from the game, then for each session found, a server browser item is created and added to a list box. When a player has located the session they want to join, they press the check box next to it and then the join game button. From there, it takes the details of the checked session and sends the player into that session. Before this happens however, a check is ran to make sure that the session isn't full by comparing the current players to the max players settings on the session.
+The original server browser menu was also created using the same tutorial, but once again, it didn't contain all the features needed for Greedy Piggies to work. It was missing online sessions, a back button and the ability to stop fake sessions from being created.
+Online sessions were implemented by simply replacing the find sessions node with the find advanced sessions node from the plugin that allowed the game to work with Steam sessions. The menu uses this node to search for available sessions, and once it finds them, it adds a server browser item that displays session details and allows the player to tick the session they want to join.
+The script for this menu works by searching for sessions from the game, then for each session found, a server browser item is created and added to a list box. When a player has located the session they want to join, they press the check box next to it and then the join game button. From there, it takes the details of the checked session and sends the player into that session. Before this happens, however, a check is run to make sure that the session isn't full by comparing the current players to the maximum number of players set on the session.
 
 ![Refresh Button](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Implementation/Server%20Browser/Join%20Game/Refresh%20Button.png)
 <br>
@@ -834,7 +834,7 @@ The script for this menu works by searching for sessions from the game, then for
 *Figure 34. When the join game button is pressed, the selected server information is given to the join session node and the player is sent into the session.*
 <br>
 
-A refresh button and a search for LAN button is also working on the menu so that the player can run the session search again and so that the player only searches for LAN sessions. A back button is also on the menu to send the player back to the main menu.
+A refresh button and a search for LAN button are also working on the menu, so that the player can run the session search again, and so that the player only searches for LAN sessions. A back button is also on the menu to send the player back to the main menu.
 
 ![LAN](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Implementation/Server%20Browser/Join%20Game/LAN.png)
 <br>
@@ -867,8 +867,8 @@ A refresh button and a search for LAN button is also working on the menu so that
 <br>
 
 ##### Server Browser Item
-The server browser item is what is displayed for each session that the server browser is able to find. The original version of this UI was also created whilst following along with the same tutorial, however I adjusted a few things.
-The original menu from the video displayed the player count in numbers, the ping of the session and a button to select the session. I added to this some code that displayed the name of the session's host and four white circles that each turned pink based on the amount of players present in the session.
+The server browser item is what is displayed for each session that the server browser is able to find. The original version of this UI was also created while following the same tutorial. I adjusted a few things.
+The original menu from the video displayed the player count in numbers, the ping of the session and a button to select the session. I added to this some code that displayed the name of the session's host and four white circles that each turned pink based on the number of players present in the session.
 
 ![Construct](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Implementation/Server%20Browser/Server%20Browser%20Item/Construct.png)
 <br>
@@ -914,11 +914,12 @@ The original menu from the video displayed the player count in numbers, the ping
 **[Game Player Perspective](https://youtu.be/gAgglTWZ7JA)**
 
 
-#### Character Select Screen 597 words
-The character select screen was originally created as a way to fix a bug that would cause players to not see or interact with players that joined after them. We thought that if the players were to get together in a pre game lobby, that they would be sent to the main game together and this would fix the issue. However, whilst the character select screen was in development, this issue was fixed with another solution. But since a character select screen was still required for the archetypes system to function, it's development continued and it was implemented into the final game. 
+#### Character Select Screen 579 words
+The character select screen was originally created as a way to fix a bug that would cause players to not see or interact with players who joined after them. We thought that if the players were to get together in a pre-game lobby, they would be sent to the main game together, and this would fix the issue. However, whilst the character select screen was in development, this issue was fixed with another solution. But since a character select screen was still required for the archetypes system to function, its development continued, and it was implemented into the final game. 
 
-Before starting the development of this UI, I attempted to find tutorials that would help the creation of the menu. However I was unable to find one that had what Greedy Piggies required. The closest video I found (Make a Multiplayer Game in Unreal Engine 5 - Character Selection - Unreal Beginner Tutorial # 16, 2022) was able to teach me the basics of making a character select screen but none of the code ended up being used in the game. 
-The original version of the character select screen used tags to give the player the tag based on the button they selected, however this allowed multiple players to select the same characters. So another tag collection was created to store every character that is selected. This was used on each character button so that if the nepo piggy was selected, the nepo piggy button would check if that character tag is present in the collection. If it is, then the button would become deactivated for all players.
+Before starting the development of this UI, I attempted to find tutorials that would help with the creation of the menu. However, I was unable to find one that had what Greedy Piggies required. The closest video I found (Make a Multiplayer Game in Unreal Engine 5 - Character Selection - Unreal Beginner Tutorial # 16, 2022) was able to teach me the basics of making a character selection screen, but none of the code ended up being used in the game. 
+
+The original version of the character select screen used tags to give the player the tag based on the button they selected; this allowed multiple players to select the same characters. So another tag collection was created to store every character that is selected. This was used on each character button so that if the nepo piggy was selected, the nepo piggy button would check if that character tag is present in the collection. If it is, then the button would become deactivated for all players.
 
 ![Character Button Pressed](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Implementation/Server%20Browser/Character%20Select/The%20Nobody%20Clicked.png)
 <br>
@@ -945,9 +946,9 @@ The original version of the character select screen used tags to give the player
 <br>
 
 
-The majority of the time that was spent on this screen was used fixing a problem that stopped players from seeing each others selected characters. For example, player two can pick a character and then player one was able to overwrite their character selection and the only character that would become selected would be character ones choice. Also, the players that joined before another player was unable to see the choice of later joining players. This issue was fixed by using server events and having the script that sets the selected character tags for the collection moved into the player controller.
+The majority of the time that was spent on this screen was used fixing a problem that stopped players from seeing each other's selected characters. For example, player two can pick a character, and then player one can overwrite their character selection, and the only character that would become selected would be player one's choice. Also, the players who joined before another player were unable to see the choices of later joining players. This issue was fixed by using server events and having the script that sets the selected character tags for the collection moved into the player controller.
 
-Once this problem was fixed, the rest of the time spent on this UI was spent on the ready up button. The original script for this was simple, when the players who have pressed ready equals the amount of players within the session, the players would be sent into the main game. However this ended up being too simple and coming with issues. For example, players where unable to unready, a player could enter a game by themselves and players could join a game without selecting a character. To resolve these issues, code was added that allowed players to unready and changed the buttons text accordingly, as well as the number of ready players having to equal the number of current players, another and pin was added to make sure that the players ready is more than one and finally the player's selected character tag collection would be checked to make sure that they have a character tag before ready up can be pressed.
+Once this problem was fixed, the rest of the time spent on this UI was spent on the ready-up button. The original script for this was simple: when the number of players who have pressed ready equals the number of players within the session, the players would be sent into the main game. However, this ended up being too simple and came with issues. For example, players were unable to unready, a player could enter a game by themselves, and players could join a game without selecting a character. To resolve these issues, code was added that allowed players to unready and changed the buttons text accordingly, as well as the number of ready players having to equal the number of current players, another and pin was added to make sure that the players ready is more than one and finally the player's selected character tag collection would be checked to make sure that they have a character tag before ready up can be pressed.
 
 ![Ready Up](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Implementation/Server%20Browser/Character%20Select/Ready%20Up.png)
 <br>
@@ -967,7 +968,7 @@ Once this problem was fixed, the rest of the time spent on this UI was spent on 
 *Figure 52. First off, the player count is obtained from the game states player array. Then for each player, their ready boolean is checked to see if it's true. If it is true, then variables are ran through an and node to check if there are enough players in the session, if the players ready is equal to the player count and if there is more than one player ready, to avoid players entering the game by themselves. If these all come back true, then the start game script is run and the UI is removed from the screen.*
 <br>
 
-Originally this menu was in it's own level within Unreal Engine, however, due to a problem with the archetype system and saving the tag collection data between levels, I changed some nodes so that the players were sent to the main game instead of the character select level and also the menu would disappear and the game would become playable once all players were ready.
+Originally, this menu was in its own level within Unreal Engine; however, due to a problem with the archetype system and saving the tag collection data between levels, I changed some nodes so that the players were sent to the main game instead of the character select level and also the menu would disappear, and the game would become playable once all players were ready.
 
 ![Start Game](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Implementation/Server%20Browser/Character%20Select/Start%20Game.png)
 <br>
@@ -1001,9 +1002,10 @@ Originally this menu was in it's own level within Unreal Engine, however, due to
 <br>
 
 
-#### Late Fixes 522 words
+#### Late Fixes 521 words
 During the last few days of the game, I worked with Cameron, Lilly and Anna to try and get the game ready for release. Although by the end of our sessions together, the gameplay wasn't ready for release, I was able to get a handful of the features working and ready for release. 
-During this process, I was uploading the game to Steam so that test can be constantly ran to make sure fixes being made were working properly, leading to a lot of builds on Steamworks.
+
+During this process, I was uploading the game to Steam so that tests could be constantly run to make sure the fixes being made were working properly, leading to a lot of builds on Steamworks.
 
 ![Steamwork Builds](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Implementation/Late%20Fixes/Steamworks.png)
 <br>
@@ -1011,7 +1013,7 @@ During this process, I was uploading the game to Steam so that test can be const
 *Figure 58. The list of game builds on Steamworks.*
 <br>
 
-Due to problems with the artists assets not getting into the final game, I prioritised locating and preparing a scene that contained a good handful or their assets. To do this I worked on locating and adding in the artist's textures that the designers struggled to locate and added them to the scene. Unfortunately it seemed that a mix between the asset bot and github resulted in assets and textures going missing, so some assets from the scene needed deleting or re-texturing. I was able to get the scene together and transferred game blueprints and spawns over to the new scene and replaced any references, meaning the scene with the artist's work is now the main scene in the game.
+Due to problems with the artists' assets not getting into the final game, I prioritised locating and preparing a scene that contained a good handful of their assets. To do this, I worked on locating and adding the artist's textures that the designers struggled to locate and added them to the scene. Unfortunately, it seemed that a mix between the asset bot and GitHub resulted in assets and textures going missing, so some assets from the scene needed to be deleted or re-textured. I was able to get the scene together and transferred game blueprints and spawns over to the new scene and replaced any references, meaning the scene with the artist's work is now the main scene in the game.
 
 ![Original Final Scene](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Implementation/Late%20Fixes/Original%20Final%20Scene.png)
 <br>
@@ -1025,7 +1027,7 @@ Due to problems with the artists assets not getting into the final game, I prior
 *Figure 60. The new final scene that contains the work from the artists. This is the new main scene on the current game release.*
 <br>
 
-As well as this, I fixed input bugs caused by the gamepad. Whenever a button would be pressed to change the current card, around five cards would be skipped meaning it was accepting the button input too many times. To fix this issue, I adjust the node connection so that the input was accepted once the player let go of the arrow key.
+As well as this, I fixed input bugs caused by the gamepad. Whenever a button was pressed to change the current card, around five cards would be skipped, meaning it was accepting the button input too many times. To fix this issue, I adjusted the node connection so that the input was accepted once the player let go of the arrow key.
 
 ![Input Fix](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Implementation/Late%20Fixes/Gamepad%20Issue%20Fix.png)
 <br>
@@ -1033,16 +1035,16 @@ As well as this, I fixed input bugs caused by the gamepad. Whenever a button wou
 *Figure 61. Previously the connection was coming out of triggered but to fix the issue, it is now connected to completed.*
 <br>
 
-I was also able to fix the game starting. Until I changed it, the game would only start once the player pressed G on the keyboard, which obviously couldn't make it to the final game. So I altered this so that the game would start just after the character select screen was removed from view. The adjusted script can be seen in figure 53.
+I was also able to fix the game starting. Until I changed it, the game would only start once the player pressed G on the keyboard, which obviously couldn't make it to the final game. So I altered this so that the game would start just after the character select screen was removed from view. The adjusted script can be seen in Figure 53.
 
-It took me a while to figure out what was wrong with it, but during this fixing stage, I was able to fix a problem with my own server browser where the session name wouldn't display the host's username. After some trial and error and testing I was able to fix this issue by using advanced session nodes to access the player's nickname and set it as the session name text. Unfortunately after further testing, we had a test where the session name was displayed as "unknown". This happened when someone tried to join my session who has never played with me before and didn't have me as a friend. I did not end up looking into this due to a lack of time but also because some players may prefer not having their username visible to random players.
+It took me a while to figure out what was wrong with it, but during this fixing stage, I was able to fix a problem with my own server browser, where the session name wouldn't display the host's username. After some trial and error and testing, I was able to fix this issue by using advanced session nodes to access the player's nickname and set it as the session name text. Unfortunately, after further testing, we had a test where the session name was displayed as "unknown". This happened when someone tried to join my session who had never played with me before and didn't have me as a friend. I did not end up looking into this due to a lack of time, but also because some players may prefer not having their username visible to random players.
 
-An error also occurred when merging the UI design branch into staging which did not successfully bring over an addition to my ready up script to change the text on the ready up. I quickly remade this script so that player's knew if they were readied up or not.
+An error also occurred when merging the UI design branch into staging, which did not successfully bring over an addition to my ready-up script to change the text on the ready-up. I quickly remade this script so that players knew if they were readied up or not.
 
 ### What creative or technical methods did you try? 256 words
 
 #### Tools
-As I have never used Jenkins or groovy before, it was all new to me. After researching Jenkins and looking into its capabilities however. I found it simple to update the pipeline for whatever I needed. I went from having Jenkins check if staging works to having it message Discord with the job status, upload a build of the game to GitHub releases and link it in the message and use python to create and update a CSV file, a data graph and a build status text file.
+As I have never used Jenkins or Groovy before, it was all new to me. After researching Jenkins and looking into its capabilities, however. I found it simple to update the pipeline for whatever I needed. I went from having Jenkins check if staging works to having it message Discord with the job status, upload a build of the game to GitHub releases and link it in the message and use Python to create and update a CSV file, a data graph and a build status text file.
 
 #### Development
 The whole of the multiplayer programming was completely unfamiliar to me seeing as I had never made an online game before Greedy Piggies. The whole time I was working on the multiplayer, I was researching or asking for peer feedback due to the difficulty of it. Many errors were occurring due to a lack of knowledge of how multiplayer is handled. I originally thought every player would see the same thing and some variables would be shared between players automatically since the session has one host hosting the game and the players are all playing the same game. However it turns out it doesn't work like that. I needed to ask for help and was taught by Bradley about server events existing. After experimenting with different server event settings and the blueprints that different codes were handled in, as some blueprints are shared between players and some aren't, I was able to solve these issues and get the server browser and the character select screen working as intended.  
@@ -1061,8 +1063,8 @@ How did you address problems, bugs, or limitations?
 
 ## Testing *(Approx. 10–15% of word count)*
 
-### Server Browser 377
-To check that the server browser worked, I had to upload the game build to Steam to run tests. From the first test, I discovered that fake sessions were being found and added to the server browser. When I attempted to join them, it said that there were either too many players in the sessions, while displaying that there is only one player in the session on the player count, or it would say the session didn't exist. Also this test allowed me to realise that the session names were not working either. Instead of having the host's username as the session name, it just said session name.
+### Server Browser 376
+To check that the server browser worked, I had to upload the game build to Steam to run tests. From the first test, I discovered that fake sessions were being found and added to the server browser. When I attempted to join them, it said that there were either too many players in the sessions, while displaying that there was only one player in the session on the player count, or it would say the session didn't exist. Also, this test allowed me to realise that the session names were not working either. Instead of having the host's username as the session name, it just said session name.
 
 ![Fake Sessions](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Testing/Fake%20Sessions.png)
 <br>
@@ -1070,7 +1072,7 @@ To check that the server browser worked, I had to upload the game build to Steam
 *Figure 62. An example of the fake sessions issue. This sessions said that I could not join because the session doesn't exist.*
 <br>
 
-I started with dealing with the fake session problem first. My thought process whilst working out how to solve this issue was that if these sessions don't exist, then they shouldn't have any players and shouldn't have a proper connection signal. So I added branches into the code so that the sessions would only appear if the session has at least one player and a valid signal.
+I started by dealing with the fake session problem first. My thought process whilst working out how to solve this issue was that if these sessions don't exist, then they shouldn't have any players and shouldn't have a proper connection signal. So I added branches into the code so that the sessions would only appear if the session has at least one player and a valid signal.
 
 ![Fake Sessions fix attempt](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Testing/Fake%20Sessions%20First%20Attempt%20Fix.png)
 <br>
@@ -1078,7 +1080,7 @@ I started with dealing with the fake session problem first. My thought process w
 *Figure 63. The first fix I attempted for the fake sessions issue.*
 <br>
 
-However, after running another Steam test, it turned out that this solution did not fix the issue. I decided to put this problem on hold for now and attempt to fix the other issue with the session name. After looking further into the nodes that are included with the advanced sessions plugin, I found a unique net id to string node. After setting this as the session name string and testing, the same issue was still present, it still just said "session name". So I went back to looking into more nodes, leading me to find the get player nickname node. So I replaced the unique net id to string with it and tested the server browser again, resulting in the issue being fixed.
+However, after running another Steam test, it turned out that this solution did not fix the issue. I decided to put this problem on hold for now and attempt to fix the other issue with the session name. After looking further into the nodes that are included with the advanced sessions plugin, I found a unique net ID to string node. After setting this as the session name string and testing, the same issue was still present; it still just said "session name". So I went back to looking into more nodes, leading me to find the get player nickname node. So I replaced the unique net ID with a string and tested the server browser again, resulting in the issue being fixed.
 
 ![Session Name Fix](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Testing/Session%20Name%20Fix.png)
 <br>
@@ -1092,7 +1094,7 @@ However, after running another Steam test, it turned out that this solution did 
 *Figure 65. The session name is now displaying the host's username instead of saying "session name".*
 <br>
 
-Being able to solve this problem allowed me to fix the first issue that I left to fix this one. If the sessions did not have a host player, then there is no valid net id within the session. This idea resulted in me deleting the branches from before and replacing it with a single branch that checked if there is a unique net id within the session. After one final Steam test, the fake sessions stopped appearing. 
+Being able to solve this problem allowed me to fix the first issue that I left to fix this one. If the sessions did not have a host player, then there is no valid net ID within the session. This idea resulted in me deleting the branches from before and replacing them with a single branch that checked if there is a unique net ID within the session. After one final Steam test, the fake sessions stopped appearing. 
 
 ![Fake Sessions Fix](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Testing/Fake%20Sessions%20Final%20Fix.png)
 <br>
@@ -1106,9 +1108,9 @@ Being able to solve this problem allowed me to fix the first issue that I left t
 *Figure 67. The Steam builds that were used to test the server browser issues.*
 <br>
 
-### Jenkins 214
-Before running the staging pipeline, I tested the original code on a test pipeline. The test pipeline was setup to test a random repository that I hadn't used in a while. I did this instead of just working straight on the staging branch of the project because I had never used Jenkins before, so I did not want to risk any problems occurring in the project because of setting up Jenkins.
-After running the pipeline to test the code, I had many failed builds, with each one further expanding my knowledge of how Jenkins works and what is needed to automate the Unreal Engine build. My first few failed builds were occurring due to file paths being wrong and not existing, resulting in me fixing them checking through the code further for any other incorrect paths. After that failure, the next one failed due to a lack of access to the repository. To fix this problem, I had to look into access levels and keys, so that I could give Jenkins a GitHub access key with permissions to access and edit the repository. The final error ended up being due to a missing bracket in the code. After these tests, the original code worked and was ready for me to setup for Greedy Piggies.
+### Jenkins 217
+Before running the staging pipeline, I tested the original code on a test pipeline. The test pipeline was set up to test a random repository that I hadn't used in a while. I did this instead of just working straight on the staging branch of the project because I had never used Jenkins before, so I did not want to risk any problems occurring in the project because of setting up Jenkins.
+After running the pipeline to test the code, I had many failed builds, with each one further expanding my knowledge of how Jenkins works and what is needed to automate the Unreal Engine build. My first few failed builds were occurring due to file paths being wrong and not existing, resulting in me fixing them and checking through the code further for any other incorrect paths. After that failure, the next one failed due to a lack of access to the repository. To fix this problem, I had to look into access levels and keys so that I could give Jenkins a GitHub access key with permissions to access and edit the repository. The final error ended up being due to a missing bracket in the code. After these tests, the original code worked and was ready for me to set up for Greedy Piggies.
 
 ![Jenkins Pipelines](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Testing/Jenkins%20Pipelines.png)
 <br>
@@ -1123,7 +1125,7 @@ After running the pipeline to test the code, I had many failed builds, with each
 <br>
 
 ### Character Select 95
-The majority of my testing occurred whilst working on the character select screen due to all the errors that I have previously discussed. After each test, I noted down my observations into a data table to keep track of my progress and each error that occurred during it's development. When I managed to fix the problems, it was not added to the table because I moved straight back to the server browser to fix an issue.
+The majority of my testing occurred whilst working on the character select screen due to all the errors that I have previously discussed. After each test, I noted down my observations in a data table to keep track of my progress and each error that occurred during its development. When I managed to fix the problems, it was not added to the table because I moved straight back to the server browser to fix an issue.
 
 ![Character Select Test Table](https://raw.githubusercontent.com/C6WX/Year-2-Tools-and-Production/refs/heads/main/Development%20Commentary/Images/Testing/Character%20Select%20Test%20Table.png)
 <br>
@@ -1178,20 +1180,20 @@ You may include screenshots, graphs, tables, or embedded videos to demonstrate t
 ## Critical Reflection *(Approx. 10–15% of word count)*
 
 ### What went well? 171
-I was very proud of how well the sever browser and character select screen works, especially as it is my first time working with multiplayer on Unreal Engine. Even though both of them had countless errors and problems, I never gave up and kept testing, researching and altering their code until they both worked. 
+I was very proud of how well the server browser and character select screen work, especially as it is my first time working with multiplayer on Unreal Engine. Even though both of them had countless errors and problems, I never gave up and kept testing, researching and altering their code until they both worked. 
 
-When it comes to Jenkins, I was very proud of the end result and how far I have developed the code, from just checking if the game builds to uploading it to GitHub release, messaging the results to Discord and then using python to create and update data files on the results of each build.
+When it comes to Jenkins, I was very proud of the end result and how far I have developed the code, from just checking if the game builds to uploading it to GitHub release, messaging the results to Discord and then using Python to create and update data files on the results of each build.
 
-Although I wasn't the happiest in being left to fix the game basically by myself near the end, I was glad that I did it and happy of the progress I was able to make over those two days, especially with the fact that I was able to fix issues with scripts that I had never worked on or seen before then. 
+Although I wasn't the happiest in being left to fix the game basically by myself near the end, I was glad that I did it and happy with the progress I was able to make over those two days, especially with the fact that I was able to fix issues with scripts that I had never worked on or seen before then. 
 
-### What could be improved or done differently next time? 316
-I felt like a main problem throughout this project was a lack of communication. This affected the whole project throughout the whole ten weeks, from code needing to be cut or added but was not communicated properly, to me having to put assets in and change up the scene last minute as I heard that the assets weren't in the game or any scenes yet, even though it took me a minute to find all of them.
+### What could be improved or done differently next time? 320
+I felt like the main problem throughout this project was a lack of communication. This affected the whole project throughout the whole ten weeks, from code needing to be cut or added but was not communicated properly, to me having to put assets in and change up the scene last minute, as I heard that the assets weren't in the game or any scenes yet, even though it took me a minute to find all of them.
 
-Personally, I felt like I could have got Jenkins setup much sooner than I did. I did not set it up late into the project but I feel like if it was done a little bit sooner, I could have possibly helped with other bits that did not end up making it into the game like the shop cards instead of working on the server browser and character select screen till as late as I did.
+Personally, I felt like I could have got Jenkins set up much sooner than I did. I did not set it up late into the project, but I feel like if it had been done a little bit sooner, I could have possibly helped with other bits that did not end up making it into the game, like the shop cards, instead of working on the server browser and character select screen till as late as I did.
 
-I also felt that some things were focussed on more than they should've been by other developers and designers, either by having a person focus on one small thing the whole of the ten weeks, or having a large group working on something that does not require that many people. If people were spread out between tasks in a more resourceful way, I feel like there would not have had to be as much cut from the final game as there was.
+I also felt that some things were focused on more than they should've been by other developers and designers, either by having a person focus on one small thing for the whole of the ten weeks, or having a large group working on something that does not require that many people. If people were spread out between tasks in a more resourceful way, I feel like there would not have had to be as much cut from the final game as there was.
 
-If I was to do this again, I would get Jenkins setup within the first day of the project and then get straight onto working on the server browser as this ended up taking up most of my time as I did not realise how long of a task this was going to be to develop. I would have also setup the ClickUp webhook sooner than I did as that would have got people using it more as well as sooner.
+If I were to do this again, I would get Jenkins set up within the first day of the project and then get straight to working on the server browser, as this ended up taking up most of my time, as I did not realise how long a task this was going to be to develop. I would have also set up the ClickUp webhook sooner than I did, as that would have got people using it more as well as sooner.
 
 
 <!--
@@ -1227,7 +1229,9 @@ If I was to do this again, I would get Jenkins setup within the first day of the
 - UE5 Steam Multiplayer EP1 – Basic Connection Logic (No UI) (2026) Directed by It’s Me Bro. At: https://www.youtube.com/watch?v=KNeRVpPvl-w (Accessed  17/04/2026).
 
 ### Declared Assets
+- Grammarly (s.d.) At: https://app.grammarly.com/ (Accessed  24/04/2026).
 - Statzer, J. (MordenTral) (2026) mordentral/AdvancedSessionsPlugin. At: https://github.com/mordentral/AdvancedSessionsPlugin (Accessed  20/04/2026).
+
 
 ---
 
@@ -1235,6 +1239,7 @@ If I was to do this again, I would get Jenkins setup within the first day of the
 
 - * `AdvancedSessions.uplugin` - Third party plugin to connect the game to steam session - (Statzer, 2026)
 - * `AdvancedSteamSessions.uplugin` - Third party plugin to connect the game to steam session - (Statzer, 2026)
+- * `Grammerly` - Used for spelling, punctuation and grammar checking - (Grammarly, s.d.)
 <!--
 You must declare any content that was **not entirely created by you**, or was **modified with the aid of AI tools**. This includes:
 
